@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>Amir Web — сайты для бизнеса в Казахстане | Астана</title>
+<meta name="description" content="Делаю сайты для кафе, доставок, магазинов и салонов красоты: быстрые, удобные с телефона, с заявками прямо вам в WhatsApp. Астана, работаю по всему Казахстану. От 30 000 ₸, готово за 3 дня.">
+
+<!-- Тема оформления выбирается ДО первой отрисовки: иначе на долю секунды
+     мелькнёт светлый фон под тёмной темой. Скрипт обязан быть блокирующим
+     и стоять раньше стилей. -->
+<script>
+(function () {
+  var d = document.documentElement;
+  try {
+    var s = JSON.parse(localStorage.getItem('amirweb:settings') || '{}');
+    var t = s.theme || 'system';
+    var dark = t === 'dark' || (t === 'system' &&
+               window.matchMedia('(prefers-color-scheme: dark)').matches);
+    d.setAttribute('data-theme', dark ? 'dark' : 'light');
+    if (s.motion === 'reduced') d.setAttribute('data-motion', 'reduced');
+    if (s.lang && s.lang !== 'ru') d.setAttribute('lang', s.lang);
+  } catch (e) { d.setAttribute('data-theme', 'light'); }
+  d.classList.add('js');
+})();
+</script>
+
+<meta name="theme-color" content="#FCFBF8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0A181F" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+
+<link rel="canonical" href="https://amir-web.kz/">
+<link rel="alternate" hreflang="ru" href="https://amir-web.kz/">
+<link rel="alternate" hreflang="en" href="https://amir-web.kz/?lang=en">
+<link rel="alternate" hreflang="kk" href="https://amir-web.kz/?lang=kk">
+<link rel="alternate" hreflang="x-default" href="https://amir-web.kz/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_KZ">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="kk_KZ">
+<meta property="og:site_name" content="Amir Web">
+<meta property="og:url" content="https://amir-web.kz/">
+<meta property="og:title" content="Amir Web — сайты для бизнеса в Казахстане">
+<meta property="og:description" content="Быстрые сайты для кафе, магазинов и салонов. Заявки приходят вам в WhatsApp. Астана, весь Казахстан.">
+<meta property="og:image" content="https://amir-web.kz/assets/img/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Amir Web — сайты, которые приводят клиентов">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Amir Web — сайты для бизнеса в Казахстане">
+<meta name="twitter:description" content="Быстрые сайты для кафе, магазинов и салонов. Заявки приходят вам в WhatsApp.">
+<meta name="twitter:image" content="https://amir-web.kz/assets/img/og-cover.png">
+
+<!-- Иконки. /favicon.ico лежит в КОРНЕ намеренно: подсказки адресной строки,
+     история и закладки запрашивают именно его, ещё не открыв страницу и не
+     прочитав эти теги. Без файла в корне иконка там пропадает. -->
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/manrope-cyrillic.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/manrope-latin.woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main" data-i18n="a11y.skip">Перейти к содержанию</a>
+
+<!-- ============ ШАПКА ============ -->
+<header class="header" id="header">
+  <div class="header__inner container">
+    <a class="logo" href="#top" data-i18n-attr="aria-label:a11y.logoHome" aria-label="Amir Web — на главную">
+      <svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <g class="logo__ring">
+          <circle cx="20" cy="20" r="14.5"/>
+          <path d="M36.5 20h2.7M31.67 8.33l1.91-1.91M20 3.5V.8M8.33 8.33 6.42 6.42M3.5 20H.8M8.33 31.67l-1.91 1.91M20 36.5v2.7M31.67 31.67l1.91 1.91"/>
+        </g>
+        <path class="logo__letter" d="M13.5 26.8 20 12.6l6.5 14.2M16.4 21.9h7.2"/>
+      </svg>
+      <span class="logo__text">Amir<span>Web</span></span>
+    </a>
+
+    <nav class="nav" data-i18n-attr="aria-label:a11y.mainMenu" aria-label="Основное меню">
+      <a href="#services" data-i18n="nav.services">Услуги</a>
+      <a href="#works" data-i18n="nav.works">Работы</a>
+      <a href="#process" data-i18n="nav.process">Как работаем</a>
+      <a href="#pricing" data-i18n="nav.pricing">Цены</a>
+      <a href="#faq" data-i18n="nav.faq">Вопросы</a>
+    </nav>
+
+    <div class="header__actions">
+      <button class="prefs-btn" id="prefs-btn" type="button"
+              aria-expanded="false" aria-controls="prefs"
+              data-i18n-attr="aria-label:a11y.openSettings" aria-label="Язык и оформление">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="prefs-btn__globe">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M3.2 9.8h17.6M3.2 14.2h17.6"/>
+          <path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18Z"/>
+        </svg>
+        <span class="prefs-btn__code" id="prefs-code">RU</span>
+      </button>
+
+      <a class="btn btn--sm btn--primary header__cta" href="https://wa.me/77085482453"
+         target="_blank" rel="noopener" data-i18n="cta.writeMe">Написать мне</a>
+
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="mobile-menu"
+              data-i18n-attr="aria-label:a11y.openMenu" aria-label="Открыть меню">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ ПАНЕЛЬ НАСТРОЕК ============ -->
+<div class="prefs" id="prefs" hidden>
+  <div class="prefs__panel" role="dialog" aria-modal="true" aria-labelledby="prefs-title">
+    <div class="prefs__head">
+      <h2 class="prefs__title" id="prefs-title" data-i18n="settings.title">Язык и оформление</h2>
+      <button class="prefs__close" id="prefs-close" type="button"
+              data-i18n-attr="aria-label:a11y.close" aria-label="Закрыть">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+
+    <div class="prefs__group">
+      <p class="prefs__label" id="prefs-lang-label" data-i18n="settings.language">Язык</p>
+      <div class="segmented" role="radiogroup" aria-labelledby="prefs-lang-label" data-pref="lang">
+        <button type="button" role="radio" aria-checked="true"  data-value="ru" lang="ru">Русский</button>
+        <button type="button" role="radio" aria-checked="false" data-value="kk" lang="kk">Қазақша</button>
+        <button type="button" role="radio" aria-checked="false" data-value="en" lang="en">English</button>
+      </div>
+    </div>
+
+    <div class="prefs__group">
+      <p class="prefs__label" id="prefs-theme-label" data-i18n="settings.theme">Оформление</p>
+      <div class="segmented" role="radiogroup" aria-labelledby="prefs-theme-label" data-pref="theme">
+        <button type="button" role="radio" aria-checked="false" data-value="light">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
+          <span data-i18n="settings.light">Светлое</span>
+        </button>
+        <button type="button" role="radio" aria-checked="false" data-value="dark">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.2A8.4 8.4 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2Z"/></svg>
+          <span data-i18n="settings.dark">Тёмное</span>
+        </button>
+        <button type="button" role="radio" aria-checked="true" data-value="system">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.8" y="4.2" width="18.4" height="12.5" rx="2"/><path d="M8.5 20.2h7"/></svg>
+          <span data-i18n="settings.system">Как в системе</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="prefs__group">
+      <p class="prefs__label" data-i18n="settings.accessibility">Доступность</p>
+      <button class="switch" type="button" role="switch" aria-checked="false" data-pref="motion">
+        <span class="switch__text">
+          <span class="switch__name" data-i18n="settings.reduceMotion">Меньше движения</span>
+          <span class="switch__hint" data-i18n="settings.reduceMotionHint">Отключает анимации и бегущую строку</span>
+        </span>
+        <span class="switch__track" aria-hidden="true"><span class="switch__knob"></span></span>
+      </button>
+    </div>
+
+    <button class="prefs__reset" id="prefs-reset" type="button" data-i18n="settings.reset">Сбросить настройки</button>
+  </div>
+</div>
+
+<!-- ============ МОБИЛЬНОЕ МЕНЮ ============ -->
+<div class="mmenu" id="mobile-menu" hidden>
+  <nav class="mmenu__nav" data-i18n-attr="aria-label:a11y.mobileMenu" aria-label="Мобильное меню">
+    <a href="#services"><span>01</span> <em data-i18n="nav.services">Услуги</em></a>
+    <a href="#why"><span>02</span> <em data-i18n="nav.why">Почему я</em></a>
+    <a href="#works"><span>03</span> <em data-i18n="nav.works">Работы</em></a>
+    <a href="#process"><span>04</span> <em data-i18n="nav.process">Как работаем</em></a>
+    <a href="#pricing"><span>05</span> <em data-i18n="nav.pricing">Цены</em></a>
+    <a href="#faq"><span>06</span> <em data-i18n="nav.faq">Вопросы</em></a>
+  </nav>
+  <div class="mmenu__foot">
+    <a class="btn btn--primary btn--block" href="https://wa.me/77085482453" target="_blank" rel="noopener"
+       data-i18n="cta.whatsapp">Написать в WhatsApp</a>
+    <p data-i18n="cta.meta">Астана, Казахстан · отвечаю в течение часа</p>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ============ ГЛАВНЫЙ ЭКРАН ============ -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="hero__rays" data-motion-loop aria-hidden="true"></div>
+    <div class="container hero__inner">
+      <p class="badge reveal"><span class="badge__dot"></span> <span data-i18n="hero.badge">Астана · свободен для новых проектов</span></p>
+
+      <h1 class="hero__title reveal" id="hero-title" data-d="1" data-i18n-html="hero.title">
+        Сайт, который приводит<br>
+        <em>клиентов</em> вашему бизнесу
+      </h1>
+
+      <p class="hero__lead reveal" data-d="2" data-i18n="hero.lead">
+        Меня зовут Амир, я веб-разработчик из Астаны. Делаю сайты для кафе, доставок,
+        магазинов и салонов красоты — быстрые, удобные с телефона и понятные вашему клиенту.
+      </p>
+
+      <div class="hero__cta reveal" data-d="3">
+        <a class="btn btn--primary btn--lg" href="https://wa.me/77085482453" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="ico-wa"><path d="M17.472 14.382c-.301-.15-1.782-.879-2.057-.98-.277-.101-.478-.151-.678.15-.202.302-.78.98-.957 1.182-.176.201-.352.226-.653.075-.301-.15-1.272-.469-2.423-1.496-.895-.799-1.5-1.786-1.676-2.087-.176-.302-.019-.465.132-.615.136-.135.301-.351.452-.527.15-.176.2-.301.301-.502.101-.201.05-.377-.025-.528-.075-.15-.678-1.633-.929-2.237-.245-.588-.493-.509-.678-.518-.176-.01-.377-.01-.578-.01-.201 0-.528.076-.804.377-.276.301-1.055 1.03-1.055 2.512s1.08 2.914 1.231 3.115c.15.201 2.125 3.245 5.147 4.551.719.311 1.28.497 1.718.636.722.23 1.378.197 1.898.12.579-.087 1.782-.728 2.033-1.431.251-.703.251-1.306.176-1.432-.075-.125-.276-.201-.577-.351zM12.05 21.784h-.008a9.78 9.78 0 0 1-4.99-1.365l-.358-.213-3.71.973.99-3.617-.234-.372a9.782 9.782 0 0 1-1.5-5.187C2.24 6.61 6.64 2.21 12.056 2.21a9.785 9.785 0 0 1 6.927 2.873 9.787 9.787 0 0 1 2.871 6.927c-.002 5.4-4.406 9.774-9.804 9.774zm8.318-18.093A11.715 11.715 0 0 0 12.056.25C5.568.25.286 5.534.283 12.025a11.72 11.72 0 0 0 1.794 6.229L0 23.75l5.632-1.477a11.73 11.73 0 0 0 6.417 1.877h.005c6.486 0 11.769-5.283 11.772-11.775a11.7 11.7 0 0 0-3.458-8.384z"/></svg>
+          <span data-i18n="cta.whatsapp">Написать в WhatsApp</span>
+        </a>
+        <a class="btn btn--ghost btn--lg" href="#works" data-i18n="cta.seeWorks">Посмотреть работы</a>
+      </div>
+
+      <dl class="hero__facts reveal" data-d="4">
+        <div class="fact">
+          <dt data-i18n="hero.fact1.label">среднее время ответа</dt>
+          <dd data-i18n="hero.fact1.value">~1 час</dd>
+        </div>
+        <div class="fact">
+          <dt data-i18n="hero.fact2.label">до готового сайта</dt>
+          <dd data-i18n="hero.fact2.value">от 3 дней</dd>
+        </div>
+        <div class="fact">
+          <dt data-i18n="hero.fact3.label">помогаю после запуска</dt>
+          <dd data-i18n="hero.fact3.value">1 месяц</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="hero__strip" aria-hidden="true">
+      <div class="strip__track" data-motion-loop>
+        <span data-i18n="strip.cafe">Кафе и рестораны</span><i></i><span data-i18n="strip.delivery">Доставка еды</span><i></i><span data-i18n="strip.coffee">Кофейни</span><i></i>
+        <span data-i18n="strip.shops">Магазины</span><i></i><span data-i18n="strip.beauty">Салоны красоты</span><i></i><span data-i18n="strip.small">Небольшие компании</span><i></i>
+        <span data-i18n="strip.pros">Мастера и специалисты</span><i></i>
+        <span data-i18n="strip.cafe">Кафе и рестораны</span><i></i><span data-i18n="strip.delivery">Доставка еды</span><i></i><span data-i18n="strip.coffee">Кофейни</span><i></i>
+        <span data-i18n="strip.shops">Магазины</span><i></i><span data-i18n="strip.beauty">Салоны красоты</span><i></i><span data-i18n="strip.small">Небольшие компании</span><i></i>
+        <span data-i18n="strip.pros">Мастера и специалисты</span><i></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ПОЧЕМУ ВЫБИРАЮТ МЕНЯ ============ -->
+  <section class="section" id="why" aria-labelledby="why-title">
+    <div class="container">
+      <header class="shead reveal">
+        <p class="shead__kicker" data-i18n="why.kicker">Почему выбирают меня</p>
+        <h2 class="shead__title" id="why-title" data-i18n="why.title">Работаю так, как хотел бы, чтобы работали со мной</h2>
+        <p class="shead__lead" data-i18n="why.lead">Без агентства, менеджеров и наценок. Вы общаетесь напрямую со мной — от первого сообщения до запуска.</p>
+      </header>
+
+      <div class="grid grid--3">
+        <article class="card reveal" data-d="1">
+          <span class="card__ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3v4l5-4h8a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Z"/></svg>
+          </span>
+          <h3 data-i18n="why.c1.title">Объясняю понятно</h3>
+          <p data-i18n="why.c1.text">Никаких сложных слов. Расскажу простым языком, что именно делаю, зачем это вашему делу и сколько будет стоить.</p>
+        </article>
+
+        <article class="card reveal" data-d="2">
+          <span class="card__ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M10.8 18.5h2.4"/></svg>
+          </span>
+          <h3 data-i18n="why.c2.title">Удобно с телефона</h3>
+          <p data-i18n="why.c2.text">Почти все клиенты откроют ваш сайт со смартфона. Проверяю каждый экран, чтобы ничего не съезжало и всё легко читалось.</p>
+        </article>
+
+        <article class="card reveal" data-d="3">
+          <span class="card__ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg>
+          </span>
+          <h3 data-i18n="why.c3.title">Открывается за секунду</h3>
+          <p data-i18n="why.c3.text">Люди не ждут — они уходят. Делаю сайты лёгкими, чтобы они открывались моментально даже при слабом интернете.</p>
+        </article>
+
+        <article class="card reveal" data-d="4">
+          <span class="card__ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.6 5.6 6.4.8-4.5 4.3 1.1 6.3L12 17l-5.6 3 1.1-6.3L3 9.4l6.4-.8L12 3Z"/></svg>
+          </span>
+          <h3 data-i18n="why.c4.title">Дизайн под ваш бизнес</h3>
+          <p data-i18n="why.c4.text">Не беру готовые шаблоны. Собираю внешний вид под ваше дело, ваши фотографии и ваших клиентов — так, чтобы вас запоминали.</p>
+        </article>
+
+        <article class="card reveal" data-d="5">
+          <span class="card__ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3 3 10.5l7 3 3 7L21 3Z"/><path d="m10 13.5 4-4"/></svg>
+          </span>
+          <h3 data-i18n="why.c5.title">Заявки приходят сразу вам</h3>
+          <p data-i18n="why.c5.text">Клиент оставляет имя и номер — сообщение мгновенно приходит вам в WhatsApp. Ни одна заявка не теряется.</p>
+        </article>
+
+        <article class="card reveal" data-d="6">
+          <span class="card__ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 4.5 5.8v6c0 4.4 3.2 8.2 7.5 9.7 4.3-1.5 7.5-5.3 7.5-9.7v-6L12 2.5Z"/><path d="m8.8 12 2.3 2.3 4.3-4.5"/></svg>
+          </span>
+          <h3 data-i18n="why.c6.title">Не пропадаю после запуска</h3>
+          <p data-i18n="why.c6.text">Первый месяц помогаю бесплатно: поправить текст, поменять фото, добавить новый раздел или акцию. Пишите — сделаю.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ КАКИЕ САЙТЫ Я СОЗДАЮ ============ -->
+  <section class="section section--sand" id="services" aria-labelledby="services-title">
+    <div class="ornament" aria-hidden="true"></div>
+    <div class="container">
+      <header class="shead reveal">
+        <p class="shead__kicker" data-i18n="svc.kicker">Какие сайты я создаю</p>
+        <h2 class="shead__title" id="services-title" data-i18n="svc.title">Для тех, к кому клиент приходит с телефона в руке</h2>
+        <p class="shead__lead" data-i18n="svc.lead">Ниже — направления, с которыми работаю чаще всего. Вашего дела нет в списке? Напишите, почти наверняка справлюсь.</p>
+      </header>
+
+      <div class="grid grid--3">
+        <article class="svc reveal" data-d="1">
+          <span class="svc__ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h12v5a6 6 0 0 1-6 6h0a6 6 0 0 1-6-6V8Z"/><path d="M16 9h2a3 3 0 0 1 0 6h-2"/><path d="M7.5 2v3M11.5 2v3"/></svg>
+          </span>
+          <h3 data-i18n="svc.s1.title">Кафе, рестораны и кофейни</h3>
+          <p data-i18n="svc.s1.text">Меню с фотографиями блюд, адрес на карте, бронь столика и ссылки на соцсети. Гость видит атмосферу заведения ещё до визита.</p>
+        </article>
+
+        <article class="svc reveal" data-d="2">
+          <span class="svc__ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="7" width="12" height="10" rx="2"/><path d="M14.5 10.5H18l3 3.5V17h-6.5"/><circle cx="7" cy="19" r="1.7"/><circle cx="17.5" cy="19" r="1.7"/></svg>
+          </span>
+          <h3 data-i18n="svc.s2.title">Доставка еды</h3>
+          <p data-i18n="svc.s2.text">Каталог блюд с ценами, корзина и оформление заказа. Готовый заказ вместе с адресом сразу приходит вам — без звонков и путаницы.</p>
+        </article>
+
+        <article class="svc reveal" data-d="3">
+          <span class="svc__ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l1.6-5h14.8L21 9"/><path d="M4.5 9v10a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V9"/><path d="M3 9h18"/><path d="M9.5 20v-5.5h5V20"/></svg>
+          </span>
+          <h3 data-i18n="svc.s3.title">Магазины</h3>
+          <p data-i18n="svc.s3.text">Витрина товаров с ценами и фотографиями, удобные категории и поиск. Клиент находит нужное за пару касаний и пишет вам.</p>
+        </article>
+
+        <article class="svc reveal" data-d="4">
+          <span class="svc__ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="6.5" r="2.6"/><circle cx="6" cy="17.5" r="2.6"/><path d="M8.2 7.9 20 18M8.2 16.1 20 6"/></svg>
+          </span>
+          <h3 data-i18n="svc.s4.title">Салоны красоты</h3>
+          <p data-i18n="svc.s4.text">Услуги и цены, работы мастеров, отзывы и запись онлайн. Клиентка выбирает мастера и записывается, пока вы заняты.</p>
+        </article>
+
+        <article class="svc reveal" data-d="5">
+          <span class="svc__ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20.2a7.5 7.5 0 0 1 15 0"/></svg>
+          </span>
+          <h3 data-i18n="svc.s5.title">Мастера и специалисты</h3>
+          <p data-i18n="svc.s5.text">Личный сайт: кто вы, чем помогаете, примеры работ, отзывы и кнопка связи. Выглядит солиднее, чем страница в соцсети.</p>
+        </article>
+
+        <article class="svc reveal" data-d="6">
+          <span class="svc__ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 7.5h2M13 7.5h2M9 11.5h2M13 11.5h2"/><path d="M10 21v-4h4v4"/></svg>
+          </span>
+          <h3 data-i18n="svc.s6.title">Небольшие компании</h3>
+          <p data-i18n="svc.s6.text">Понятный сайт об услугах, ценах и команде. Тот самый, который партнёр или заказчик открывает перед тем, как вам позвонить.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ РАБОТЫ ============ -->
+  <section class="section" id="works" aria-labelledby="works-title">
+    <div class="container">
+      <header class="shead reveal">
+        <p class="shead__kicker" data-i18n="works.kicker">Мои работы</p>
+        <h2 class="shead__title" id="works-title" data-i18n="works.title">Живые сайты, которые можно открыть прямо сейчас</h2>
+        <p class="shead__lead" data-i18n="works.lead">Не картинки в портфолио — работающие проекты. Нажмите и посмотрите, как они ведут себя на вашем телефоне.</p>
+      </header>
+
+      <article class="work reveal">
+        <div class="work__visual">
+          <div class="phone" aria-hidden="true">
+            <div class="phone__screen">
+              <div class="mk mk--menu">
+                <div class="mk__bar"><span class="mk__logo">Sharyn</span><span class="mk__dots"></span></div>
+                <div class="mk__hero"></div>
+                <div class="mk__chips"><i class="on"></i><i></i><i></i><i></i></div>
+                <div class="mk__row"><span class="mk__thumb"></span><span class="mk__lines"><b></b><s></s></span><span class="mk__price"></span></div>
+                <div class="mk__row"><span class="mk__thumb"></span><span class="mk__lines"><b></b><s></s></span><span class="mk__price"></span></div>
+                <div class="mk__row"><span class="mk__thumb"></span><span class="mk__lines"><b></b><s></s></span><span class="mk__price"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="work__body">
+          <p class="work__tag" data-i18n="works.w1.tag">Ресторан</p>
+          <h3 class="work__name">Sharyn</h3>
+          <dl class="work__list">
+            <dt data-i18n="works.task">Задача</dt>
+            <dd data-i18n="works.w1.task">Гостям было неудобно смотреть меню, а печатать новое при каждом изменении цен — дорого и долго.</dd>
+            <dt data-i18n="works.did">Что сделал</dt>
+            <dd data-i18n="works.w1.did">Меню, которое открывается по ссылке или QR-коду прямо за столом. Фотографии блюд, разделы и цены листаются одним пальцем.</dd>
+            <dt data-i18n="works.result">Результат</dt>
+            <dd data-i18n="works.w1.result">Гостю не нужно ничего скачивать, а заведение меняет блюда и цены за минуту — без типографии.</dd>
+          </dl>
+          <a class="link" href="https://sharynmenu.onrender.com" target="_blank" rel="noopener">
+            <span data-i18n="works.open">Открыть сайт</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="work work--rev reveal">
+        <div class="work__visual">
+          <div class="phone" aria-hidden="true">
+            <div class="phone__screen">
+              <div class="mk mk--profile">
+                <div class="mk__bar"><span class="mk__logo">Teacher</span><span class="mk__dots"></span></div>
+                <div class="mk__ava"></div>
+                <div class="mk__title"></div>
+                <div class="mk__sub"></div>
+                <div class="mk__pills"><i></i><i></i></div>
+                <div class="mk__cta"></div>
+                <div class="mk__row mk__row--flat"><span class="mk__lines"><b></b><s></s></span></div>
+                <div class="mk__row mk__row--flat"><span class="mk__lines"><b></b><s></s></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="work__body">
+          <p class="work__tag" data-i18n="works.w2.tag">Преподаватель</p>
+          <h3 class="work__name">Teacher Temp</h3>
+          <dl class="work__list">
+            <dt data-i18n="works.task">Задача</dt>
+            <dd data-i18n="works.w2.task">Учеников находили в соцсетях, но они не понимали, сколько стоит занятие и как записаться.</dd>
+            <dt data-i18n="works.did">Что сделал</dt>
+            <dd data-i18n="works.w2.did">Понятный личный сайт: о преподавателе, форматы занятий, цены и кнопка записи на каждом экране.</dd>
+            <dt data-i18n="works.result">Результат</dt>
+            <dd data-i18n="works.w2.result">Человек за минуту понимает, чем ему помогут, и пишет сам — без десяти уточняющих вопросов в директ.</dd>
+          </dl>
+          <a class="link" href="https://teachertemp.onrender.com" target="_blank" rel="noopener">
+            <span data-i18n="works.open">Открыть сайт</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!--
+  ============================================================
+   ОТЗЫВЫ — раздел готов, но намеренно выключен.
+
+   Я не стал придумывать отзывы за вас: выдуманные отзывы на
+   коммерческом сайте — это обман клиента, и его почти всегда
+   видно. Как только появятся два-три настоящих:
+
+   1. снимите обёртку комментария вокруг блока ниже,
+   2. замените текст, имя и заведение на реальные,
+   3. добавьте ключи reviews.* в assets/js/i18n.js.
+
+   Достаточно двух отзывов — они дают больше доверия,
+   чем шесть безымянных.
+  ============================================================
+  <section class="section section--sand" id="reviews" aria-labelledby="reviews-title">
+    <div class="ornament" aria-hidden="true"></div>
+    <div class="container">
+      <header class="shead reveal">
+        <p class="shead__kicker">Отзывы</p>
+        <h2 class="shead__title" id="reviews-title">Что говорят те, для кого я уже сделал сайт</h2>
+      </header>
+      <div class="grid grid--2">
+        <figure class="quote reveal" data-d="1">
+          <blockquote><p>Настоящий отзыв клиента: что было до, что изменилось после.</p></blockquote>
+          <figcaption>
+            <span class="quote__ava" aria-hidden="true">И</span>
+            <span class="quote__who"><strong>Имя Фамилия</strong><span>Заведение, город</span></span>
+          </figcaption>
+        </figure>
+        <figure class="quote reveal" data-d="2">
+          <blockquote><p>Второй настоящий отзыв.</p></blockquote>
+          <figcaption>
+            <span class="quote__ava" aria-hidden="true">А</span>
+            <span class="quote__who"><strong>Имя Фамилия</strong><span>Заведение, город</span></span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+  -->
+
+  <!-- ============ КАК ПРОХОДИТ РАБОТА ============ -->
+  <section class="section section--sand" id="process" aria-labelledby="process-title">
+    <div class="ornament" aria-hidden="true"></div>
+    <div class="container">
+      <header class="shead reveal">
+        <p class="shead__kicker" data-i18n="process.kicker">Как проходит работа</p>
+        <h2 class="shead__title" id="process-title" data-i18n="process.title">Пять простых шагов — от сообщения до готового сайта</h2>
+        <p class="shead__lead" data-i18n="process.lead">Вам не нужно ничего знать про сайты. Достаточно рассказать о своём деле — остальное беру на себя.</p>
+      </header>
+
+      <ol class="steps">
+        <li class="step reveal" data-d="1">
+          <span class="step__num" aria-hidden="true">01</span>
+          <div class="step__body">
+            <h3><span data-i18n="process.p1.title">Знакомство</span> <span class="step__free" data-i18n="process.free">бесплатно</span></h3>
+            <p data-i18n="process.p1.text">Вы рассказываете о своём деле и клиентах. Я задаю вопросы и говорю прямо: какой сайт вам нужен, сколько он будет стоить и сколько займёт времени.</p>
+          </div>
+        </li>
+        <li class="step reveal" data-d="2">
+          <span class="step__num" aria-hidden="true">02</span>
+          <div class="step__body">
+            <h3 data-i18n="process.p2.title">Показываю, как будет выглядеть</h3>
+            <p data-i18n="process.p2.text">До начала работы вы видите будущий сайт картинкой. Меняем цвета, фото и порядок блоков, пока вам не понравится. Дальше иду только после вашего «да».</p>
+          </div>
+        </li>
+        <li class="step reveal" data-d="3">
+          <span class="step__num" aria-hidden="true">03</span>
+          <div class="step__body">
+            <h3 data-i18n="process.p3.title">Собираю сайт</h3>
+            <p data-i18n="process.p3.text">Здесь работаю я. Вы в любой момент можете открыть ссылку и посмотреть, что получается — и сказать, если что-то хочется поправить.</p>
+          </div>
+        </li>
+        <li class="step reveal" data-d="4">
+          <span class="step__num" aria-hidden="true">04</span>
+          <div class="step__body">
+            <h3 data-i18n="process.p4.title">Запускаю</h3>
+            <p data-i18n="process.p4.text">Размещаю сайт в интернете, подключаю ваш адрес (например, vashe-kafe.kz) и проверяю всё на разных телефонах и компьютерах.</p>
+          </div>
+        </li>
+        <li class="step reveal" data-d="5">
+          <span class="step__num" aria-hidden="true">05</span>
+          <div class="step__body">
+            <h3 data-i18n="process.p5.title">Остаюсь на связи</h3>
+            <p data-i18n="process.p5.text">Первый месяц после запуска помогаю бесплатно: поменять цены, добавить фото или акцию. Дальше — по договорённости, если понадобится.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ ЦЕНЫ ============ -->
+  <section class="section" id="pricing" aria-labelledby="pricing-title">
+    <div class="container">
+      <header class="shead reveal">
+        <p class="shead__kicker" data-i18n="price.kicker">Что входит в стоимость</p>
+        <h2 class="shead__title" id="pricing-title" data-i18n="price.title">Честные цены без мелкого шрифта</h2>
+        <p class="shead__lead" data-i18n="price.lead">В любой сайт уже входит: индивидуальный дизайн, удобство на телефоне, заявки вам в WhatsApp и месяц помощи после запуска.</p>
+      </header>
+
+      <div class="grid grid--3 plans">
+        <article class="plan reveal" data-d="1">
+          <h3 class="plan__name" data-i18n="price.t1.name">Сайт-визитка</h3>
+          <p class="plan__for" data-i18n="price.t1.for">Если нужно просто и быстро рассказать о себе и дать клиенту способ связаться.</p>
+          <p class="plan__price" data-i18n-html="price.t1.price"><span>от</span> 30&nbsp;000&nbsp;₸</p>
+          <p class="plan__term" data-i18n="price.t1.term">Готово за 3–5 дней</p>
+          <ul class="plan__list">
+            <li data-i18n="price.t1.f1">Одна страница со всей главной информацией</li>
+            <li data-i18n="price.t1.f2">Услуги или меню с ценами</li>
+            <li data-i18n="price.t1.f3">Кнопки WhatsApp и Instagram</li>
+            <li data-i18n="price.t1.f4">Адрес, часы работы и карта</li>
+            <li data-i18n="price.t1.f5">Форма заявки</li>
+          </ul>
+          <a class="btn btn--ghost btn--block" href="https://wa.me/77085482453" target="_blank" rel="noopener" data-i18n="price.discuss">Обсудить</a>
+        </article>
+
+        <article class="plan plan--best reveal" data-d="2">
+          <span class="plan__badge" data-i18n="price.popular">Чаще всего выбирают</span>
+          <h3 class="plan__name" data-i18n="price.t2.name">Сайт для бизнеса</h3>
+          <p class="plan__for" data-i18n="price.t2.for">Полноценный сайт, который убеждает клиента выбрать вас, а не соседнее заведение.</p>
+          <p class="plan__price" data-i18n-html="price.t2.price"><span>от</span> 60&nbsp;000&nbsp;₸</p>
+          <p class="plan__term" data-i18n="price.t2.term">Готово за 7–10 дней</p>
+          <ul class="plan__list">
+            <li data-i18n="price.t2.f1">Всё из «Сайта-визитки»</li>
+            <li data-i18n="price.t2.f2">Несколько разделов: о вас, услуги, работы, отзывы</li>
+            <li data-i18n="price.t2.f3">Тексты и порядок блоков, которые ведут к заявке</li>
+            <li data-i18n="price.t2.f4">Галерея фотографий и видео</li>
+            <li data-i18n="price.t2.f5">Карта, отзывы и ответы на частые вопросы</li>
+            <li data-i18n="price.t2.f6">Настройка, чтобы вас находили в поиске</li>
+            <li data-i18n="price.t2.f7">Статистика: сколько людей заходит и откуда</li>
+          </ul>
+          <a class="btn btn--primary btn--block" href="https://wa.me/77085482453" target="_blank" rel="noopener" data-i18n="price.discuss">Обсудить</a>
+        </article>
+
+        <article class="plan reveal" data-d="3">
+          <h3 class="plan__name" data-i18n="price.t3.name">Большой проект</h3>
+          <p class="plan__for" data-i18n="price.t3.for">Когда нужен интернет-магазин, доставка с корзиной или личные кабинеты.</p>
+          <p class="plan__price" data-i18n-html="price.t3.price"><span>от</span> 100&nbsp;000&nbsp;₸</p>
+          <p class="plan__term" data-i18n="price.t3.term">Сроки обсуждаем</p>
+          <ul class="plan__list">
+            <li data-i18n="price.t3.f1">Каталог товаров, корзина и оформление заказа</li>
+            <li data-i18n="price.t3.f2">Оплата картой прямо на сайте</li>
+            <li data-i18n="price.t3.f3">Панель управления: сами меняете цены, фото и товары</li>
+            <li data-i18n="price.t3.f4">Два-три языка: қазақша, русский, english</li>
+            <li data-i18n="price.t3.f5">Личные кабинеты клиентов</li>
+            <li data-i18n="price.t3.f6">Свой адрес сайта, защита и резервные копии</li>
+          </ul>
+          <a class="btn btn--ghost btn--block" href="https://wa.me/77085482453" target="_blank" rel="noopener" data-i18n="price.discuss">Обсудить</a>
+        </article>
+      </div>
+
+      <!-- Гарантии: те же обещания, что рассыпаны по сайту, собраны в одну строку -->
+      <ul class="guarantees reveal">
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 4.5 5.8v6c0 4.4 3.2 8.2 7.5 9.7 4.3-1.5 7.5-5.3 7.5-9.7v-6L12 2.5Z"/><path d="m8.8 12 2.3 2.3 4.3-4.5"/></svg>
+          <strong data-i18n="guarantee.g1.title">Цена фиксируется</strong>
+          <span data-i18n="guarantee.g1.text">Сумму называю до начала работы. По ходу она не растёт.</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7.5h16v12H4z"/><path d="M8.5 7.5V6a3.5 3.5 0 0 1 7 0v1.5"/><path d="M12 12.5v2.5"/></svg>
+          <strong data-i18n="guarantee.g2.title">Сайт принадлежит вам</strong>
+          <span data-i18n="guarantee.g2.text">Домен и хостинг оформляю на ваше имя, не на своё.</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.2l3.4 2"/></svg>
+          <strong data-i18n="guarantee.g3.title">Месяц поддержки</strong>
+          <span data-i18n="guarantee.g3.text">Правки после запуска — бесплатно, обычно в тот же день.</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="2.5"/><path d="M2.5 10h19"/></svg>
+          <strong data-i18n="guarantee.g4.title">Оплата пополам</strong>
+          <span data-i18n="guarantee.g4.text">50% в начале, остальное — когда сайт готов и вам всё нравится.</span>
+        </li>
+      </ul>
+
+      <p class="plans__note reveal" data-i18n="price.note">Это стартовые цены. Точную сумму назову после короткого разговора — она зависит от количества разделов и объёма работы. Скрытых доплат не будет.</p>
+    </div>
+  </section>
+
+  <!-- ============ ОБО МНЕ ============ -->
+  <section class="section section--sand" id="about" aria-labelledby="about-title">
+    <div class="ornament" aria-hidden="true"></div>
+    <div class="container about">
+      <div class="about__media reveal">
+        <div class="about__photo">
+          <span class="about__initial" aria-hidden="true">А</span>
+        </div>
+        <span class="about__stamp" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><g class="logo__ring"><circle cx="20" cy="20" r="14.5"/><path d="M36.5 20h2.7M31.67 8.33l1.91-1.91M20 3.5V.8M8.33 8.33 6.42 6.42M3.5 20H.8M8.33 31.67l-1.91 1.91M20 36.5v2.7M31.67 31.67l1.91 1.91"/></g></svg>
+        </span>
+      </div>
+      <div class="about__body reveal" data-d="1">
+        <p class="shead__kicker" data-i18n="about.kicker">Обо мне</p>
+        <h2 class="shead__title" id="about-title" data-i18n="about.title">Амир, веб-разработчик из Астаны</h2>
+        <p data-i18n="about.p1">Делаю сайты для небольшого бизнеса — тех, кому важно, чтобы клиент открыл сайт с телефона и сразу захотел написать, позвонить или приехать.</p>
+        <p data-i18n="about.p2">Работаю сам, без агентства и менеджеров: вы общаетесь напрямую со мной, поэтому быстрее и без лишних наценок. Мне важно, чтобы сайт не просто красиво выглядел, а приносил вам заявки — поэтому спрашиваю про ваших клиентов больше, чем про цвета кнопок.</p>
+        <ul class="about__chips">
+          <li data-i18n="about.chip1">Астана, Казахстан</li>
+          <li data-i18n="about.chip2">Работаю по всему Казахстану</li>
+          <li data-i18n="about.chip3">Отвечаю в течение часа</li>
+          <li data-i18n="about.chip4">Общаюсь на русском и қазақша</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ВОПРОСЫ ============ -->
+  <section class="section" id="faq" aria-labelledby="faq-title">
+    <div class="container container--narrow">
+      <header class="shead reveal">
+        <p class="shead__kicker" data-i18n="faq.kicker">Ответы на популярные вопросы</p>
+        <h2 class="shead__title" id="faq-title" data-i18n="faq.title">То, что обычно спрашивают первым</h2>
+      </header>
+
+      <div class="faq reveal">
+        <div class="faq__item">
+          <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">
+            <span data-i18n="faq.q1">Я совсем не разбираюсь в сайтах. Это проблема?</span>
+            <span class="faq__ico" aria-hidden="true"></span>
+          </button></h3>
+          <div class="faq__a" id="faq-a1" role="region" aria-labelledby="faq-q1"><div><p data-i18n="faq.a1">Нет, и так почти у всех. Разбираться — это моя работа. Вы рассказываете про своё дело обычными словами, я задаю понятные вопросы и сам решаю все технические моменты.</p></div></div>
+        </div>
+
+        <div class="faq__item">
+          <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">
+            <span data-i18n="faq.q2">Сколько стоит сайт?</span>
+            <span class="faq__ico" aria-hidden="true"></span>
+          </button></h3>
+          <div class="faq__a" id="faq-a2" role="region" aria-labelledby="faq-q2"><div><p data-i18n="faq.a2">Простой сайт — от 30 000 ₸, сайт для бизнеса — от 60 000 ₸, большой проект с корзиной и оплатой — от 100 000 ₸. Точную сумму назову после короткого разговора. Цена фиксируется до начала работы и потом не растёт.</p></div></div>
+        </div>
+
+        <div class="faq__item">
+          <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">
+            <span data-i18n="faq.q3">Сколько времени займёт?</span>
+            <span class="faq__ico" aria-hidden="true"></span>
+          </button></h3>
+          <div class="faq__a" id="faq-a3" role="region" aria-labelledby="faq-q3"><div><p data-i18n="faq.a3">Обычно 3–5 дней на простой сайт и 7–10 дней на сайт для бизнеса. Большие проекты обсуждаем отдельно. Больше всего времени уходит на ваши фотографии и тексты — если они уже готовы, будет быстрее.</p></div></div>
+        </div>
+
+        <div class="faq__item">
+          <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">
+            <span data-i18n="faq.q4">А если мне не понравится дизайн?</span>
+            <span class="faq__ico" aria-hidden="true"></span>
+          </button></h3>
+          <div class="faq__a" id="faq-a4" role="region" aria-labelledby="faq-q4"><div><p data-i18n="faq.a4">Сначала я показываю, как сайт будет выглядеть, и мы правим это столько, сколько нужно. К сборке перехожу только после вашего согласия — так вы не платите за то, что вам не нравится.</p></div></div>
+        </div>
+
+        <div class="faq__item">
+          <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">
+            <span data-i18n="faq.q5">Что такое адрес сайта и хостинг? Мне это покупать?</span>
+            <span class="faq__ico" aria-hidden="true"></span>
+          </button></h3>
+          <div class="faq__a" id="faq-a5" role="region" aria-labelledby="faq-q5"><div><p data-i18n="faq.a5">Адрес — это то, что клиент набирает в браузере, например vashe-kafe.kz. Плюс нужно место, где сайт хранится. Это оплачивается раз в год отдельно и стоит недорого. Я подскажу, что выбрать, и всё оформлю — оплата останется на ваше имя, чтобы сайт всегда принадлежал вам.</p></div></div>
+        </div>
+
+        <div class="faq__item">
+          <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a6" id="faq-q6">
+            <span data-i18n="faq.q6">Смогу ли я сам менять цены, фото и тексты?</span>
+            <span class="faq__ico" aria-hidden="true"></span>
+          </button></h3>
+          <div class="faq__a" id="faq-a6" role="region" aria-labelledby="faq-q6"><div><p data-i18n="faq.a6">Да. Если нужно менять часто — например, меню или товары — сделаю простую панель управления: заходите со своего телефона и правите цену или фото за минуту. Если правки бывают редко, можно просто написать мне.</p></div></div>
+        </div>
+
+        <div class="faq__item">
+          <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a7" id="faq-q7">
+            <span data-i18n="faq.q7">Как происходит оплата?</span>
+            <span class="faq__ico" aria-hidden="true"></span>
+          </button></h3>
+          <div class="faq__a" id="faq-a7" role="region" aria-labelledby="faq-q7"><div><p data-i18n="faq.a7">Половина суммы в начале работы, остальное — когда сайт готов и вам всё нравится. Удобным способом: переводом или на Kaspi. Все договорённости фиксируем письменно, чтобы у обеих сторон была ясность.</p></div></div>
+        </div>
+
+        <div class="faq__item">
+          <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a8" id="faq-q8">
+            <span data-i18n="faq.q8">Вы работаете только в Астане?</span>
+            <span class="faq__ico" aria-hidden="true"></span>
+          </button></h3>
+          <div class="faq__a" id="faq-a8" role="region" aria-labelledby="faq-q8"><div><p data-i18n="faq.a8">Живу в Астане, но работаю со всем Казахстаном. Общаться удобно в WhatsApp — встречаться лично не обязательно. Если вы в Астане и хотите увидеться, тоже не проблема.</p></div></div>
+        </div>
+
+        <div class="faq__item">
+          <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a9" id="faq-q9">
+            <span data-i18n="faq.q9">Что будет с сайтом после запуска?</span>
+            <span class="faq__ico" aria-hidden="true"></span>
+          </button></h3>
+          <div class="faq__a" id="faq-a9" role="region" aria-labelledby="faq-q9"><div><p data-i18n="faq.a9">Сайт полностью ваш. Первый месяц бесплатно помогаю с изменениями. Дальше можно писать по мере необходимости — небольшие правки обычно делаю в тот же день.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ БОЛЬШОЙ ПРИЗЫВ / КОНТАКТЫ ============ -->
+  <section class="cta" id="contacts" aria-labelledby="cta-title">
+    <div class="cta__rays" data-motion-loop aria-hidden="true"></div>
+    <div class="container cta__inner">
+      <p class="badge badge--light reveal"><span class="badge__dot"></span> <span data-i18n="cta.badge">Свободен для новых проектов</span></p>
+
+      <h2 class="cta__title reveal" data-d="1" id="cta-title" data-i18n-html="cta.title">
+        Расскажите о своём деле —<br>предложу, каким должен быть ваш сайт
+      </h2>
+
+      <p class="cta__text reveal" data-d="2" data-i18n="cta.text">
+        Напишите пару слов о бизнесе. Отвечу в течение часа, задам несколько вопросов
+        и назову точную цену и сроки. Разговор бесплатный и ни к чему не обязывает.
+      </p>
+
+      <div class="cta__btns reveal" data-d="3">
+        <a class="btn btn--primary btn--lg" href="https://wa.me/77085482453" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="ico-wa"><path d="M17.472 14.382c-.301-.15-1.782-.879-2.057-.98-.277-.101-.478-.151-.678.15-.202.302-.78.98-.957 1.182-.176.201-.352.226-.653.075-.301-.15-1.272-.469-2.423-1.496-.895-.799-1.5-1.786-1.676-2.087-.176-.302-.019-.465.132-.615.136-.135.301-.351.452-.527.15-.176.2-.301.301-.502.101-.201.05-.377-.025-.528-.075-.15-.678-1.633-.929-2.237-.245-.588-.493-.509-.678-.518-.176-.01-.377-.01-.578-.01-.201 0-.528.076-.804.377-.276.301-1.055 1.03-1.055 2.512s1.08 2.914 1.231 3.115c.15.201 2.125 3.245 5.147 4.551.719.311 1.28.497 1.718.636.722.23 1.378.197 1.898.12.579-.087 1.782-.728 2.033-1.431.251-.703.251-1.306.176-1.432-.075-.125-.276-.201-.577-.351zM12.05 21.784h-.008a9.78 9.78 0 0 1-4.99-1.365l-.358-.213-3.71.973.99-3.617-.234-.372a9.782 9.782 0 0 1-1.5-5.187C2.24 6.61 6.64 2.21 12.056 2.21a9.785 9.785 0 0 1 6.927 2.873 9.787 9.787 0 0 1 2.871 6.927c-.002 5.4-4.406 9.774-9.804 9.774zm8.318-18.093A11.715 11.715 0 0 0 12.056.25C5.568.25.286 5.534.283 12.025a11.72 11.72 0 0 0 1.794 6.229L0 23.75l5.632-1.477a11.73 11.73 0 0 0 6.417 1.877h.005c6.486 0 11.769-5.283 11.772-11.775a11.7 11.7 0 0 0-3.458-8.384z"/></svg>
+          <span data-i18n="cta.whatsapp">Написать в WhatsApp</span>
+        </a>
+        <a class="btn btn--outline btn--lg" href="https://www.instagram.com/altayev_amir" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="ico-ig"><rect x="2.8" y="2.8" width="18.4" height="18.4" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.4" cy="6.6" r="1.15" class="fill"/></svg>
+          Instagram
+        </a>
+      </div>
+
+      <p class="cta__meta reveal" data-d="4" data-i18n="cta.hours">Астана, Казахстан · на связи каждый день с 10:00 до 22:00</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ ПОДВАЛ ============ -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <a class="logo logo--sm" href="#top" data-i18n-attr="aria-label:a11y.logoTop" aria-label="Amir Web — наверх">
+      <svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <g class="logo__ring">
+          <circle cx="20" cy="20" r="14.5"/>
+          <path d="M36.5 20h2.7M31.67 8.33l1.91-1.91M20 3.5V.8M8.33 8.33 6.42 6.42M3.5 20H.8M8.33 31.67l-1.91 1.91M20 36.5v2.7M31.67 31.67l1.91 1.91"/>
+        </g>
+        <path class="logo__letter" d="M13.5 26.8 20 12.6l6.5 14.2M16.4 21.9h7.2"/>
+      </svg>
+      <span class="logo__text">Amir<span>Web</span></span>
+    </a>
+
+    <p class="footer__copy">© <span id="year">2026</span> <span data-i18n="footer.copy">Amir Web — сайты для бизнеса в Казахстане</span></p>
+
+    <div class="footer__socials">
+      <a href="https://wa.me/77085482453" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="ico-wa"><path d="M17.472 14.382c-.301-.15-1.782-.879-2.057-.98-.277-.101-.478-.151-.678.15-.202.302-.78.98-.957 1.182-.176.201-.352.226-.653.075-.301-.15-1.272-.469-2.423-1.496-.895-.799-1.5-1.786-1.676-2.087-.176-.302-.019-.465.132-.615.136-.135.301-.351.452-.527.15-.176.2-.301.301-.502.101-.201.05-.377-.025-.528-.075-.15-.678-1.633-.929-2.237-.245-.588-.493-.509-.678-.518-.176-.01-.377-.01-.578-.01-.201 0-.528.076-.804.377-.276.301-1.055 1.03-1.055 2.512s1.08 2.914 1.231 3.115c.15.201 2.125 3.245 5.147 4.551.719.311 1.28.497 1.718.636.722.23 1.378.197 1.898.12.579-.087 1.782-.728 2.033-1.431.251-.703.251-1.306.176-1.432-.075-.125-.276-.201-.577-.351zM12.05 21.784h-.008a9.78 9.78 0 0 1-4.99-1.365l-.358-.213-3.71.973.99-3.617-.234-.372a9.782 9.782 0 0 1-1.5-5.187C2.24 6.61 6.64 2.21 12.056 2.21a9.785 9.785 0 0 1 6.927 2.873 9.787 9.787 0 0 1 2.871 6.927c-.002 5.4-4.406 9.774-9.804 9.774zm8.318-18.093A11.715 11.715 0 0 0 12.056.25C5.568.25.286 5.534.283 12.025a11.72 11.72 0 0 0 1.794 6.229L0 23.75l5.632-1.477a11.73 11.73 0 0 0 6.417 1.877h.005c6.486 0 11.769-5.283 11.772-11.775a11.7 11.7 0 0 0-3.458-8.384z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/altayev_amir" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="ico-ig"><rect x="2.8" y="2.8" width="18.4" height="18.4" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.4" cy="6.6" r="1.15" class="fill"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ КНОПКА СВЯЗИ НА ТЕЛЕФОНЕ ============ -->
+<div class="mobile-cta" id="mobile-cta">
+  <a class="btn btn--primary btn--block" href="https://wa.me/77085482453" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" aria-hidden="true" class="ico-wa"><path d="M17.472 14.382c-.301-.15-1.782-.879-2.057-.98-.277-.101-.478-.151-.678.15-.202.302-.78.98-.957 1.182-.176.201-.352.226-.653.075-.301-.15-1.272-.469-2.423-1.496-.895-.799-1.5-1.786-1.676-2.087-.176-.302-.019-.465.132-.615.136-.135.301-.351.452-.527.15-.176.2-.301.301-.502.101-.201.05-.377-.025-.528-.075-.15-.678-1.633-.929-2.237-.245-.588-.493-.509-.678-.518-.176-.01-.377-.01-.578-.01-.201 0-.528.076-.804.377-.276.301-1.055 1.03-1.055 2.512s1.08 2.914 1.231 3.115c.15.201 2.125 3.245 5.147 4.551.719.311 1.28.497 1.718.636.722.23 1.378.197 1.898.12.579-.087 1.782-.728 2.033-1.431.251-.703.251-1.306.176-1.432-.075-.125-.276-.201-.577-.351zM12.05 21.784h-.008a9.78 9.78 0 0 1-4.99-1.365l-.358-.213-3.71.973.99-3.617-.234-.372a9.782 9.782 0 0 1-1.5-5.187C2.24 6.61 6.64 2.21 12.056 2.21a9.785 9.785 0 0 1 6.927 2.873 9.787 9.787 0 0 1 2.871 6.927c-.002 5.4-4.406 9.774-9.804 9.774zm8.318-18.093A11.715 11.715 0 0 0 12.056.25C5.568.25.286 5.534.283 12.025a11.72 11.72 0 0 0 1.794 6.229L0 23.75l5.632-1.477a11.73 11.73 0 0 0 6.417 1.877h.005c6.486 0 11.769-5.283 11.772-11.775a11.7 11.7 0 0 0-3.458-8.384z"/></svg>
+    <span data-i18n="cta.writeMe">Написать мне</span>
+  </a>
+</div>
+
+<script src="/assets/js/i18n.js" defer></script>
+<script src="/assets/js/main.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://amir-web.kz/#business",
+      "name": "Amir Web",
+      "url": "https://amir-web.kz/",
+      "image": "https://amir-web.kz/assets/img/og-cover.png",
+      "description": "Разработка сайтов для малого бизнеса в Казахстане: кафе, доставки, магазины, салоны красоты, небольшие компании.",
+      "priceRange": "30000₸–100000₸",
+      "areaServed": { "@type": "Country", "name": "Казахстан" },
+      "address": { "@type": "PostalAddress", "addressLocality": "Астана", "addressCountry": "KZ" },
+      "founder": { "@type": "Person", "name": "Амир Алтаев", "jobTitle": "Веб-разработчик" },
+      "availableLanguage": ["ru", "kk", "en"],
+      "sameAs": ["https://wa.me/77085482453", "https://www.instagram.com/altayev_amir"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Разработка сайтов",
+        "itemListElement": [
+          { "@type": "Offer", "name": "Сайт-визитка", "price": "30000", "priceCurrency": "KZT",
+            "description": "Одна страница: услуги или меню с ценами, контакты, карта, форма заявки." },
+          { "@type": "Offer", "name": "Сайт для бизнеса", "price": "60000", "priceCurrency": "KZT",
+            "description": "Несколько разделов, галерея, отзывы, настройка поиска и статистика." },
+          { "@type": "Offer", "name": "Большой проект", "price": "100000", "priceCurrency": "KZT",
+            "description": "Интернет-магазин или доставка: каталог, корзина, оплата, панель управления." }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://amir-web.kz/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Я совсем не разбираюсь в сайтах. Это проблема?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Нет. Вы рассказываете про своё дело обычными словами, я задаю понятные вопросы и сам решаю все технические моменты." } },
+        { "@type": "Question", "name": "Сколько стоит сайт?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Простой сайт — от 30 000 ₸, сайт для бизнеса — от 60 000 ₸, большой проект с корзиной и оплатой — от 100 000 ₸. Цена фиксируется до начала работы и потом не растёт." } },
+        { "@type": "Question", "name": "Сколько времени займёт?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Обычно 3–5 дней на простой сайт и 7–10 дней на сайт для бизнеса. Большие проекты обсуждаются отдельно." } },
+        { "@type": "Question", "name": "А если мне не понравится дизайн?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Сначала показываю, как сайт будет выглядеть, и мы правим это столько, сколько нужно. К сборке перехожу только после вашего согласия." } },
+        { "@type": "Question", "name": "Смогу ли я сам менять цены, фото и тексты?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Да. Если менять нужно часто, делаю простую панель управления — заходите с телефона и правите цену или фото за минуту." } },
+        { "@type": "Question", "name": "Как происходит оплата?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Половина суммы в начале работы, остальное — когда сайт готов. Переводом или на Kaspi. Договорённости фиксируем письменно." } },
+        { "@type": "Question", "name": "Вы работаете только в Астане?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Живу в Астане, работаю со всем Казахстаном. Общаться удобно в WhatsApp." } }
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- Аналитика: грузится последней и только когда браузер освободится,
+     чтобы не отбирать время у отрисовки первого экрана. -->
+<script>
+window.addEventListener('load', function () {
+  var start = function () {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-Y099QCCJHP';
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', 'G-Y099QCCJHP');
+  };
+  'requestIdleCallback' in window ? requestIdleCallback(start, { timeout: 3000 }) : setTimeout(start, 1200);
+});
+</script>
+</body>
+</html>
