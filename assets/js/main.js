@@ -78,17 +78,22 @@
 
     // Текст
     each('[data-i18n]', function (el) {
-      el.textContent = i18n.t(lang, el.getAttribute('data-i18n'));
+      var val = i18n.t(lang, el.getAttribute('data-i18n'));
+      if (val) el.textContent = val;
     });
     // Значения с разметкой внутри (переносы строки, выделения)
     each('[data-i18n-html]', function (el) {
-      el.innerHTML = i18n.t(lang, el.getAttribute('data-i18n-html'));
+      var val = i18n.t(lang, el.getAttribute('data-i18n-html'));
+      if (val) el.innerHTML = val;
     });
     // Атрибуты: data-i18n-attr="aria-label:ключ"
     each('[data-i18n-attr]', function (el) {
       el.getAttribute('data-i18n-attr').split(',').forEach(function (pair) {
         var bits = pair.split(':');
-        if (bits.length === 2) el.setAttribute(bits[0].trim(), i18n.t(lang, bits[1].trim()));
+        if (bits.length === 2) {
+          var val = i18n.t(lang, bits[1].trim());
+          if (val) el.setAttribute(bits[0].trim(), val);
+        }
       });
     });
 

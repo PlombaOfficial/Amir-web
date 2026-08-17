@@ -5,7 +5,7 @@
    Номер версии меняем при любой правке списка ниже — старый кэш
    удаляется при активации. */
 
-const CACHE = 'amirweb-v4';
+const CACHE = 'amirweb-v5';
 const ASSETS = [
   '/',
   '/index.html',
