@@ -1,10 +1,3 @@
-/* Ускоряет повторные заходы и даёт сайту открываться без интернета.
-   Важно: обновления сайта видны сразу — страница всегда берётся из сети,
-   а стили, шрифты и картинки после отдачи из кэша тут же обновляются в фоне.
-
-   Номер версии меняем при любой правке списка ниже — старый кэш
-   удаляется при активации. */
-
 const CACHE = 'amirweb-v5';
 const ASSETS = [
   '/',
@@ -22,8 +15,7 @@ const ASSETS = [
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE)
-      // addAll падает целиком, если хоть один файл не скачался.
-      // Кладём по одному: пропавшая иконка не должна ломать установку.
+
       .then((cache) => Promise.all(
         ASSETS.map((url) => cache.add(url).catch(() => null))
       ))
@@ -44,7 +36,6 @@ self.addEventListener('fetch', (event) => {
   if (req.method !== 'GET') return;
   if (new URL(req.url).origin !== self.location.origin) return;
 
-  // Страницы — сначала сеть, кэш только когда интернета нет.
   if (req.mode === 'navigate') {
     event.respondWith(
       fetch(req)
@@ -58,7 +49,6 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Остальное — отдаём мгновенно из кэша и сразу обновляем в фоне.
   event.respondWith(
     caches.open(CACHE).then((cache) =>
       cache.match(req).then((hit) => {

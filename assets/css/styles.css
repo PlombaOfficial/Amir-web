@@ -1,35 +1,3 @@
-/* =========================================================
-   Amir Web — стили сайта
-
-    1. Шрифт                 9. Работы
-    2. Токены: цвет и тема  10. Этапы работы
-    3. Ритм, типографика    11. Цены и гарантии
-    4. База и сброс         12. Обо мне
-    5. Кнопки и мелочи      13. Вопросы
-    6. Шапка и настройки    14. Призыв и подвал
-    7. Меню на телефоне     15. Анимации
-    8. Главный экран        16. Экраны побольше
-
-   ЦВЕТ УСТРОЕН В ДВА СЛОЯ — это важно понимать перед правкой:
-
-   • --brand-*  фирменные цвета. Одинаковы в светлой и тёмной теме.
-                Это и есть узнаваемость сайта, менять не нужно.
-   • всё остальное (--bg, --text, --surface…) — РОЛИ. Их значения
-     подменяются в тёмной теме. Компоненты пользуются только ролями,
-     поэтому тема переключается без правки каждого блока.
-
-   Отдельно: --text-gold и --text-accent. Фирменные золото и голубой
-   на светлом фоне дают контраст 2,9:1 — мелкий текст ими читать
-   нельзя. Поэтому у текста свои, притемнённые версии, а чистый
-   --brand-gold остаётся на украшениях, где контраст не требуется.
-   ========================================================= */
-
-/* ---------- 1. Шрифт ---------- */
-/* Manrope переменного начертания: один файл на все толщины 400–800.
-   Лежит рядом с сайтом, а не на серверах Google — это убирает два
-   обращения к чужому домену и ожидание чужой таблицы стилей перед
-   первой отрисовкой. unicode-range заставляет браузер скачать только
-   нужный алфавит: латиница и кириллица, казахские буквы отдельно. */
 @font-face {
   font-family: 'Manrope';
   font-style: normal;
@@ -57,9 +25,8 @@
   unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 }
 
-/* ---------- 2. Токены: цвет и тема ---------- */
 :root {
-  /* --- фирменные цвета: одинаковы в обеих темах --- */
+  
   --brand-ink:       #0B1D26;
   --brand-sky:       #12A2C4;
   --brand-gold:      #C08A2E;
@@ -67,23 +34,19 @@
   --brand-paper:     #FCFBF8;
   --brand-green:     #22B07D;
 
-  /* --- форма --- */
+  
   --r-sm: 10px;
   --r-md: 14px;
   --r-lg: 20px;
   --r-xl: 28px;
 
-  /* --- движение --- */
+  
   --ease: cubic-bezier(.22, .68, .36, 1);
   --dur-fast: .18s;
   --dur: .28s;
   --dur-slow: .5s;
 
-  /* --- безопасные зоны экрана ---------------------------------------
-     Страница объявлена с viewport-fit=cover, то есть занимает экран
-     целиком — вместе с областью под часами, Dynamic Island и полосой
-     жестов. Эти четыре значения — единственный источник правды о том,
-     сколько места занимает система. На обычном мониторе все они = 0. */
+  
   --sa-top:    env(safe-area-inset-top, 0px);
   --sa-right:  env(safe-area-inset-right, 0px);
   --sa-bottom: env(safe-area-inset-bottom, 0px);
@@ -97,7 +60,6 @@
   --bar-h: calc(var(--btn-h) + var(--bar-pad) * 2 + 1px + var(--sa-bottom));
 }
 
-/* --- РОЛИ: светлая тема --- */
 :root,
 :root[data-theme="light"] {
   color-scheme: light;
@@ -108,9 +70,9 @@
   --surface-sub: #F7F5F0;
 
   --text:        #0B1D26;
-  --text-muted:  #4C616D;   /* 6,3:1 на фоне страницы */
-  --text-gold:   #8A6216;   /* 5,3:1 — вместо #C08A2E, который даёт 2,9:1 */
-  --text-accent: #06697F;   /* 6,1:1 */
+  --text-muted:  #4C616D;   
+  --text-gold:   #8A6216;   
+  --text-accent: #06697F;   
   --text-green:  #106B4B;
 
   --border:      rgba(11, 29, 38, .11);
@@ -121,13 +83,13 @@
   --sky-wash:    rgba(18, 162, 196, .10);
   --green-wash:  rgba(34, 176, 125, .13);
 
-  /* тёмные панели на светлой странице */
-  --panel-bg:    #0B1D26;   /* выделенный тариф */
+  
+  --panel-bg:    #0B1D26;   
   --panel-text:  #FCFBF8;
-  --cta-bg:      #0B1D26;   /* полоса призыва во всю ширину */
+  --cta-bg:      #0B1D26;   
   --footer-bg:   #0B1D26;
 
-  /* основная кнопка */
+  
   --btn-bg:      #0B1D26;
   --btn-fg:      #FCFBF8;
   --btn-bg-hov:  #14313F;
@@ -142,7 +104,6 @@
   --rays-opacity: .13;
 }
 
-/* --- РОЛИ: тёмная тема --- */
 :root[data-theme="dark"] {
   color-scheme: dark;
 
@@ -152,9 +113,9 @@
   --surface-sub: #0D2028;
 
   --text:        #E9F1F4;
-  --text-muted:  #9DB3BD;   /* 7,2:1 на карточке */
-  --text-gold:   #E2B968;   /* 8,5:1 — светлее фирменного, читаемо */
-  --text-accent: #5CC4E2;   /* 7,8:1 */
+  --text-muted:  #9DB3BD;   
+  --text-gold:   #E2B968;   
+  --text-accent: #5CC4E2;   
   --text-green:  #5FD3A6;
 
   --border:      rgba(255, 255, 255, .11);
@@ -165,16 +126,13 @@
   --sky-wash:    rgba(18, 162, 196, .17);
   --green-wash:  rgba(34, 176, 125, .18);
 
-  /* Карточку тарифа на тёмной странице приподнимаем — иначе она
-     перестанет отличаться от соседних. А вот полосу призыва наоборот
-     топим: осветлённый блок во всю ширину выглядел бы выцветшим,
-     тогда как утопленный даёт глубину, и голубое свечение читается. */
+  
   --panel-bg:    #14303C;
   --panel-text:  #E9F1F4;
   --cta-bg:      #08171E;
   --footer-bg:   #050F14;
 
-  /* в тёмной теме главная кнопка светлая — так она остаётся главной */
+  
   --btn-bg:      #E9F1F4;
   --btn-fg:      #0A181F;
   --btn-bg-hov:  #FFFFFF;
@@ -189,7 +147,6 @@
   --rays-opacity: .16;
 }
 
-/* ---------- 3. Ритм и типографика ---------- */
 :root {
   --pad-x: 20px;
   --gap: 18px;
@@ -205,7 +162,6 @@
   --fs-h1:   clamp(32px, 7.4vw, 64px);
 }
 
-/* ---------- 4. База и сброс ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
@@ -229,9 +185,6 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Смена темы: красим только то, что действительно меняется.
-   Переход на «всём подряд» заставил бы браузер пересчитывать
-   каждую карточку при любом наведении мыши. */
 :root.is-theming,
 :root.is-theming body,
 :root.is-theming .header,
@@ -256,8 +209,6 @@ p { text-wrap: pretty; }
 
 ::selection { background: var(--text); color: var(--bg); }
 
-/* Заметная и одинаковая по всему сайту рамка фокуса.
-   Две тени вместо outline — чтобы кольцо читалось и на тёмных панелях. */
 :focus-visible {
   outline: 2px solid var(--brand-sky);
   outline-offset: 3px;
@@ -293,7 +244,6 @@ body.is-locked { overflow: hidden; }
 }
 .container--narrow { max-width: 780px; }
 
-/* --- заголовки секций --- */
 .shead { margin-bottom: clamp(30px, 4vw, 52px); max-width: 46rem; }
 
 .shead__kicker {
@@ -331,7 +281,6 @@ body.is-locked { overflow: hidden; }
   max-width: 58ch;
 }
 
-/* ---------- 5. Кнопки и мелочи ---------- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -378,7 +327,6 @@ body.is-locked { overflow: hidden; }
 
 .btn:active { transform: translateY(1px); }
 
-/* На тёмных панелях главная кнопка всегда светлая — независимо от темы */
 .cta .btn--primary,
 .plan--best .btn--primary {
   background: var(--brand-paper);
@@ -392,7 +340,6 @@ body.is-locked { overflow: hidden; }
 .ico-ig { fill: none; stroke: currentColor; stroke-width: 1.7; }
 .ico-ig .fill { fill: currentColor; stroke: none; }
 
-/* значок-плашка */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -426,7 +373,6 @@ body.is-locked { overflow: hidden; }
   50%      { box-shadow: 0 0 0 6px rgba(34, 176, 125, 0); }
 }
 
-/* ссылка со стрелкой */
 .link {
   position: relative;
   display: inline-flex;
@@ -437,12 +383,11 @@ body.is-locked { overflow: hidden; }
   border-bottom: 1px solid transparent;
   transition: gap var(--dur) var(--ease), border-color var(--dur) var(--ease);
 }
-/* палец попадает по ссылке легко, а вид не меняется */
+
 .link::after { content: ''; position: absolute; inset: -11px -8px; }
 .link svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .link:hover { gap: 14px; border-color: currentColor; }
 
-/* ---------- 6. Шапка и панель настроек ---------- */
 .header {
   position: sticky;
   top: 0;
@@ -454,7 +399,7 @@ body.is-locked { overflow: hidden; }
   border-bottom: 1px solid transparent;
   transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
 }
-/* под самими часами фон непрозрачный — иначе время читается плохо */
+
 .header::before {
   content: '';
   position: absolute;
@@ -485,7 +430,6 @@ body.is-locked { overflow: hidden; }
 .header__actions { display: flex; align-items: center; gap: 8px; }
 .header__cta { display: none; }
 
-/* кнопка «язык и оформление» */
 .prefs-btn {
   display: inline-flex;
   align-items: center;
@@ -525,7 +469,6 @@ body.is-locked { overflow: hidden; }
 .burger[aria-expanded="true"] span:first-child { transform: translateY(3.5px) rotate(45deg); }
 .burger[aria-expanded="true"] span:last-child  { transform: translateY(-3.5px) rotate(-45deg); }
 
-/* --- панель настроек --- */
 .prefs {
   position: fixed;
   inset: 0;
@@ -580,7 +523,6 @@ body.is-locked { overflow: hidden; }
   color: var(--text-muted);
 }
 
-/* переключатель из нескольких вариантов */
 .segmented {
   display: grid;
   gap: 3px;
@@ -618,7 +560,6 @@ body.is-locked { overflow: hidden; }
 }
 :root[data-theme="dark"] .segmented button[aria-checked="true"] { background: #1B3B49; }
 
-/* тумблер «меньше движения» */
 .switch {
   display: flex;
   align-items: center;
@@ -668,8 +609,6 @@ body.is-locked { overflow: hidden; }
 }
 .prefs__reset:hover { color: var(--text); border-color: var(--border-firm); }
 
-/* Пальцем целиться труднее, чем мышью: там, где указатель неточный,
-   мелкие элементы управления вырастают до комфортных 44 px. */
 @media (pointer: coarse) {
   .prefs-btn { height: 44px; padding-inline: 13px; }
   .prefs__close { width: 44px; height: 44px; }
@@ -677,7 +616,6 @@ body.is-locked { overflow: hidden; }
   .prefs__reset { padding: 13px; }
 }
 
-/* ---------- 7. Меню на телефоне ---------- */
 .mmenu {
   position: fixed;
   inset: var(--head-total) 0 0;
@@ -716,7 +654,6 @@ body.is-locked { overflow: hidden; }
 }
 .mmenu__foot p { margin-top: 14px; font-size: var(--fs-sm); color: var(--text-muted); text-align: center; }
 
-/* ---------- 8. Главный экран ---------- */
 .hero {
   position: relative;
   isolation: isolate;
@@ -724,7 +661,6 @@ body.is-locked { overflow: hidden; }
   overflow: hidden;
 }
 
-/* солнечные лучи с флага — очень мягко, как водяной знак */
 .hero__rays,
 .cta__rays {
   position: absolute;
@@ -794,9 +730,6 @@ body.is-locked { overflow: hidden; }
   margin-top: 28px;
 }
 
-/* цифры-факты: значение крупно, подпись мелко.
-   В разметке это <dl>: dt — подпись, dd — значение. Поэтому
-   колонка перевёрнута, семантика при этом остаётся правильной. */
 .hero__facts {
   display: grid;
   gap: 18px;
@@ -814,7 +747,6 @@ body.is-locked { overflow: hidden; }
 }
 .fact dt { font-size: var(--fs-xs); line-height: 1.35; color: var(--text-muted); }
 
-/* бегущая строка с направлениями */
 .hero__strip {
   overflow: hidden;
   padding: 13px 0;
@@ -847,11 +779,8 @@ body.is-locked { overflow: hidden; }
 }
 @keyframes slide { to { transform: translateX(-50%); } }
 
-/* Бесконечные анимации останавливаются, когда блок ушёл с экрана —
-   иначе браузер продолжает перерисовывать их всё время чтения. */
 [data-motion-loop].is-paused { animation-play-state: paused; }
 
-/* ---------- 9. Секции и карточки ---------- */
 .section {
   position: relative;
   padding-block: var(--sec-y);
@@ -859,7 +788,6 @@ body.is-locked { overflow: hidden; }
 }
 .section--sand { background: var(--bg-alt); }
 
-/* казахский узор «қошқар мүйіз» тонкой лентой сверху секции */
 .ornament {
   position: absolute;
   top: 0;
@@ -908,7 +836,6 @@ body.is-locked { overflow: hidden; }
 .card h3 { font-size: var(--fs-h3); font-weight: 700; letter-spacing: -.018em; line-height: 1.3; }
 .card p { margin-top: 7px; font-size: var(--fs-base); color: var(--text-muted); }
 
-/* карточка направления */
 .svc {
   position: relative;
   padding: 24px 22px;
@@ -940,7 +867,6 @@ body.is-locked { overflow: hidden; }
 .svc h3 { font-size: var(--fs-h3); font-weight: 700; letter-spacing: -.018em; line-height: 1.3; }
 .svc p { margin-top: 7px; font-size: var(--fs-base); color: var(--text-muted); }
 
-/* отзыв (раздел готов, включается в index.html) */
 .quote {
   display: flex;
   flex-direction: column;
@@ -964,7 +890,6 @@ body.is-locked { overflow: hidden; }
 .quote__who strong { font-size: var(--fs-base); font-weight: 700; }
 .quote__who span { font-size: var(--fs-sm); color: var(--text-muted); }
 
-/* ---------- 10. Работы ---------- */
 .work {
   display: grid;
   gap: 24px;
@@ -986,9 +911,6 @@ body.is-locked { overflow: hidden; }
   overflow: hidden;
 }
 
-/* Телефон с миниатюрой сайта.
-   Внутри экрана цвета намеренно literal, а не токены: это изображение
-   чужого светлого сайта, и в тёмной теме оно должно остаться светлым. */
 .phone {
   width: 200px;
   padding: 8px 8px 0;
@@ -1054,7 +976,6 @@ body.is-locked { overflow: hidden; }
 .work__list dd { margin-top: 4px; font-size: var(--fs-base); color: var(--text-muted); }
 .work__body .link { margin-top: 22px; }
 
-/* ---------- 11. Этапы работы ---------- */
 .steps { position: relative; display: grid; gap: 0; }
 .step {
   position: relative;
@@ -1093,7 +1014,6 @@ body.is-locked { overflow: hidden; }
   text-transform: uppercase;
 }
 
-/* ---------- 12. Цены и гарантии ---------- */
 .plan {
   display: flex;
   flex-direction: column;
@@ -1177,7 +1097,6 @@ body.is-locked { overflow: hidden; }
 }
 .plan--best .plan__list li::before { border-color: var(--brand-gold-soft); }
 
-/* строка гарантий под тарифами */
 .guarantees {
   display: grid;
   gap: 2px;
@@ -1214,7 +1133,6 @@ body.is-locked { overflow: hidden; }
   margin-inline: auto;
 }
 
-/* ---------- 13. Обо мне ---------- */
 .about { display: grid; gap: 28px; }
 .about__media { position: relative; max-width: 240px; }
 .about__photo {
@@ -1258,7 +1176,6 @@ body.is-locked { overflow: hidden; }
   font-weight: 500;
 }
 
-/* ---------- 14. Вопросы ---------- */
 .faq { border-top: 1px solid var(--border); }
 .faq__item { border-bottom: 1px solid var(--border); }
 .faq__h { font: inherit; font-weight: inherit; }
@@ -1323,7 +1240,6 @@ body.is-locked { overflow: hidden; }
 }
 .faq__item.is-open .faq__a { grid-template-rows: 1fr; }
 
-/* ---------- 15. Большой призыв и подвал ---------- */
 .cta {
   position: relative;
   isolation: isolate;
@@ -1340,9 +1256,7 @@ body.is-locked { overflow: hidden; }
   inset: 0;
   background: radial-gradient(70% 60% at 50% 110%, rgba(18, 162, 196, .30), transparent 70%);
 }
-/* Лучи здесь лежат прямо под заголовком, поэтому середина маски шире,
-   а сами лучи бледнее, чем на первом экране: узор должен читаться как
-   фактура фона, а не спорить с текстом за внимание. */
+
 .cta__rays {
   top: 50%;
   left: 50%;
@@ -1366,8 +1280,7 @@ body.is-locked { overflow: hidden; }
   font-weight: 800;
   letter-spacing: -.035em;
   text-wrap: balance;
-  /* как и на первом экране: колонка достаточно широкая, чтобы перенос
-     шёл ровно по <br>, а не рвал фразу на четыре куска */
+  
   max-width: 28ch;
 }
 .cta__text {
@@ -1418,7 +1331,6 @@ body.is-locked { overflow: hidden; }
 .footer__socials a:hover { background: rgba(255, 255, 255, .1); color: #fff; border-color: rgba(255, 255, 255, .35); }
 .footer__socials svg { width: 18px; height: 18px; }
 
-/* кнопка связи на телефоне */
 .mobile-cta {
   position: fixed;
   z-index: 70;
@@ -1436,8 +1348,6 @@ body.is-locked { overflow: hidden; }
 }
 .mobile-cta.is-hidden { transform: translateY(120%); opacity: 0; pointer-events: none; }
 
-/* ---------- 16. Анимации появления ---------- */
-/* прячем только если скрипты работают — без них сайт остаётся читаемым */
 .js .reveal {
   opacity: 0;
   transform: translateY(16px);
@@ -1445,10 +1355,6 @@ body.is-locked { overflow: hidden; }
   transition-delay: calc(var(--d, 0) * 60ms);
 }
 .js .reveal.is-in { opacity: 1; transform: none; }
-
-/* =========================================================
-   Экраны побольше
-   ========================================================= */
 
 @media (min-width: 480px) {
   .hero__cta { flex-direction: row; flex-wrap: wrap; }
@@ -1476,13 +1382,11 @@ body.is-locked { overflow: hidden; }
 
   .about { grid-template-columns: 240px 1fr; align-items: center; gap: 44px; }
 
-  /* кнопки внизу нет — значит и место под неё не нужно */
+  
   :root { --bar-h: 0px; }
   .mobile-cta { display: none; }
 
-  /* На широком экране затемнение убираем — панель читается как всплывашка
-     от кнопки. Слой при этом продолжает ловить клики: он закрывает панель
-     по щелчку мимо и остаётся честным aria-modal. */
+  
   .prefs { background: transparent; }
 }
 
@@ -1516,9 +1420,7 @@ body.is-locked { overflow: hidden; }
   .grid--3 { grid-template-columns: repeat(3, 1fr); }
   .guarantees { grid-template-columns: repeat(4, 1fr); }
 
-  /* 19ch — не «на глаз»: при более узкой колонке заголовок ломается
-     на четыре рваные строки, здесь же перенос идёт ровно по <br>
-     и получаются две крупные строки. */
+  
   .hero__title { max-width: 19ch; }
   .hero__lead { max-width: 46ch; }
   .hero__cta { margin-top: 32px; }
@@ -1558,16 +1460,10 @@ body.is-locked { overflow: hidden; }
   .cta__rays { width: 1000px; height: 1000px; }
 }
 
-/* Очень широкие мониторы: не растягиваем строку до нечитаемой длины,
-   а добавляем воздух по краям — как в печатной вёрстке. */
 @media (min-width: 1440px) {
   :root { --pad-x: 40px; }
 }
 
-/* =========================================================
-   Бережный режим: меньше движения
-   Работает и от настройки системы, и от тумблера в панели.
-   ========================================================= */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
@@ -1588,7 +1484,6 @@ body.is-locked { overflow: hidden; }
 }
 :root[data-motion="reduced"] .js .reveal { opacity: 1; transform: none; }
 
-/* Печать */
 @media print {
   .header, .mmenu, .mobile-cta, .hero__strip, .hero__rays, .cta__rays,
   .ornament, .prefs, .prefs-btn, .skip-link { display: none !important; }

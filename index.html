@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<!--
+  чё смотришь? :D
+  верстал сам, код чистый
+-->
 <html lang="ru" data-theme="light">
 <head>
 <meta charset="UTF-8">
@@ -7,9 +11,6 @@
 <title>Amir Web — сайты для бизнеса в Казахстане | Астана</title>
 <meta name="description" content="Делаю сайты для кафе, доставок, магазинов и салонов красоты: быстрые, удобные с телефона, с заявками прямо вам в WhatsApp. Астана, работаю по всему Казахстану. От 30 000 ₸, готово за 3 дня.">
 
-<!-- Тема оформления выбирается ДО первой отрисовки: иначе на долю секунды
-     мелькнёт светлый фон под тёмной темой. Скрипт обязан быть блокирующим
-     и стоять раньше стилей. -->
 <script>
 (function () {
   var d = document.documentElement;
@@ -53,23 +54,19 @@
 <meta name="twitter:description" content="Быстрые сайты для кафе, магазинов и салонов. Заявки приходят вам в WhatsApp.">
 <meta name="twitter:image" content="https://amir-web.kz/assets/img/og-cover.png">
 
-<!-- Иконки. /favicon.ico лежит в КОРНЕ намеренно: подсказки адресной строки,
-     история и закладки запрашивают именно его, ещё не открыв страницу и не
-     прочитав эти теги. Без файла в корне иконка там пропадает. -->
-<link rel="icon" href="/favicon.ico" sizes="32x32">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="./favicon.ico" sizes="32x32">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml" sizes="any">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<link rel="manifest" href="./manifest.json">
 
-<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/manrope-cyrillic.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/manrope-latin.woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/styles.css">
+<link rel="preload" as="font" type="font/woff2" href="./assets/fonts/manrope-cyrillic.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="./assets/fonts/manrope-latin.woff2" crossorigin>
+<link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body>
 
 <a class="skip-link" href="#main" data-i18n="a11y.skip">Перейти к содержанию</a>
 
-<!-- ============ ШАПКА ============ -->
 <header class="header" id="header">
   <div class="header__inner container">
     <a class="logo" href="#top" data-i18n-attr="aria-label:a11y.logoHome" aria-label="Amir Web — на главную">
@@ -114,7 +111,6 @@
   </div>
 </header>
 
-<!-- ============ ПАНЕЛЬ НАСТРОЕК ============ -->
 <div class="prefs" id="prefs" hidden>
   <div class="prefs__panel" role="dialog" aria-modal="true" aria-labelledby="prefs-title">
     <div class="prefs__head">
@@ -167,7 +163,6 @@
   </div>
 </div>
 
-<!-- ============ МОБИЛЬНОЕ МЕНЮ ============ -->
 <div class="mmenu" id="mobile-menu" hidden>
   <nav class="mmenu__nav" data-i18n-attr="aria-label:a11y.mobileMenu" aria-label="Мобильное меню">
     <a href="#services"><span>01</span> <em data-i18n="nav.services">Услуги</em></a>
@@ -186,7 +181,7 @@
 
 <main id="main">
 
-  <!-- ============ ГЛАВНЫЙ ЭКРАН ============ -->
+  
   <section class="hero" id="top" aria-labelledby="hero-title">
     <div class="hero__rays" data-motion-loop aria-hidden="true"></div>
     <div class="container hero__inner">
@@ -238,7 +233,7 @@
     </div>
   </section>
 
-  <!-- ============ ПОЧЕМУ ВЫБИРАЮТ МЕНЯ ============ -->
+  
   <section class="section" id="why" aria-labelledby="why-title">
     <div class="container">
       <header class="shead reveal">
@@ -299,7 +294,7 @@
     </div>
   </section>
 
-  <!-- ============ КАКИЕ САЙТЫ Я СОЗДАЮ ============ -->
+  
   <section class="section section--sand" id="services" aria-labelledby="services-title">
     <div class="ornament" aria-hidden="true"></div>
     <div class="container">
@@ -361,7 +356,7 @@
     </div>
   </section>
 
-  <!-- ============ РАБОТЫ ============ -->
+  
   <section class="section" id="works" aria-labelledby="works-title">
     <div class="container">
       <header class="shead reveal">
@@ -440,49 +435,9 @@
     </div>
   </section>
 
-  <!--
-  ============================================================
-   ОТЗЫВЫ — раздел готов, но намеренно выключен.
+  
 
-   Я не стал придумывать отзывы за вас: выдуманные отзывы на
-   коммерческом сайте — это обман клиента, и его почти всегда
-   видно. Как только появятся два-три настоящих:
-
-   1. снимите обёртку комментария вокруг блока ниже,
-   2. замените текст, имя и заведение на реальные,
-   3. добавьте ключи reviews.* в assets/js/i18n.js.
-
-   Достаточно двух отзывов — они дают больше доверия,
-   чем шесть безымянных.
-  ============================================================
-  <section class="section section--sand" id="reviews" aria-labelledby="reviews-title">
-    <div class="ornament" aria-hidden="true"></div>
-    <div class="container">
-      <header class="shead reveal">
-        <p class="shead__kicker">Отзывы</p>
-        <h2 class="shead__title" id="reviews-title">Что говорят те, для кого я уже сделал сайт</h2>
-      </header>
-      <div class="grid grid--2">
-        <figure class="quote reveal" data-d="1">
-          <blockquote><p>Настоящий отзыв клиента: что было до, что изменилось после.</p></blockquote>
-          <figcaption>
-            <span class="quote__ava" aria-hidden="true">И</span>
-            <span class="quote__who"><strong>Имя Фамилия</strong><span>Заведение, город</span></span>
-          </figcaption>
-        </figure>
-        <figure class="quote reveal" data-d="2">
-          <blockquote><p>Второй настоящий отзыв.</p></blockquote>
-          <figcaption>
-            <span class="quote__ava" aria-hidden="true">А</span>
-            <span class="quote__who"><strong>Имя Фамилия</strong><span>Заведение, город</span></span>
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-  -->
-
-  <!-- ============ КАК ПРОХОДИТ РАБОТА ============ -->
+  
   <section class="section section--sand" id="process" aria-labelledby="process-title">
     <div class="ornament" aria-hidden="true"></div>
     <div class="container">
@@ -532,7 +487,7 @@
     </div>
   </section>
 
-  <!-- ============ ЦЕНЫ ============ -->
+  
   <section class="section" id="pricing" aria-labelledby="pricing-title">
     <div class="container">
       <header class="shead reveal">
@@ -592,7 +547,7 @@
         </article>
       </div>
 
-      <!-- Гарантии: те же обещания, что рассыпаны по сайту, собраны в одну строку -->
+      
       <ul class="guarantees reveal">
         <li>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 4.5 5.8v6c0 4.4 3.2 8.2 7.5 9.7 4.3-1.5 7.5-5.3 7.5-9.7v-6L12 2.5Z"/><path d="m8.8 12 2.3 2.3 4.3-4.5"/></svg>
@@ -620,7 +575,7 @@
     </div>
   </section>
 
-  <!-- ============ ОБО МНЕ ============ -->
+  
   <section class="section section--sand" id="about" aria-labelledby="about-title">
     <div class="ornament" aria-hidden="true"></div>
     <div class="container about">
@@ -647,7 +602,7 @@
     </div>
   </section>
 
-  <!-- ============ ВОПРОСЫ ============ -->
+  
   <section class="section" id="faq" aria-labelledby="faq-title">
     <div class="container container--narrow">
       <header class="shead reveal">
@@ -731,7 +686,7 @@
     </div>
   </section>
 
-  <!-- ============ БОЛЬШОЙ ПРИЗЫВ / КОНТАКТЫ ============ -->
+  
   <section class="cta" id="contacts" aria-labelledby="cta-title">
     <div class="cta__rays" data-motion-loop aria-hidden="true"></div>
     <div class="container cta__inner">
@@ -763,7 +718,6 @@
 
 </main>
 
-<!-- ============ ПОДВАЛ ============ -->
 <footer class="footer">
   <div class="container footer__inner">
     <a class="logo logo--sm" href="#top" data-i18n-attr="aria-label:a11y.logoTop" aria-label="Amir Web — наверх">
@@ -790,7 +744,6 @@
   </div>
 </footer>
 
-<!-- ============ КНОПКА СВЯЗИ НА ТЕЛЕФОНЕ ============ -->
 <div class="mobile-cta" id="mobile-cta">
   <a class="btn btn--primary btn--block" href="https://wa.me/77085482453" target="_blank" rel="noopener">
     <svg viewBox="0 0 24 24" aria-hidden="true" class="ico-wa"><path d="M17.472 14.382c-.301-.15-1.782-.879-2.057-.98-.277-.101-.478-.151-.678.15-.202.302-.78.98-.957 1.182-.176.201-.352.226-.653.075-.301-.15-1.272-.469-2.423-1.496-.895-.799-1.5-1.786-1.676-2.087-.176-.302-.019-.465.132-.615.136-.135.301-.351.452-.527.15-.176.2-.301.301-.502.101-.201.05-.377-.025-.528-.075-.15-.678-1.633-.929-2.237-.245-.588-.493-.509-.678-.518-.176-.01-.377-.01-.578-.01-.201 0-.528.076-.804.377-.276.301-1.055 1.03-1.055 2.512s1.08 2.914 1.231 3.115c.15.201 2.125 3.245 5.147 4.551.719.311 1.28.497 1.718.636.722.23 1.378.197 1.898.12.579-.087 1.782-.728 2.033-1.431.251-.703.251-1.306.176-1.432-.075-.125-.276-.201-.577-.351zM12.05 21.784h-.008a9.78 9.78 0 0 1-4.99-1.365l-.358-.213-3.71.973.99-3.617-.234-.372a9.782 9.782 0 0 1-1.5-5.187C2.24 6.61 6.64 2.21 12.056 2.21a9.785 9.785 0 0 1 6.927 2.873 9.787 9.787 0 0 1 2.871 6.927c-.002 5.4-4.406 9.774-9.804 9.774zm8.318-18.093A11.715 11.715 0 0 0 12.056.25C5.568.25.286 5.534.283 12.025a11.72 11.72 0 0 0 1.794 6.229L0 23.75l5.632-1.477a11.73 11.73 0 0 0 6.417 1.877h.005c6.486 0 11.769-5.283 11.772-11.775a11.7 11.7 0 0 0-3.458-8.384z"/></svg>
@@ -798,8 +751,8 @@
   </a>
 </div>
 
-<script src="/assets/js/i18n.js" defer></script>
-<script src="/assets/js/main.js" defer></script>
+<script src="./assets/js/i18n.js" defer></script>
+<script src="./assets/js/main.js" defer></script>
 
 <script type="application/ld+json">
 {
@@ -855,8 +808,6 @@
 }
 </script>
 
-<!-- Аналитика: грузится последней и только когда браузер освободится,
-     чтобы не отбирать время у отрисовки первого экрана. -->
 <script>
 window.addEventListener('load', function () {
   var start = function () {

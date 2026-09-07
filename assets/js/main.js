@@ -1,12 +1,5 @@
-/* =========================================================
-   Amir Web — скрипты сайта
+console.log("%cчё смотришь? :D", "color: #ff5722; font-size: 16px; font-weight: bold;");
 
-   Блоки: настройки → тема → язык → панель настроек → шапка →
-   меню → вопросы → появление блоков → нижняя кнопка → мелочи.
-
-   Всё необязательное: если скрипт не загрузится, сайт остаётся
-   читаемым и рабочим — тексты в разметке, ссылки настоящие.
-   ========================================================= */
 (function () {
   'use strict';
 
@@ -15,7 +8,7 @@
   var root = document.documentElement;
   var i18n = window.AmirI18n;
 
-  /* ---------- Настройки: чтение и запись ---------- */
+  
   var settings = (function () {
     var saved = {};
     try { saved = JSON.parse(localStorage.getItem(STORE_KEY) || '{}'); } catch (e) { saved = {}; }
@@ -25,7 +18,7 @@
   })();
 
   function save() {
-    try { localStorage.setItem(STORE_KEY, JSON.stringify(settings)); } catch (e) { /* приватный режим */ }
+    try { localStorage.setItem(STORE_KEY, JSON.stringify(settings)); } catch (e) {}
   }
 
   var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -35,22 +28,17 @@
     return settings.motion === 'reduced' || motionQuery.matches;
   }
 
-  /* ---------- Тема ---------- */
+  
   function applyTheme(animated) {
     var dark = settings.theme === 'dark' ||
                (settings.theme === 'system' && darkQuery.matches);
 
-    // Плавный переход цвета включаем только на время самой смены,
-    // иначе каждое наведение мыши тянуло бы за собой лишние пересчёты.
     if (animated && !motionOff()) {
       root.classList.add('is-theming');
       window.setTimeout(function () { root.classList.remove('is-theming'); }, 360);
     }
     root.setAttribute('data-theme', dark ? 'dark' : 'light');
 
-    // Цвет системной панели на телефоне. Статические теги в <head>
-    // завязаны на настройку системы — когда человек выбрал тему сам,
-    // они врут, поэтому заменяем их одним точным.
     var metas = document.querySelectorAll('meta[name="theme-color"]');
     Array.prototype.forEach.call(metas, function (m) { m.remove(); });
     var meta = document.createElement('meta');
@@ -63,30 +51,29 @@
     if (settings.theme === 'system') applyTheme(true);
   });
 
-  /* ---------- Бережный режим ---------- */
+  
   function applyMotion() {
     if (settings.motion === 'reduced') root.setAttribute('data-motion', 'reduced');
     else root.removeAttribute('data-motion');
     syncLoops();
   }
 
-  /* ---------- Язык ---------- */
+  
   function applyLang(lang, updateUrl) {
     if (!i18n || i18n.langs.indexOf(lang) === -1) lang = 'ru';
     settings.lang = lang;
     root.setAttribute('lang', lang);
 
-    // Текст
     each('[data-i18n]', function (el) {
       var val = i18n.t(lang, el.getAttribute('data-i18n'));
       if (val) el.textContent = val;
     });
-    // Значения с разметкой внутри (переносы строки, выделения)
+
     each('[data-i18n-html]', function (el) {
       var val = i18n.t(lang, el.getAttribute('data-i18n-html'));
       if (val) el.innerHTML = val;
     });
-    // Атрибуты: data-i18n-attr="aria-label:ключ"
+
     each('[data-i18n-attr]', function (el) {
       el.getAttribute('data-i18n-attr').split(',').forEach(function (pair) {
         var bits = pair.split(':');
@@ -104,13 +91,11 @@
     var code = document.getElementById('prefs-code');
     if (code) code.textContent = lang.toUpperCase();
 
-    // Бургер и кнопка настроек показывают состояние текстом — обновляем
     if (burger) {
       burger.setAttribute('aria-label', i18n.t(lang,
         burger.getAttribute('aria-expanded') === 'true' ? 'a11y.closeMenu' : 'a11y.openMenu'));
     }
 
-    // Адрес страницы: русский — корень, остальные — ?lang=
     if (updateUrl && window.history && history.replaceState) {
       var url = new URL(window.location.href);
       if (lang === 'ru') url.searchParams.delete('lang');
@@ -129,11 +114,7 @@
     Array.prototype.forEach.call(document.querySelectorAll(sel), fn);
   }
 
-  /* Перевод всегда другой длины: английский короче русского, и страница
-     после переключения становится ниже. Если человек читал середину,
-     текст уехал бы у него из-под глаз. Поэтому запоминаем секцию,
-     которая сейчас вверху экрана, и после подстановки возвращаем её
-     на то же место — переключение выглядит неподвижным. */
+  
   function keepingPlace(fn) {
     var sections = document.querySelectorAll('main section[id]');
     var ref = null, refTop = 0;
@@ -152,7 +133,7 @@
     catch (e) { window.scrollBy(0, delta); }
   }
 
-  /* ---------- Панель настроек ---------- */
+  
   var prefsBtn = document.getElementById('prefs-btn');
   var prefs = document.getElementById('prefs');
   var prefsClose = document.getElementById('prefs-close');
@@ -196,12 +177,10 @@
     });
     prefsClose.addEventListener('click', closePrefs);
 
-    // щелчок мимо панели закрывает её
     prefs.addEventListener('mousedown', function (e) {
       if (e.target === prefs) closePrefs();
     });
 
-    // выбор варианта: язык или тема
     each('.segmented[data-pref]', function (group) {
       var name = group.getAttribute('data-pref');
       var buttons = Array.prototype.slice.call(group.querySelectorAll('button'));
@@ -216,7 +195,6 @@
         if (name === 'lang') keepingPlace(function () { applyLang(settings.lang, true); });
       });
 
-      // стрелками — как в настоящей группе переключателей
       group.addEventListener('keydown', function (e) {
         var i = buttons.indexOf(document.activeElement);
         if (i === -1) return;
@@ -232,7 +210,6 @@
       });
     });
 
-    // тумблер «меньше движения»
     var motionSwitch = document.querySelector('.switch[data-pref="motion"]');
     if (motionSwitch) {
       motionSwitch.addEventListener('click', function () {
@@ -244,7 +221,7 @@
     }
 
     prefsReset.addEventListener('click', function () {
-      try { localStorage.removeItem(STORE_KEY); } catch (e) { /* ничего */ }
+      try { localStorage.removeItem(STORE_KEY); } catch (e) {}
       for (var k in DEFAULTS) settings[k] = DEFAULTS[k];
       syncControls();
       applyTheme(true);
@@ -252,7 +229,6 @@
       applyLang(settings.lang, true);
     });
 
-    // фокус не уходит из открытой панели
     prefs.addEventListener('keydown', function (e) {
       if (e.key !== 'Tab') return;
       var items = prefs.querySelectorAll('button:not([tabindex="-1"])');
@@ -263,10 +239,8 @@
     });
   }
 
-  /* ---------- Шапка: тень при прокрутке ---------- */
-  /* Раньше это был обработчик scroll, срабатывавший на каждый пиксель.
-     Наблюдатель за меткой в начале страницы делает то же самое, но
-     будит браузер лишь дважды: когда метка ушла и когда вернулась. */
+  
+  
   var header = document.getElementById('header');
   if (header) {
     var sentinel = document.createElement('div');
@@ -281,7 +255,7 @@
     }
   }
 
-  /* ---------- Меню на телефоне ---------- */
+  
   var burger = document.getElementById('burger');
   var menu = document.getElementById('mobile-menu');
 
@@ -317,7 +291,7 @@
     });
   }
 
-  /* Esc закрывает то, что открыто сейчас */
+  
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;
     if (prefsOpen()) { closePrefs(); return; }
@@ -327,7 +301,7 @@
     }
   });
 
-  /* ---------- Вопросы и ответы ---------- */
+  
   var faqItems = document.querySelectorAll('.faq__item');
 
   Array.prototype.forEach.call(faqItems, function (item) {
@@ -336,7 +310,6 @@
     btn.addEventListener('click', function () {
       var willOpen = !item.classList.contains('is-open');
 
-      // открыт всегда только один вопрос — так список остаётся коротким
       Array.prototype.forEach.call(faqItems, function (other) {
         other.classList.remove('is-open');
         other.querySelector('.faq__q').setAttribute('aria-expanded', 'false');
@@ -349,7 +322,7 @@
     });
   });
 
-  /* ---------- Плавное появление блоков ---------- */
+  
   var revealables = document.querySelectorAll('.reveal');
 
   Array.prototype.forEach.call(revealables, function (el) {
@@ -373,21 +346,16 @@
 
     Array.prototype.forEach.call(revealables, function (el) { observer.observe(el); });
 
-    // страховка: что бы ни случилось, текст не должен остаться невидимым
     window.setTimeout(function () {
       if (!document.querySelector('.reveal.is-in')) showAll();
     }, 2500);
   }
 
-  /* ---------- Бесконечные анимации только на видимых блоках ---------- */
-  /* Лучи и бегущая строка крутятся вечно. Пока они за экраном, браузер
-     всё равно перерисовывал бы кадры — на телефоне это лишний расход
-     батареи. Ушли из виду — поставили на паузу. */
+  
+  
   var loops = document.querySelectorAll('[data-motion-loop]');
 
-  /* Причин для паузы две: блок ушёл за экран или человек попросил
-     меньше движения. Держим их порознь и каждый раз пересчитываем обе,
-     иначе выключенный тумблер уже не смог бы вернуть анимацию. */
+  
   function syncLoops() {
     Array.prototype.forEach.call(loops, function (el) {
       var offscreen = el.getAttribute('data-offscreen') === '1';
@@ -405,12 +373,11 @@
     Array.prototype.forEach.call(loops, function (el) { loopWatcher.observe(el); });
   }
 
-  /* ---------- Кнопка связи внизу экрана ---------- */
+  
   var mobileCta = document.getElementById('mobile-cta');
   var ctaSection = document.getElementById('contacts');
 
-  /* Место под кнопку рассчитано в стилях из её составляющих. Здесь уточняем
-     по фактической высоте: на узком экране надпись может перенестись. */
+  
   if (mobileCta && 'ResizeObserver' in window) {
     new ResizeObserver(function () {
       var visible = getComputedStyle(mobileCta).display !== 'none';
@@ -424,13 +391,12 @@
     }, { threshold: 0.15 }).observe(ctaSection);
   }
 
-  /* ---------- Год в подвале ---------- */
+  
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 
-  /* ---------- Запуск ---------- */
-  // Язык из адреса важнее сохранённого: по ссылке ?lang=en человек
-  // должен попасть на английскую версию, что бы он ни выбирал раньше.
+  
+
   var urlLang = new URLSearchParams(window.location.search).get('lang');
   if (urlLang && i18n && i18n.langs.indexOf(urlLang) !== -1) {
     settings.lang = urlLang;
@@ -442,10 +408,10 @@
   if (i18n) applyLang(settings.lang, false);
   syncControls();
 
-  /* ---------- Ускорение повторных заходов ---------- */
+  
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
-      navigator.serviceWorker.register('/sw.js').catch(function () { /* не критично */ });
+      navigator.serviceWorker.register('/sw.js').catch(function () {  });
     });
   }
 })();
