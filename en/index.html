@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+
+<html lang="en" data-page-lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>Website Design in Astana from 30,000 ₸ — Amir Web</title>
+<meta name="description" content="Website design in Astana and across Kazakhstan. Landing pages, business websites and online stores from 30,000 ₸. Mobile design, WhatsApp and a month of support.">
+
+<script>
+(function () {
+  var d = document.documentElement;
+  try {
+    var s = JSON.parse(localStorage.getItem('amirweb:settings') || '{}');
+    var t = s.theme || 'light';
+    var dark = t === 'dark' || (t === 'system' &&
+               window.matchMedia('(prefers-color-scheme: dark)').matches);
+    d.setAttribute('data-theme', dark ? 'dark' : 'light');
+    if (s.motion === 'reduced') d.setAttribute('data-motion', 'reduced');
+  } catch (e) { d.setAttribute('data-theme', 'light'); }
+  d.classList.add('js');
+})();
+</script>
+
+<meta name="theme-color" content="#F7F9F8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101714" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<link rel="canonical" href="https://amir-web.kz/en/">
+<link rel="alternate" hreflang="ru" href="https://amir-web.kz/">
+<link rel="alternate" hreflang="kk" href="https://amir-web.kz/kk/">
+<link rel="alternate" hreflang="en" href="https://amir-web.kz/en/">
+<link rel="alternate" hreflang="x-default" href="https://amir-web.kz/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ru_KZ">
+<meta property="og:locale:alternate" content="kk_KZ">
+<meta property="og:site_name" content="Amir Web">
+<meta property="og:url" content="https://amir-web.kz/en/">
+<meta property="og:title" content="Website Design in Astana from 30,000 ₸ — Amir Web">
+<meta property="og:description" content="Website design in Astana and across Kazakhstan. Landing pages, business websites and online stores from 30,000 ₸. Mobile design, WhatsApp and a month of support.">
+<meta property="og:image" content="https://amir-web.kz/assets/img/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Website Design in Astana from 30,000 ₸ — Amir Web">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Website Design in Astana from 30,000 ₸ — Amir Web">
+<meta name="twitter:description" content="Website design in Astana and across Kazakhstan. Landing pages, business websites and online stores from 30,000 ₸. Mobile design, WhatsApp and a month of support.">
+<meta name="twitter:image" content="https://amir-web.kz/assets/img/og-cover.png">
+
+<link rel="icon" href="../favicon-aw.ico" sizes="16x16 32x32 48x48 64x64">
+<link rel="icon" href="../favicon-aw.png" type="image/png" sizes="96x96">
+<link rel="apple-touch-icon" href="../apple-touch-icon-aw.png">
+<link rel="manifest" href="../manifest.webmanifest">
+
+<link rel="preload" as="font" type="font/woff2" href="../assets/fonts/manrope-cyrillic.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="../assets/fonts/manrope-latin.woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/styles.css?v=13">
+<link rel="preload" as="image" href="../assets/img/hero-devices.webp" fetchpriority="high">
+<link rel="stylesheet" href="../assets/css/experience.css?v=13">
+</head>
+<body>
+<div class="reading-progress" aria-hidden="true"><span id="reading-progress"></span></div>
+
+<a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
+<header class="header" id="header">
+  <div class="header__inner container">
+    <a class="logo" href="#top" data-i18n-attr="aria-label:a11y.logoHome" aria-label="Amir Web — home">
+      <img class="logo__mark" src="../assets/img/logo-mark.png" width="120" height="56" alt="">
+      <span class="logo__text">Amir Web</span>
+    </a>
+
+    <nav class="nav" data-i18n-attr="aria-label:a11y.mainMenu" aria-label="Main menu">
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#works" data-i18n="nav.works">Work</a>
+      <a href="#process" data-i18n="nav.process">Process</a>
+      <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+    </nav>
+
+    <div class="header__actions">
+      <button class="prefs-btn" id="prefs-btn" type="button"
+              aria-expanded="false" aria-controls="prefs"
+              data-i18n-attr="aria-label:a11y.openSettings" aria-label="Language and appearance">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="prefs-btn__globe">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M3.2 9.8h17.6M3.2 14.2h17.6"/>
+          <path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18Z"/>
+        </svg>
+        <span class="prefs-btn__code" id="prefs-code">EN</span>
+      </button>
+
+      <a class="btn btn--sm btn--primary header__cta" href="https://wa.me/77085482453"
+         target="_blank" rel="noopener" data-i18n="cta.writeMe">Message me</a>
+
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="mobile-menu"
+              data-i18n-attr="aria-label:a11y.openMenu" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="prefs" id="prefs" data-nosnippet hidden>
+  <div class="prefs__panel" role="dialog" aria-modal="true" aria-labelledby="prefs-title">
+    <div class="prefs__head">
+      <h2 class="prefs__title" id="prefs-title" data-i18n="settings.title">Language and appearance</h2>
+      <button class="prefs__close" id="prefs-close" type="button"
+              data-i18n-attr="aria-label:a11y.close" aria-label="Close">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+
+    <div class="prefs__group">
+      <p class="prefs__label" id="prefs-lang-label" data-i18n="settings.language">Language</p>
+      <div class="segmented" role="radiogroup" aria-labelledby="prefs-lang-label" data-pref="lang">
+        <button type="button" role="radio" aria-checked="false"  data-value="ru" lang="ru">Русский</button>
+        <button type="button" role="radio" aria-checked="false" data-value="kk" lang="kk">Қазақша</button>
+        <button type="button" role="radio" aria-checked="true" data-value="en" lang="en">English</button>
+      </div>
+    </div>
+
+    <div class="prefs__group">
+      <p class="prefs__label" id="prefs-theme-label" data-i18n="settings.theme">Appearance</p>
+      <div class="segmented" role="radiogroup" aria-labelledby="prefs-theme-label" data-pref="theme">
+        <button type="button" role="radio" aria-checked="false" data-value="light">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
+          <span data-i18n="settings.light">Light</span>
+        </button>
+        <button type="button" role="radio" aria-checked="false" data-value="dark">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.2A8.4 8.4 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2Z"/></svg>
+          <span data-i18n="settings.dark">Dark</span>
+        </button>
+        <button type="button" role="radio" aria-checked="true" data-value="system">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.8" y="4.2" width="18.4" height="12.5" rx="2"/><path d="M8.5 20.2h7"/></svg>
+          <span data-i18n="settings.system">System</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="prefs__group">
+      <p class="prefs__label" data-i18n="settings.accessibility">Accessibility</p>
+      <button class="switch" type="button" role="switch" aria-checked="false" data-pref="motion">
+        <span class="switch__text">
+          <span class="switch__name" data-i18n="settings.reduceMotion">Reduce motion</span>
+          <span class="switch__hint" data-i18n="settings.reduceMotionHint">Turns off animations and the moving strip</span>
+        </span>
+        <span class="switch__track" aria-hidden="true"><span class="switch__knob"></span></span>
+      </button>
+    </div>
+
+    <button class="prefs__reset" id="prefs-reset" type="button" data-i18n="settings.reset">Reset settings</button>
+  </div>
+</div>
+
+<div class="mmenu" id="mobile-menu" hidden>
+  <nav class="mmenu__nav" data-i18n-attr="aria-label:a11y.mobileMenu" aria-label="Mobile menu">
+    <a href="#services"><span>01</span> <em data-i18n="nav.services">Services</em></a>
+    <a href="#why"><span>02</span> <em data-i18n="nav.why">Why me</em></a>
+    <a href="#works"><span>03</span> <em data-i18n="nav.works">Work</em></a>
+    <a href="#process"><span>04</span> <em data-i18n="nav.process">Process</em></a>
+    <a href="#pricing"><span>05</span> <em data-i18n="nav.pricing">Pricing</em></a>
+    <a href="#faq"><span>06</span> <em data-i18n="nav.faq">FAQ</em></a>
+  </nav>
+  <div class="mmenu__foot">
+    <a class="btn btn--primary btn--block" href="https://wa.me/77085482453" target="_blank" rel="noopener"
+       data-i18n="cta.whatsapp">Message on WhatsApp</a>
+    <p data-i18n="cta.meta">Astana, Kazakhstan · I reply within an hour</p>
+  </div>
+</div>
+
+<main id="main">
+
+  
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <p class="badge reveal"><span class="badge__dot"></span><span data-i18n="hero.badge">Astana · available for new projects</span></p>
+        <h1 class="hero__title reveal" id="hero-title" data-d="1" data-i18n-html="hero.title">Websites<br>for business<span class="hero__period">.</span></h1>
+        <p class="hero__lead reveal" data-d="2" data-i18n="hero.lead">Business websites · landing pages · stores</p>
+        <a class="hero__price reveal" data-d="2" href="#pricing"><span data-i18n="hero.from">from</span><strong>30 000</strong><span class="hero__currency">₸</span><svg class="" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+        <ul class="hero__benefits reveal" data-d="3">
+          <li><svg class="" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 4-6h10l4 6-9 12L3 9Z M3 9h18 M7 3l5 18 5-18"/></svg><span data-i18n="hero.modern">Modern design</span></li>
+          <li><svg class="" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m13 2-9 12h7l-1 8 10-13h-8l1-7Z"/></svg><span data-i18n="hero.fast">Fast to launch</span></li>
+          <li><svg class="" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg><span data-i18n="hero.mobile">Mobile friendly</span></li>
+        </ul>
+        <div class="hero__cta reveal" data-d="4">
+          <a class="btn btn--primary btn--lg hero__whatsapp" href="https://wa.me/77085482453" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" class="ico-wa"><path d="M17.472 14.382c-.301-.15-1.782-.879-2.057-.98-.277-.101-.478-.151-.678.15-.202.302-.78.98-.957 1.182-.176.201-.352.226-.653.075-.301-.15-1.272-.469-2.423-1.496-.895-.799-1.5-1.786-1.676-2.087-.176-.302-.019-.465.132-.615.136-.135.301-.351.452-.527.15-.176.2-.301.301-.502.101-.201.05-.377-.025-.528-.075-.15-.678-1.633-.929-2.237-.245-.588-.493-.509-.678-.518-.176-.01-.377-.01-.578-.01-.201 0-.528.076-.804.377-.276.301-1.055 1.03-1.055 2.512s1.08 2.914 1.231 3.115c.15.201 2.125 3.245 5.147 4.551.719.311 1.28.497 1.718.636.722.23 1.378.197 1.898.12.579-.087 1.782-.728 2.033-1.431.251-.703.251-1.306.176-1.432-.075-.125-.276-.201-.577-.351zM12.05 21.784h-.008a9.78 9.78 0 0 1-4.99-1.365l-.358-.213-3.71.973.99-3.617-.234-.372a9.782 9.782 0 0 1-1.5-5.187C2.24 6.61 6.64 2.21 12.056 2.21a9.785 9.785 0 0 1 6.927 2.873 9.787 9.787 0 0 1 2.871 6.927c-.002 5.4-4.406 9.774-9.804 9.774zm8.318-18.093A11.715 11.715 0 0 0 12.056.25C5.568.25.286 5.534.283 12.025a11.72 11.72 0 0 0 1.794 6.229L0 23.75l5.632-1.477a11.73 11.73 0 0 0 6.417 1.877h.005c6.486 0 11.769-5.283 11.772-11.775a11.7 11.7 0 0 0-3.458-8.384z"/></svg><span data-i18n="cta.whatsapp">Message on WhatsApp</span><svg class="" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+          <a class="hero__work-link" href="#brief"><span data-i18n="brief.title">What website do you need?</span><svg class="" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+        </div>
+      </div>
+      <div class="hero__visual reveal" data-d="2">
+        <div class="hero__image-wrap"><img class="hero__image hero__image--light" src="../assets/img/hero-devices.webp" width="1500" height="1000" alt="Amir Web website on a laptop and smartphone" data-i18n-attr="alt:hero.imageAlt" fetchpriority="high" decoding="async"><img class="hero__image hero__image--dark" src="../assets/img/hero-devices-dark.webp" width="1500" height="1000" alt="Amir Web website on a laptop and smartphone" data-i18n-attr="alt:hero.imageAlt" loading="lazy" decoding="async"></div>
+        <div class="float-card float-card--growth" data-motion-loop>
+          <div class="float-card__icon"><svg class="" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20v-5m7 5V9m7 11V3"/></svg></div>
+          <span data-i18n="hero.clients">More customers</span>
+          <svg class="growth-line" viewBox="0 0 100 48" aria-hidden="true"><path d="M3 43C40 39 66 30 91 6m-19 3 21-6-3 21"/></svg>
+        </div>
+        <div class="float-card float-card--contact" data-motion-loop><span class="float-card__wa"><svg viewBox="0 0 24 24" aria-hidden="true" class="ico-wa"><path d="M17.472 14.382c-.301-.15-1.782-.879-2.057-.98-.277-.101-.478-.151-.678.15-.202.302-.78.98-.957 1.182-.176.201-.352.226-.653.075-.301-.15-1.272-.469-2.423-1.496-.895-.799-1.5-1.786-1.676-2.087-.176-.302-.019-.465.132-.615.136-.135.301-.351.452-.527.15-.176.2-.301.301-.502.101-.201.05-.377-.025-.528-.075-.15-.678-1.633-.929-2.237-.245-.588-.493-.509-.678-.518-.176-.01-.377-.01-.578-.01-.201 0-.528.076-.804.377-.276.301-1.055 1.03-1.055 2.512s1.08 2.914 1.231 3.115c.15.201 2.125 3.245 5.147 4.551.719.311 1.28.497 1.718.636.722.23 1.378.197 1.898.12.579-.087 1.782-.728 2.033-1.431.251-.703.251-1.306.176-1.432-.075-.125-.276-.201-.577-.351zM12.05 21.784h-.008a9.78 9.78 0 0 1-4.99-1.365l-.358-.213-3.71.973.99-3.617-.234-.372a9.782 9.782 0 0 1-1.5-5.187C2.24 6.61 6.64 2.21 12.056 2.21a9.785 9.785 0 0 1 6.927 2.873 9.787 9.787 0 0 1 2.871 6.927c-.002 5.4-4.406 9.774-9.804 9.774zm8.318-18.093A11.715 11.715 0 0 0 12.056.25C5.568.25.286 5.534.283 12.025a11.72 11.72 0 0 0 1.794 6.229L0 23.75l5.632-1.477a11.73 11.73 0 0 0 6.417 1.877h.005c6.486 0 11.769-5.283 11.772-11.775a11.7 11.7 0 0 0-3.458-8.384z"/></svg></span><span data-i18n="hero.direct">Enquiries straight to WhatsApp</span><span class="float-card__check">✓</span></div>
+        <div class="hero__caption"><svg class="" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="hero.location">Astana · Kazakhstan</span><span class="hero__caption-line"></span><span data-i18n="hero.online">Your business online</span></div>
+      </div>
+    </div>
+    <div class="container hero__bottom"><dl class="hero__facts reveal" data-d="4">
+        <div class="fact">
+          <dt data-i18n="hero.fact1.label">average reply time</dt>
+          <dd data-i18n="hero.fact1.value">~1 hour</dd>
+        </div>
+        <div class="fact">
+          <dt data-i18n="hero.fact2.label">to a finished site</dt>
+          <dd data-i18n="hero.fact2.value">from 3 days</dd>
+        </div>
+        <div class="fact">
+          <dt data-i18n="hero.fact3.label">of support after launch</dt>
+          <dd data-i18n="hero.fact3.value">1 month</dd>
+        </div>
+      </dl><a class="hero__scroll" href="#services"><span data-i18n="hero.explore">Built around your business</span><svg class="" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16m-6-6 6 6 6-6"/></svg></a></div>
+    <div class="hero__strip" aria-hidden="true">
+      <div class="strip__track" data-motion-loop>
+        <span data-i18n="strip.cafe">Cafés and restaurants</span><i></i><span data-i18n="strip.delivery">Food delivery</span><i></i><span data-i18n="strip.coffee">Coffee shops</span><i></i>
+        <span data-i18n="strip.shops">Retail shops</span><i></i><span data-i18n="strip.beauty">Beauty salons</span><i></i><span data-i18n="strip.small">Small companies</span><i></i>
+        <span data-i18n="strip.pros">Independent professionals</span><i></i>
+        <span data-i18n="strip.cafe">Cafés and restaurants</span><i></i><span data-i18n="strip.delivery">Food delivery</span><i></i><span data-i18n="strip.coffee">Coffee shops</span><i></i>
+        <span data-i18n="strip.shops">Retail shops</span><i></i><span data-i18n="strip.beauty">Beauty salons</span><i></i><span data-i18n="strip.small">Small companies</span><i></i>
+        <span data-i18n="strip.pros">Independent professionals</span><i></i>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section" id="why" aria-labelledby="why-title">
+    <div class="container">
+      <header class="shead reveal">
+        <p class="shead__kicker" data-i18n="why.kicker">Why people choose me</p>
+        <h2 class="shead__title" id="why-title" data-i18n="why.title">Beautiful. Simple. Thoughtful.</h2>
+        <p class="shead__lead" data-i18n="why.lead">No agency, no account managers, no markup. You deal with me directly — from your first message to launch day.</p>
+      </header>
+
+      <div class="grid grid--3">
+        <article class="card reveal" data-d="1">
+          <span class="card__ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3v4l5-4h8a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Z"/></svg>
+          </span>
+          <h3 data-i18n="why.c1.title">I explain things plainly</h3>
+          <p data-i18n="why.c1.text">No jargon. I’ll tell you in plain words what I’m doing, why it matters for your business and what it will cost.</p>
+        </article>
+
+        <article class="card reveal" data-d="2">
+          <span class="card__ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M10.8 18.5h2.4"/></svg>
+          </span>
+          <h3 data-i18n="why.c2.title">Built for phones first</h3>
+          <p data-i18n="why.c2.text">Nearly all your customers will open the site on a phone. I check every screen so nothing shifts and everything stays readable.</p>
+        </article>
+
+        <article class="card reveal" data-d="3">
+          <span class="card__ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg>
+          </span>
+          <h3 data-i18n="why.c3.title">Opens in a second</h3>
+          <p data-i18n="why.c3.text">People don’t wait — they leave. I keep sites light so they load instantly, even on a weak connection.</p>
+        </article>
+
+        <article class="card reveal" data-d="4">
+          <span class="card__ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.6 5.6 6.4.8-4.5 4.3 1.1 6.3L12 17l-5.6 3 1.1-6.3L3 9.4l6.4-.8L12 3Z"/></svg>
+          </span>
+          <h3 data-i18n="why.c4.title">Designed around your business</h3>
+          <p data-i18n="why.c4.text">No off-the-shelf templates. I build the look around your business, your photos and your customers — so people remember you.</p>
+        </article>
+
+        <article class="card reveal" data-d="5">
+          <span class="card__ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3 3 10.5l7 3 3 7L21 3Z"/><path d="m10 13.5 4-4"/></svg>
+          </span>
+          <h3 data-i18n="why.c5.title">Enquiries reach you instantly</h3>
+          <p data-i18n="why.c5.text">A customer leaves a name and number and the message lands in your WhatsApp straight away. Nothing gets lost.</p>
+        </article>
+
+        <article class="card reveal" data-d="6">
+          <span class="card__ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 4.5 5.8v6c0 4.4 3.2 8.2 7.5 9.7 4.3-1.5 7.5-5.3 7.5-9.7v-6L12 2.5Z"/><path d="m8.8 12 2.3 2.3 4.3-4.5"/></svg>
+          </span>
+          <h3 data-i18n="why.c6.title">I don’t disappear after launch</h3>
+          <p data-i18n="why.c6.text">The first month is free: fix a line of text, swap a photo, add a section or a promotion. Just message me.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section section--sand" id="services" aria-labelledby="services-title">
+    <div class="ornament" aria-hidden="true"></div>
+    <div class="container">
+      <header class="shead reveal">
+        <p class="shead__kicker" data-i18n="svc.kicker">What I build</p>
+        <h2 class="shead__title" id="services-title" data-i18n="svc.title">A website for your business</h2>
+        <p class="shead__lead" data-i18n="svc.lead">Choose your field and explore what your business website could do.</p>
+      </header><div class="service-explorer reveal"><div class="service-tabs" role="tablist" aria-label="Choose a business type" data-i18n-attr="aria-label:svc.selection"><button id="service-tab-1" role="tab" aria-selected="true" aria-controls="service-panel-1" tabindex="0" type="button" data-service="1"><span class="service-tab-dot"></span><span data-i18n="svc.tab1">Cafés</span></button><button id="service-tab-2" role="tab" aria-selected="false" aria-controls="service-panel-2" tabindex="-1" type="button" data-service="2"><span class="service-tab-dot"></span><span data-i18n="svc.tab2">Delivery</span></button><button id="service-tab-3" role="tab" aria-selected="false" aria-controls="service-panel-3" tabindex="-1" type="button" data-service="3"><span class="service-tab-dot"></span><span data-i18n="svc.tab3">Stores</span></button><button id="service-tab-4" role="tab" aria-selected="false" aria-controls="service-panel-4" tabindex="-1" type="button" data-service="4"><span class="service-tab-dot"></span><span data-i18n="svc.tab4">Beauty</span></button><button id="service-tab-5" role="tab" aria-selected="false" aria-controls="service-panel-5" tabindex="-1" type="button" data-service="5"><span class="service-tab-dot"></span><span data-i18n="svc.tab5">Specialists</span></button><button id="service-tab-6" role="tab" aria-selected="false" aria-controls="service-panel-6" tabindex="-1" type="button" data-service="6"><span class="service-tab-dot"></span><span data-i18n="svc.tab6">Companies</span></button></div><article class="service-panel" id="service-panel-1" role="tabpanel" aria-labelledby="service-tab-1" tabindex="0" >
+  <div class="service-photo"><img src="../assets/img/cafe.webp" width="1000" height="1200" loading="lazy" decoding="async" alt="Bright café interior" data-i18n-attr="alt:svc.photo1"><span class="service-photo__label"><span data-i18n="svc.caption">Design starts with your business</span></span></div>
+  <div class="service-info"><span class="service-number">01<span>/ 06</span></span><p class="service-chip" data-i18n="svc.feature1">Menu &amp; reservations</p><h3 data-i18n="svc.s1.title">Cafés, restaurants and coffee shops</h3><p data-i18n="svc.s1.text">A menu with photos, your location on a map, table booking and links to your socials. Guests get a feel for the place before they arrive.</p><div class="service-includes"><span>✓ <span data-i18n="hero.mobile">Mobile friendly</span></span><span>✓ WhatsApp</span></div><a class="btn btn--primary" href="#brief" data-business="1"><span data-i18n="svc.choose">I want a site like this</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+</article>
+<article class="service-panel" id="service-panel-2" role="tabpanel" aria-labelledby="service-tab-2" tabindex="0" hidden>
+  <div class="service-photo"><img src="../assets/img/cafe.webp" width="1000" height="1200" loading="lazy" decoding="async" alt="Bright café interior" data-i18n-attr="alt:svc.photo1"><span class="service-photo__label"><span data-i18n="svc.caption">Design starts with your business</span></span></div>
+  <div class="service-info"><span class="service-number">02<span>/ 06</span></span><p class="service-chip" data-i18n="svc.feature2">Catalogue &amp; ordering</p><h3 data-i18n="svc.s2.title">Food delivery</h3><p data-i18n="svc.s2.text">A menu with prices, a basket and checkout. Completed orders arrive with the address straight to you — no phone calls, no confusion.</p><div class="service-includes"><span>✓ <span data-i18n="hero.mobile">Mobile friendly</span></span><span>✓ WhatsApp</span></div><a class="btn btn--primary" href="#brief" data-business="2"><span data-i18n="svc.choose">I want a site like this</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+</article>
+<article class="service-panel" id="service-panel-3" role="tabpanel" aria-labelledby="service-tab-3" tabindex="0" hidden>
+  <div class="service-photo"><img src="../assets/img/shop.webp" width="1000" height="1200" loading="lazy" decoding="async" alt="Minimal clothing hangers in a store" data-i18n-attr="alt:svc.photo2"><span class="service-photo__label"><span data-i18n="svc.caption">Design starts with your business</span></span></div>
+  <div class="service-info"><span class="service-number">03<span>/ 06</span></span><p class="service-chip" data-i18n="svc.feature3">Products &amp; categories</p><h3 data-i18n="svc.s3.title">Retail shops</h3><p data-i18n="svc.s3.text">A product showcase with prices and photos, clear categories and search. Customers find what they need in a couple of taps and message you.</p><div class="service-includes"><span>✓ <span data-i18n="hero.mobile">Mobile friendly</span></span><span>✓ WhatsApp</span></div><a class="btn btn--primary" href="#brief" data-business="3"><span data-i18n="svc.choose">I want a site like this</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+</article>
+<article class="service-panel" id="service-panel-4" role="tabpanel" aria-labelledby="service-tab-4" tabindex="0" hidden>
+  <div class="service-photo"><img src="../assets/img/shop.webp" width="1000" height="1200" loading="lazy" decoding="async" alt="Minimal clothing hangers in a store" data-i18n-attr="alt:svc.photo2"><span class="service-photo__label"><span data-i18n="svc.caption">Design starts with your business</span></span></div>
+  <div class="service-info"><span class="service-number">04<span>/ 06</span></span><p class="service-chip" data-i18n="svc.feature4">Services &amp; appointments</p><h3 data-i18n="svc.s4.title">Beauty salons</h3><p data-i18n="svc.s4.text">Services and prices, your stylists’ work, reviews and online booking. Clients pick a stylist and book while you’re busy with someone else.</p><div class="service-includes"><span>✓ <span data-i18n="hero.mobile">Mobile friendly</span></span><span>✓ WhatsApp</span></div><a class="btn btn--primary" href="#brief" data-business="4"><span data-i18n="svc.choose">I want a site like this</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+</article>
+<article class="service-panel" id="service-panel-5" role="tabpanel" aria-labelledby="service-tab-5" tabindex="0" hidden>
+  <div class="service-photo"><img src="../assets/img/workspace.webp" width="1000" height="1200" loading="lazy" decoding="async" alt="Workspace with a laptop and plants" data-i18n-attr="alt:svc.photo3"><span class="service-photo__label"><span data-i18n="svc.caption">Design starts with your business</span></span></div>
+  <div class="service-info"><span class="service-number">05<span>/ 06</span></span><p class="service-chip" data-i18n="svc.feature5">Portfolio &amp; contact</p><h3 data-i18n="svc.s5.title">Independent professionals</h3><p data-i18n="svc.s5.text">A personal site: who you are, how you help, examples of your work, reviews and a contact button. It carries more weight than a social profile.</p><div class="service-includes"><span>✓ <span data-i18n="hero.mobile">Mobile friendly</span></span><span>✓ WhatsApp</span></div><a class="btn btn--primary" href="#brief" data-business="5"><span data-i18n="svc.choose">I want a site like this</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+</article>
+<article class="service-panel" id="service-panel-6" role="tabpanel" aria-labelledby="service-tab-6" tabindex="0" hidden>
+  <div class="service-photo"><img src="../assets/img/workspace.webp" width="1000" height="1200" loading="lazy" decoding="async" alt="Workspace with a laptop and plants" data-i18n-attr="alt:svc.photo3"><span class="service-photo__label"><span data-i18n="svc.caption">Design starts with your business</span></span></div>
+  <div class="service-info"><span class="service-number">06<span>/ 06</span></span><p class="service-chip" data-i18n="svc.feature6">Company &amp; services</p><h3 data-i18n="svc.s6.title">Small companies</h3><p data-i18n="svc.s6.text">A clear site covering your services, prices and team — the one a partner or client opens right before they call you.</p><div class="service-includes"><span>✓ <span data-i18n="hero.mobile">Mobile friendly</span></span><span>✓ WhatsApp</span></div><a class="btn btn--primary" href="#brief" data-business="6"><span data-i18n="svc.choose">I want a site like this</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+</article></div></div></section>
+
+  
+  <section class="section" id="works" aria-labelledby="works-title">
+    <div class="container">
+      <header class="shead reveal">
+        <p class="shead__kicker" data-i18n="works.kicker">Selected work</p>
+        <h2 class="shead__title" id="works-title" data-i18n="works.title">Real work. Live websites.</h2>
+        <p class="shead__lead" data-i18n="works.lead">Explore actual project screenshots, then open the websites to try them.</p>
+      </header>
+
+      <article class="work reveal">
+        <div class="work__visual work__visual--real" data-tilt><button class="project-preview" type="button" data-project="sharyn" aria-label="Sharyn — Take a closer look"><span class="browser-frame"><span class="browser-frame__bar"><i></i><i></i><i></i><span>sharynmenu.onrender.com</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5H5v3m11-3h3v3M5 16v3h3m11-3v3h-3"/></svg></span><img src="../assets/img/sharyn-screen.webp" width="1280" height="820" alt="Sharyn" loading="lazy" decoding="async"></span><span class="project-preview__hint"><span data-i18n="works.preview">Take a closer look</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 17 10-10M7 7h10v10"/></svg></span></button></div>
+<div class="work__body">
+          <p class="work__tag" data-i18n="works.w1.tag">Restaurant</p>
+          <h3 class="work__name">Sharyn</h3>
+          <dl class="work__list">
+            <dt data-i18n="works.task">The problem</dt>
+            <dd data-i18n="works.w1.task">The menu was awkward for guests to read, and reprinting it every time prices changed was slow and expensive.</dd>
+            <dt data-i18n="works.did">What I built</dt>
+            <dd data-i18n="works.w1.did">A menu that opens from a link or QR code right at the table. Photos, sections and prices all scroll with one thumb.</dd>
+            <dt data-i18n="works.result">The outcome</dt>
+            <dd data-i18n="works.w1.result">Guests download nothing, and the restaurant updates dishes and prices in a minute — no print shop involved.</dd>
+          </dl>
+          <a class="link" href="https://sharynmenu.onrender.com" target="_blank" rel="noopener">
+            <span data-i18n="works.open">Open the site</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="work work--rev reveal">
+        <div class="work__visual work__visual--real" data-tilt><button class="project-preview" type="button" data-project="teacher" aria-label="Teacher Temp — Take a closer look"><span class="browser-frame"><span class="browser-frame__bar"><i></i><i></i><i></i><span>teachertemp.onrender.com</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5H5v3m11-3h3v3M5 16v3h3m11-3v3h-3"/></svg></span><img src="../assets/img/teacher-screen.webp" width="1280" height="820" alt="Teacher Temp" loading="lazy" decoding="async"></span><span class="project-preview__hint"><span data-i18n="works.preview">Take a closer look</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 17 10-10M7 7h10v10"/></svg></span></button></div>
+<div class="work__body">
+          <p class="work__tag" data-i18n="works.w2.tag">Demo · teacher</p>
+          <h3 class="work__name">Teacher Temp</h3>
+          <dl class="work__list">
+            <dt data-i18n="works.task">The problem</dt>
+            <dd data-i18n="works.w2.task">Present services, lesson formats and pricing on a personal website.</dd>
+            <dt data-i18n="works.did">What I built</dt>
+            <dd data-i18n="works.w2.did">A demonstration teacher website with programmes, pricing, case studies and a booking interface.</dd>
+            <dt data-i18n="works.result">The outcome</dt>
+            <dd data-i18n="works.w2.result">Visitors can explore the offering and enquiry flow. The demo form does not send messages.</dd>
+          </dl>
+          <a class="link" href="https://teachertemp.onrender.com" target="_blank" rel="noopener">
+            <span data-i18n="works.open">Open the site</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  
+
+  
+  <section class="section section--sand" id="process" aria-labelledby="process-title">
+    <div class="ornament" aria-hidden="true"></div>
+    <div class="container">
+      <header class="shead reveal">
+        <p class="shead__kicker" data-i18n="process.kicker">How we’ll work</p>
+        <h2 class="shead__title" id="process-title" data-i18n="process.title">From idea to launch</h2>
+        <p class="shead__lead" data-i18n="process.lead">You don’t need to know anything about websites. Just tell me about your business — I’ll handle the rest.</p>
+      </header>
+
+      <ol class="steps">
+        <li class="step reveal" data-d="1">
+          <span class="step__num" aria-hidden="true">01</span>
+          <div class="step__body">
+            <h3><span data-i18n="process.p1.title">We talk</span> <span class="step__free" data-i18n="process.free">free</span></h3>
+            <p data-i18n="process.p1.text">You tell me about your business and your customers. I ask questions and give you a straight answer: what kind of site you need, what it will cost and how long it will take.</p>
+          </div>
+        </li>
+        <li class="step reveal" data-d="2">
+          <span class="step__num" aria-hidden="true">02</span>
+          <div class="step__body">
+            <h3 data-i18n="process.p2.title">I show you how it will look</h3>
+            <p data-i18n="process.p2.text">Before any building starts, you see the site as a design. We adjust colours, photos and the order of sections until you’re happy. I only move on once you say yes.</p>
+          </div>
+        </li>
+        <li class="step reveal" data-d="3">
+          <span class="step__num" aria-hidden="true">03</span>
+          <div class="step__body">
+            <h3 data-i18n="process.p3.title">I build it</h3>
+            <p data-i18n="process.p3.text">This part is on me. You can open the link at any point to see how it’s coming along — and say if you’d like something changed.</p>
+          </div>
+        </li>
+        <li class="step reveal" data-d="4">
+          <span class="step__num" aria-hidden="true">04</span>
+          <div class="step__body">
+            <h3 data-i18n="process.p4.title">I launch it</h3>
+            <p data-i18n="process.p4.text">I put the site online, connect your address (something like your-cafe.kz) and test everything across different phones and computers.</p>
+          </div>
+        </li>
+        <li class="step reveal" data-d="5">
+          <span class="step__num" aria-hidden="true">05</span>
+          <div class="step__body">
+            <h3 data-i18n="process.p5.title">I stay in touch</h3>
+            <p data-i18n="process.p5.text">The first month after launch is free: change prices, add photos or a promotion. After that, whenever you need me.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  
+  <section class="section" id="pricing" aria-labelledby="pricing-title">
+    <div class="container">
+      <header class="shead reveal">
+        <p class="shead__kicker" data-i18n="price.kicker">What’s included</p>
+        <h2 class="shead__title" id="pricing-title" data-i18n="price.title">Honest pricing, no small print</h2>
+        <p class="shead__lead" data-i18n="price.lead">Every site includes a custom design, a proper mobile experience, enquiries sent to your WhatsApp, and a month of support after launch.</p>
+      </header>
+
+      <div class="grid grid--3 plans">
+        <article class="plan reveal" data-d="1">
+          <h3 class="plan__name" data-i18n="price.t1.name">One-page site</h3>
+          <p class="plan__for" data-i18n="price.t1.for">When you need to say who you are quickly and give customers a way to reach you.</p>
+          <p class="plan__price" data-i18n-html="price.t1.price"><span>from</span> 30,000&nbsp;₸</p>
+          <p class="plan__term" data-i18n="price.t1.term">Ready in 3–5 days</p>
+          <ul class="plan__list">
+            <li data-i18n="price.t1.f1">A single page with all the key information</li>
+            <li data-i18n="price.t1.f2">Services or a menu with prices</li>
+            <li data-i18n="price.t1.f3">WhatsApp and Instagram buttons</li>
+            <li data-i18n="price.t1.f4">Address, opening hours and a map</li>
+            <li data-i18n="price.t1.f5">Enquiry form</li>
+          </ul>
+          <a class="btn btn--ghost btn--block" href="https://wa.me/77085482453" target="_blank" rel="noopener" data-i18n="price.discuss">Discuss this</a>
+        </article>
+
+        <article class="plan plan--best reveal" data-d="2">
+          <span class="plan__badge" data-i18n="price.popular">Most popular</span>
+          <h3 class="plan__name" data-i18n="price.t2.name">Business site</h3>
+          <p class="plan__for" data-i18n="price.t2.for">A complete site that convinces customers to choose you over the place next door.</p>
+          <p class="plan__price" data-i18n-html="price.t2.price"><span>from</span> 60,000&nbsp;₸</p>
+          <p class="plan__term" data-i18n="price.t2.term">Ready in 7–10 days</p>
+          <ul class="plan__list">
+            <li data-i18n="price.t2.f1">Everything in the one-page site</li>
+            <li data-i18n="price.t2.f2">Multiple sections: about, services, work, reviews</li>
+            <li data-i18n="price.t2.f3">Copy and section order that lead toward an enquiry</li>
+            <li data-i18n="price.t2.f4">Photo and video gallery</li>
+            <li data-i18n="price.t2.f5">Map, reviews and answers to common questions</li>
+            <li data-i18n="price.t2.f6">Search engine setup so people can find you</li>
+            <li data-i18n="price.t2.f7">Analytics: how many people visit, and where from</li>
+          </ul>
+          <a class="btn btn--primary btn--block" href="https://wa.me/77085482453" target="_blank" rel="noopener" data-i18n="price.discuss">Discuss this</a>
+        </article>
+
+        <article class="plan reveal" data-d="3">
+          <h3 class="plan__name" data-i18n="price.t3.name">Larger project</h3>
+          <p class="plan__for" data-i18n="price.t3.for">When you need an online shop, delivery with a basket, or customer accounts.</p>
+          <p class="plan__price" data-i18n-html="price.t3.price"><span>from</span> 100,000&nbsp;₸</p>
+          <p class="plan__term" data-i18n="price.t3.term">Timeline agreed together</p>
+          <ul class="plan__list">
+            <li data-i18n="price.t3.f1">Product catalogue, basket and checkout</li>
+            <li data-i18n="price.t3.f2">Card payments directly on the site</li>
+            <li data-i18n="price.t3.f3">Admin panel: change prices, photos and products yourself</li>
+            <li data-i18n="price.t3.f4">Two or three languages: Kazakh, Russian, English</li>
+            <li data-i18n="price.t3.f5">Customer accounts</li>
+            <li data-i18n="price.t3.f6">Your own domain, security and backups</li>
+          </ul>
+          <a class="btn btn--ghost btn--block" href="https://wa.me/77085482453" target="_blank" rel="noopener" data-i18n="price.discuss">Discuss this</a>
+        </article>
+      </div>
+
+      
+      <ul class="guarantees reveal">
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 4.5 5.8v6c0 4.4 3.2 8.2 7.5 9.7 4.3-1.5 7.5-5.3 7.5-9.7v-6L12 2.5Z"/><path d="m8.8 12 2.3 2.3 4.3-4.5"/></svg>
+          <strong data-i18n="guarantee.g1.title">The price is fixed</strong>
+          <span data-i18n="guarantee.g1.text">I quote before work starts, and it doesn’t creep up along the way.</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7.5h16v12H4z"/><path d="M8.5 7.5V6a3.5 3.5 0 0 1 7 0v1.5"/><path d="M12 12.5v2.5"/></svg>
+          <strong data-i18n="guarantee.g2.title">The site is yours</strong>
+          <span data-i18n="guarantee.g2.text">Domain and hosting are registered in your name, not mine.</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.2l3.4 2"/></svg>
+          <strong data-i18n="guarantee.g3.title">A month of support</strong>
+          <span data-i18n="guarantee.g3.text">Changes after launch are free, usually done the same day.</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="2.5"/><path d="M2.5 10h19"/></svg>
+          <strong data-i18n="guarantee.g4.title">Paid in two halves</strong>
+          <span data-i18n="guarantee.g4.text">50% up front, the rest once the site is finished and you’re happy with it.</span>
+        </li>
+      </ul>
+
+      <p class="plans__note reveal" data-i18n="price.note">These are starting prices. I’ll give you an exact figure after a short conversation — it depends on how many sections you need and the scope of the work. There are no hidden extras.</p>
+    </div>
+  </section>
+
+  
+  <section class="section brief-section" id="brief" aria-labelledby="brief-title"><div class="container"><header class="shead reveal"><p class="shead__kicker" data-i18n="brief.kicker">Let’s get started</p><h2 class="shead__title" id="brief-title" data-i18n="brief.title">What website do you need?</h2><p class="shead__lead" data-i18n="brief.lead">Choose a format and tell me a little about your project. We’ll prepare a message so we can discuss the details.</p></header>
+<div class="brief-grid reveal"><form id="project-brief" class="brief-form" data-nosnippet><fieldset><legend data-i18n="brief.format">Website format</legend><div class="format-options"><label class="format-option"><input type="radio" name="format" value="basic" checked><span><strong data-i18n="brief.basic">Starter site</strong><small><span data-i18n="brief.from">from</span> <span>30 000 ₸</span></small></span><i aria-hidden="true"></i></label><label class="format-option"><input type="radio" name="format" value="business" ><span><strong data-i18n="brief.business">Business site</strong><small><span data-i18n="brief.from">from</span> <span>60 000 ₸</span></small></span><i aria-hidden="true"></i></label><label class="format-option"><input type="radio" name="format" value="store" ><span><strong data-i18n="brief.store">Store / larger project</strong><small><span data-i18n="brief.from">from</span> <span>100 000 ₸</span></small></span><i aria-hidden="true"></i></label></div></fieldset>
+<div class="brief-fields"><label><span data-i18n="brief.field">Your business</span><select name="business" id="brief-business"><option value="1" data-i18n="svc.s1.title">Cafés, restaurants and coffee shops</option><option value="2" data-i18n="svc.s2.title">Food delivery</option><option value="3" data-i18n="svc.s3.title">Retail shops</option><option value="4" data-i18n="svc.s4.title">Beauty salons</option><option value="5" data-i18n="svc.s5.title">Independent professionals</option><option value="6" data-i18n="svc.s6.title">Small companies</option><option value="other" data-i18n="brief.other">Another business</option></select></label><label><span data-i18n="brief.name">What should I call you?</span><input name="name" maxlength="80" autocomplete="given-name" placeholder="Name — optional" data-i18n-attr="placeholder:brief.namePlaceholder"></label></div>
+<label class="brief-details"><span data-i18n="brief.details">What would you like to build?</span><textarea name="details" maxlength="1000" rows="3" placeholder="For example: a café website with a menu and table reservations" data-i18n-attr="placeholder:brief.placeholder"></textarea></label><button type="submit" class="btn btn--primary brief-submit"><span data-i18n="brief.submit">Prepare my enquiry</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button><noscript><p data-i18n="brief.withJs">Enable JavaScript to prepare a message, or contact me directly.</p><a href="https://wa.me/77085482453">WhatsApp</a></noscript></form>
+<aside class="brief-summary"><span class="brief-summary__mark" aria-hidden="true">↗</span><p data-i18n="brief.resultTitle">Starting price</p><div class="brief-price" aria-live="polite"><span data-i18n="brief.from">from</span><strong id="brief-price">30 000</strong><span>₸</span></div><p id="brief-timeline" class="brief-timeline">Usually 3–5 days</p><p class="brief-summary__support" data-i18n="brief.support">Design, mobile version and a month of support</p><p class="brief-summary__note" data-i18n="brief.exact">Final quote after we discuss the project. No hidden extras.</p><div id="brief-ready" class="brief-ready" data-nosnippet hidden><h3 tabindex="-1" id="brief-ready-title" data-i18n="brief.ready">Your message is ready</h3><p id="brief-message"></p><a class="btn btn--primary" id="brief-whatsapp" href="https://wa.me/77085482453" target="_blank" rel="noopener noreferrer"><span data-i18n="brief.send">Open WhatsApp</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><p class="brief-notice" data-i18n="brief.notice">WhatsApp opens with your draft. You decide when to send it.</p></div></aside></div></div></section>
+<section class="section section--sand" id="about" aria-labelledby="about-title">
+    <div class="ornament" aria-hidden="true"></div>
+    <div class="container about">
+      <div class="about__media reveal">
+        <div class="about__photo about__photo--editorial"><img src="../assets/img/workspace.webp" width="1000" height="1200" loading="lazy" alt="Workspace with a laptop and plants" data-i18n-attr="alt:svc.photo3"><div class="about__photo-caption"><strong data-i18n="about.photo">Idea. Design. Your website.</strong><span data-i18n="about.photoSub">Attention to every detail</span></div></div>
+        <span class="about__stamp" aria-hidden="true"><svg class="" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m6 12 4 4 8-8"/></svg></span>
+      </div>
+      <div class="about__body reveal" data-d="1">
+        <p class="shead__kicker" data-i18n="about.kicker">About me</p>
+        <h2 class="shead__title" id="about-title" data-i18n="about.title">Amir, a web developer in Astana</h2>
+        <p data-i18n="about.p1">I build websites in Astana for small businesses across Kazakhstan: cafés, shops, salons and independent specialists. I help present your services clearly and make it easy to get in touch from a phone.</p>
+        <p data-i18n="about.p2">I work on my own, without an agency or account managers: you deal with me directly, which makes things faster and cuts the markup. What matters to me is that the site doesn’t just look good but actually brings you enquiries — which is why I ask more about your customers than about button colours.</p>
+        <ul class="about__chips">
+          <li data-i18n="about.chip1">Astana, Kazakhstan</li>
+          <li data-i18n="about.chip2">Working across Kazakhstan</li>
+          <li data-i18n="about.chip3">I reply within an hour</li>
+          <li data-i18n="about.chip4">I speak Russian and Kazakh</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section" id="faq" aria-labelledby="faq-title">
+    <div class="container container--narrow">
+      <header class="shead reveal">
+        <p class="shead__kicker" data-i18n="faq.kicker">Common questions</p>
+        <h2 class="shead__title" id="faq-title" data-i18n="faq.title">Any questions?</h2>
+      </header>
+
+      <div class="faq reveal">
+        <div class="faq__item">
+          <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">
+            <span data-i18n="faq.q1">I know nothing about websites. Is that a problem?</span>
+            <span class="faq__ico" aria-hidden="true"></span>
+          </button></h3>
+          <div class="faq__a" id="faq-a1" role="region" aria-labelledby="faq-q1"><div><p data-i18n="faq.a1">No — that’s true of almost everyone. Knowing about websites is my job. You describe your business in ordinary words, I ask clear questions and handle all the technical decisions myself.</p></div></div>
+        </div>
+
+        <div class="faq__item">
+          <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">
+            <span data-i18n="faq.q2">How much does a site cost?</span>
+            <span class="faq__ico" aria-hidden="true"></span>
+          </button></h3>
+          <div class="faq__a" id="faq-a2" role="region" aria-labelledby="faq-q2"><div><p data-i18n="faq.a2">A simple site starts at 30,000 ₸, a business site at 60,000 ₸, and a larger project with a basket and payments at 100,000 ₸. I’ll give you an exact figure after a short conversation. The price is fixed before work starts and doesn’t go up afterwards.</p></div></div>
+        </div>
+
+        <div class="faq__item">
+          <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">
+            <span data-i18n="faq.q3">How long does it take?</span>
+            <span class="faq__ico" aria-hidden="true"></span>
+          </button></h3>
+          <div class="faq__a" id="faq-a3" role="region" aria-labelledby="faq-q3"><div><p data-i18n="faq.a3">Usually 3–5 days for a simple site and 7–10 days for a business site. Larger projects are agreed separately. Most of the time goes into your photos and copy — if those are ready, it’s faster.</p></div></div>
+        </div>
+
+        <div class="faq__item">
+          <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">
+            <span data-i18n="faq.q4">What if I don’t like the design?</span>
+            <span class="faq__ico" aria-hidden="true"></span>
+          </button></h3>
+          <div class="faq__a" id="faq-a4" role="region" aria-labelledby="faq-q4"><div><p data-i18n="faq.a4">I show you how the site will look first, and we revise that as many times as needed. I only start building once you’ve approved it — so you never pay for something you don’t like.</p></div></div>
+        </div>
+
+        <div class="faq__item">
+          <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">
+            <span data-i18n="faq.q5">What are a domain and hosting? Do I have to buy them?</span>
+            <span class="faq__ico" aria-hidden="true"></span>
+          </button></h3>
+          <div class="faq__a" id="faq-a5" role="region" aria-labelledby="faq-q5"><div><p data-i18n="faq.a5">The domain is what customers type into their browser, something like your-cafe.kz. You also need somewhere for the site to live. That’s paid once a year, separately, and it isn’t expensive. I’ll advise what to choose and set it all up — the payment stays in your name so the site always belongs to you.</p></div></div>
+        </div>
+
+        <div class="faq__item">
+          <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a6" id="faq-q6">
+            <span data-i18n="faq.q6">Will I be able to change prices, photos and text myself?</span>
+            <span class="faq__ico" aria-hidden="true"></span>
+          </button></h3>
+          <div class="faq__a" id="faq-a6" role="region" aria-labelledby="faq-q6"><div><p data-i18n="faq.a6">Yes. If you need to change things often — a menu or a product list, say — I’ll build a simple admin panel: open it on your phone and update a price or photo in a minute. If changes are rare, you can just message me.</p></div></div>
+        </div>
+
+        <div class="faq__item">
+          <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a7" id="faq-q7">
+            <span data-i18n="faq.q7">How does payment work?</span>
+            <span class="faq__ico" aria-hidden="true"></span>
+          </button></h3>
+          <div class="faq__a" id="faq-a7" role="region" aria-labelledby="faq-q7"><div><p data-i18n="faq.a7">Half at the start, the rest once the site is finished and you’re happy with it. By bank transfer or Kaspi, whichever suits you. Everything we agree is put in writing so it’s clear on both sides.</p></div></div>
+        </div>
+
+        <div class="faq__item">
+          <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a8" id="faq-q8">
+            <span data-i18n="faq.q8">Do you only work in Astana?</span>
+            <span class="faq__ico" aria-hidden="true"></span>
+          </button></h3>
+          <div class="faq__a" id="faq-a8" role="region" aria-labelledby="faq-q8"><div><p data-i18n="faq.a8">I live in Astana but work with clients across Kazakhstan. WhatsApp is usually easiest — meeting in person isn’t necessary. If you’re in Astana and would like to meet, that’s fine too.</p></div></div>
+        </div>
+
+        <div class="faq__item">
+          <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a9" id="faq-q9">
+            <span data-i18n="faq.q9">What happens to the site after launch?</span>
+            <span class="faq__ico" aria-hidden="true"></span>
+          </button></h3>
+          <div class="faq__a" id="faq-a9" role="region" aria-labelledby="faq-q9"><div><p data-i18n="faq.a9">The site is entirely yours. The first month of changes is free. After that, message me whenever you need — small fixes are usually done the same day.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="cta" id="contacts" aria-labelledby="cta-title">
+    <div class="cta__glow" aria-hidden="true"></div>
+    <div class="container cta__inner">
+      <p class="badge badge--light reveal"><span class="badge__dot"></span> <span data-i18n="cta.badge">Available for new projects</span></p>
+
+      <h2 class="cta__title reveal" data-d="1" id="cta-title" data-i18n-html="cta.title">Your business.<br>The next level.</h2>
+
+      <p class="cta__text reveal" data-d="2" data-i18n="cta.text">Tell me about your business. I’ll suggest a solution, a price and a timeline. Your first consultation is free.</p>
+
+      <div class="cta__btns reveal" data-d="3">
+        <a class="btn btn--primary btn--lg" href="https://wa.me/77085482453" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="ico-wa"><path d="M17.472 14.382c-.301-.15-1.782-.879-2.057-.98-.277-.101-.478-.151-.678.15-.202.302-.78.98-.957 1.182-.176.201-.352.226-.653.075-.301-.15-1.272-.469-2.423-1.496-.895-.799-1.5-1.786-1.676-2.087-.176-.302-.019-.465.132-.615.136-.135.301-.351.452-.527.15-.176.2-.301.301-.502.101-.201.05-.377-.025-.528-.075-.15-.678-1.633-.929-2.237-.245-.588-.493-.509-.678-.518-.176-.01-.377-.01-.578-.01-.201 0-.528.076-.804.377-.276.301-1.055 1.03-1.055 2.512s1.08 2.914 1.231 3.115c.15.201 2.125 3.245 5.147 4.551.719.311 1.28.497 1.718.636.722.23 1.378.197 1.898.12.579-.087 1.782-.728 2.033-1.431.251-.703.251-1.306.176-1.432-.075-.125-.276-.201-.577-.351zM12.05 21.784h-.008a9.78 9.78 0 0 1-4.99-1.365l-.358-.213-3.71.973.99-3.617-.234-.372a9.782 9.782 0 0 1-1.5-5.187C2.24 6.61 6.64 2.21 12.056 2.21a9.785 9.785 0 0 1 6.927 2.873 9.787 9.787 0 0 1 2.871 6.927c-.002 5.4-4.406 9.774-9.804 9.774zm8.318-18.093A11.715 11.715 0 0 0 12.056.25C5.568.25.286 5.534.283 12.025a11.72 11.72 0 0 0 1.794 6.229L0 23.75l5.632-1.477a11.73 11.73 0 0 0 6.417 1.877h.005c6.486 0 11.769-5.283 11.772-11.775a11.7 11.7 0 0 0-3.458-8.384z"/></svg>
+          <span data-i18n="cta.whatsapp">Message on WhatsApp</span>
+        </a>
+        <a class="btn btn--outline btn--lg" href="https://www.instagram.com/altayev_amir" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="ico-ig"><rect x="2.8" y="2.8" width="18.4" height="18.4" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.4" cy="6.6" r="1.15" class="fill"/></svg>
+          Instagram
+        </a>
+      </div>
+
+      <p class="cta__meta reveal" data-d="4" data-i18n="cta.hours">Astana, Kazakhstan · available every day, 10:00–22:00</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <a class="logo logo--sm" href="#top" data-i18n-attr="aria-label:a11y.logoTop" aria-label="Amir Web — back to top">
+      <img class="logo__mark" src="../assets/img/logo-mark.png" width="120" height="56" alt="">
+      <span class="logo__text">Amir Web</span>
+    </a>
+
+    <p class="footer__copy">© <span id="year">2026</span> <span data-i18n="footer.copy">Amir Web — websites for businesses in Kazakhstan</span></p>
+
+    <div class="footer__socials">
+      <a href="https://wa.me/77085482453" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="ico-wa"><path d="M17.472 14.382c-.301-.15-1.782-.879-2.057-.98-.277-.101-.478-.151-.678.15-.202.302-.78.98-.957 1.182-.176.201-.352.226-.653.075-.301-.15-1.272-.469-2.423-1.496-.895-.799-1.5-1.786-1.676-2.087-.176-.302-.019-.465.132-.615.136-.135.301-.351.452-.527.15-.176.2-.301.301-.502.101-.201.05-.377-.025-.528-.075-.15-.678-1.633-.929-2.237-.245-.588-.493-.509-.678-.518-.176-.01-.377-.01-.578-.01-.201 0-.528.076-.804.377-.276.301-1.055 1.03-1.055 2.512s1.08 2.914 1.231 3.115c.15.201 2.125 3.245 5.147 4.551.719.311 1.28.497 1.718.636.722.23 1.378.197 1.898.12.579-.087 1.782-.728 2.033-1.431.251-.703.251-1.306.176-1.432-.075-.125-.276-.201-.577-.351zM12.05 21.784h-.008a9.78 9.78 0 0 1-4.99-1.365l-.358-.213-3.71.973.99-3.617-.234-.372a9.782 9.782 0 0 1-1.5-5.187C2.24 6.61 6.64 2.21 12.056 2.21a9.785 9.785 0 0 1 6.927 2.873 9.787 9.787 0 0 1 2.871 6.927c-.002 5.4-4.406 9.774-9.804 9.774zm8.318-18.093A11.715 11.715 0 0 0 12.056.25C5.568.25.286 5.534.283 12.025a11.72 11.72 0 0 0 1.794 6.229L0 23.75l5.632-1.477a11.73 11.73 0 0 0 6.417 1.877h.005c6.486 0 11.769-5.283 11.772-11.775a11.7 11.7 0 0 0-3.458-8.384z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/altayev_amir" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="ico-ig"><rect x="2.8" y="2.8" width="18.4" height="18.4" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.4" cy="6.6" r="1.15" class="fill"/></svg>
+      </a>
+    </div>
+  </div>
+<nav class="footer-languages container" aria-label="Language versions" data-i18n-attr="aria-label:footer.languages"><a data-language="ru" href="../" hreflang="ru" lang="ru">Русский</a><a data-language="kk" href="../kk/" hreflang="kk" lang="kk">Қазақша</a><a aria-current="page" data-language="en" href="../en/" hreflang="en" lang="en">English</a></nav>
+</footer>
+
+<div class="mobile-cta" id="mobile-cta">
+  <a class="btn btn--primary btn--block" href="https://wa.me/77085482453" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" aria-hidden="true" class="ico-wa"><path d="M17.472 14.382c-.301-.15-1.782-.879-2.057-.98-.277-.101-.478-.151-.678.15-.202.302-.78.98-.957 1.182-.176.201-.352.226-.653.075-.301-.15-1.272-.469-2.423-1.496-.895-.799-1.5-1.786-1.676-2.087-.176-.302-.019-.465.132-.615.136-.135.301-.351.452-.527.15-.176.2-.301.301-.502.101-.201.05-.377-.025-.528-.075-.15-.678-1.633-.929-2.237-.245-.588-.493-.509-.678-.518-.176-.01-.377-.01-.578-.01-.201 0-.528.076-.804.377-.276.301-1.055 1.03-1.055 2.512s1.08 2.914 1.231 3.115c.15.201 2.125 3.245 5.147 4.551.719.311 1.28.497 1.718.636.722.23 1.378.197 1.898.12.579-.087 1.782-.728 2.033-1.431.251-.703.251-1.306.176-1.432-.075-.125-.276-.201-.577-.351zM12.05 21.784h-.008a9.78 9.78 0 0 1-4.99-1.365l-.358-.213-3.71.973.99-3.617-.234-.372a9.782 9.782 0 0 1-1.5-5.187C2.24 6.61 6.64 2.21 12.056 2.21a9.785 9.785 0 0 1 6.927 2.873 9.787 9.787 0 0 1 2.871 6.927c-.002 5.4-4.406 9.774-9.804 9.774zm8.318-18.093A11.715 11.715 0 0 0 12.056.25C5.568.25.286 5.534.283 12.025a11.72 11.72 0 0 0 1.794 6.229L0 23.75l5.632-1.477a11.73 11.73 0 0 0 6.417 1.877h.005c6.486 0 11.769-5.283 11.772-11.775a11.7 11.7 0 0 0-3.458-8.384z"/></svg>
+    <span data-i18n="cta.writeMe">Message me</span>
+  </a>
+</div>
+
+<dialog class="project-dialog" id="project-dialog" aria-labelledby="project-dialog-title"><div class="project-dialog__head"><div><span data-i18n="preview.title">Project preview</span><h2 id="project-dialog-title"></h2></div><button type="button" id="project-dialog-close" class="dialog-close" aria-label="Close preview" data-i18n-attr="aria-label:a11y.closePreview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><img id="project-dialog-image" width="1280" height="820" alt=""><div class="project-dialog__foot"><p data-i18n="preview.hint">Website screenshot. Open the interactive version using the button below.</p><a class="btn btn--primary" id="project-dialog-link" href="https://sharynmenu.onrender.com" target="_blank" rel="noopener"><span data-i18n="works.open">Open the site</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div></dialog><a class="back-to-top" id="back-to-top" href="#top" aria-label="Back to top" data-i18n-attr="aria-label:a11y.toTop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6"/></svg></a>
+<script src="../assets/js/i18n.js?v=13" defer></script>
+<script src="../assets/js/text-motion.js?v=13" defer></script>
+<script src="../assets/js/main.js?v=13" defer></script>
+<script src="../assets/js/experience.js?v=13" defer></script>
+
+<script type="application/ld+json" id="site-schema">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://amir-web.kz/#business",
+      "name": "Amir Web",
+      "url": "https://amir-web.kz/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://amir-web.kz/assets/img/icon-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "description": "Website design in Astana and across Kazakhstan. Landing pages, business websites and online stores from 30,000 ₸. Mobile design, WhatsApp and a month of support.",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Kazakhstan"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Амир Алтаев"
+      },
+      "sameAs": [
+        "https://www.instagram.com/altayev_amir"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "url": "https://wa.me/77085482453",
+        "availableLanguage": [
+          "ru",
+          "kk",
+          "en"
+        ]
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Website design for businesses",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "One-page site",
+            "description": "These are starting prices. I’ll give you an exact figure after a short conversation — it depends on how many sections you need and the scope of the work. There are no hidden extras.",
+            "price": "30000",
+            "priceCurrency": "KZT",
+            "url": "https://amir-web.kz/en/#pricing",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "One-page site",
+              "provider": {
+                "@id": "https://amir-web.kz/#business"
+              },
+              "areaServed": {
+                "@type": "Country",
+                "name": "Kazakhstan"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Business site",
+            "description": "These are starting prices. I’ll give you an exact figure after a short conversation — it depends on how many sections you need and the scope of the work. There are no hidden extras.",
+            "price": "60000",
+            "priceCurrency": "KZT",
+            "url": "https://amir-web.kz/en/#pricing",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Business site",
+              "provider": {
+                "@id": "https://amir-web.kz/#business"
+              },
+              "areaServed": {
+                "@type": "Country",
+                "name": "Kazakhstan"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Larger project",
+            "description": "These are starting prices. I’ll give you an exact figure after a short conversation — it depends on how many sections you need and the scope of the work. There are no hidden extras.",
+            "price": "100000",
+            "priceCurrency": "KZT",
+            "url": "https://amir-web.kz/en/#pricing",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Larger project",
+              "provider": {
+                "@id": "https://amir-web.kz/#business"
+              },
+              "areaServed": {
+                "@type": "Country",
+                "name": "Kazakhstan"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://amir-web.kz/#website",
+      "url": "https://amir-web.kz/",
+      "name": "Amir Web",
+      "inLanguage": [
+        "ru",
+        "kk",
+        "en"
+      ],
+      "publisher": {
+        "@id": "https://amir-web.kz/#business"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://amir-web.kz/en/#webpage",
+      "url": "https://amir-web.kz/en/",
+      "name": "Website Design in Astana from 30,000 ₸ — Amir Web",
+      "description": "Website design in Astana and across Kazakhstan. Landing pages, business websites and online stores from 30,000 ₸. Mobile design, WhatsApp and a month of support.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://amir-web.kz/#website"
+      },
+      "about": {
+        "@id": "https://amir-web.kz/#business"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://amir-web.kz/assets/img/og-cover.png",
+        "width": 1200,
+        "height": 630
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://amir-web.kz/en/#faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "I know nothing about websites. Is that a problem?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No — that’s true of almost everyone. Knowing about websites is my job. You describe your business in ordinary words, I ask clear questions and handle all the technical decisions myself."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does a site cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A simple site starts at 30,000 ₸, a business site at 60,000 ₸, and a larger project with a basket and payments at 100,000 ₸. I’ll give you an exact figure after a short conversation. The price is fixed before work starts and doesn’t go up afterwards."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usually 3–5 days for a simple site and 7–10 days for a business site. Larger projects are agreed separately. Most of the time goes into your photos and copy — if those are ready, it’s faster."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I don’t like the design?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "I show you how the site will look first, and we revise that as many times as needed. I only start building once you’ve approved it — so you never pay for something you don’t like."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are a domain and hosting? Do I have to buy them?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The domain is what customers type into their browser, something like your-cafe.kz. You also need somewhere for the site to live. That’s paid once a year, separately, and it isn’t expensive. I’ll advise what to choose and set it all up — the payment stays in your name so the site always belongs to you."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will I be able to change prices, photos and text myself?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. If you need to change things often — a menu or a product list, say — I’ll build a simple admin panel: open it on your phone and update a price or photo in a minute. If changes are rare, you can just message me."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does payment work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Half at the start, the rest once the site is finished and you’re happy with it. By bank transfer or Kaspi, whichever suits you. Everything we agree is put in writing so it’s clear on both sides."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you only work in Astana?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "I live in Astana but work with clients across Kazakhstan. WhatsApp is usually easiest — meeting in person isn’t necessary. If you’re in Astana and would like to meet, that’s fine too."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens to the site after launch?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The site is entirely yours. The first month of changes is free. After that, message me whenever you need — small fixes are usually done the same day."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<script>
+window.addEventListener('load', function () {
+  if (!['amir-web.kz', 'www.amir-web.kz'].includes(location.hostname)) return;
+  var start = function () {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-Y099QCCJHP';
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', 'G-Y099QCCJHP');
+  };
+  'requestIdleCallback' in window ? requestIdleCallback(start, { timeout: 3000 }) : setTimeout(start, 1200);
+});
+</script>
+</body>
+</html>

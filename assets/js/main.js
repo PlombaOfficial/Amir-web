@@ -2,6 +2,8 @@
 (function () {
   'use strict';
 
+  var SITE_BASE = new URL('../../', document.currentScript.src);
+  var PAGE_LANGUAGE = document.documentElement.getAttribute('data-page-lang') || 'ru';
   var STORE_KEY = 'amirweb:settings';
   var DEFAULTS = { theme: 'light', lang: 'ru', motion: 'auto' };
   var root = document.documentElement;
@@ -13,6 +15,7 @@
     try { saved = JSON.parse(localStorage.getItem(STORE_KEY) || '{}'); } catch (e) { saved = {}; }
     var s = {};
     for (var k in DEFAULTS) s[k] = saved[k] || DEFAULTS[k];
+    s.lang = PAGE_LANGUAGE;
     return s;
   })();
 
@@ -87,6 +90,23 @@
     var desc = document.querySelector('meta[name="description"]');
     if (desc) desc.setAttribute('content', i18n.t(lang, 'meta.description'));
 
+    var pageUrl = 'https://amir-web.kz/' + (lang === 'ru' ? '' : lang + '/');
+    [['property','og:title','meta.title'],['property','og:description','meta.description'],['name','twitter:title','meta.title'],['name','twitter:description','meta.description']].forEach(function (item) {
+      var meta = document.querySelector('meta[' + item[0] + '="' + item[1] + '"]');
+      if (meta) meta.content = i18n.t(lang,item[2]);
+    });
+    document.querySelector('meta[property="og:url"]').content = pageUrl;
+    document.querySelector('meta[property="og:locale"]').content = {ru:'ru_KZ',kk:'kk_KZ',en:'en_US'}[lang];
+    var otherLocales = ['ru','kk','en'].filter(function (code) { return code !== lang; });
+    each('meta[property="og:locale:alternate"]', function (meta) {
+      meta.content = {ru:'ru_KZ',kk:'kk_KZ',en:'en_US'}[otherLocales.shift()];
+    });
+    document.querySelector('meta[property="og:image:alt"]').content = i18n.t(lang,'meta.title');
+    if (window.AmirSEO) document.getElementById('site-schema').textContent = JSON.stringify(window.AmirSEO[lang]);
+    each('[data-language]', function (link) {
+      if (link.dataset.language === lang) link.setAttribute('aria-current','page');
+      else link.removeAttribute('aria-current');
+    });
     var code = document.getElementById('prefs-code');
     if (code) code.textContent = lang.toUpperCase();
 
@@ -97,7 +117,7 @@
 
     if (updateUrl && window.history && history.replaceState) {
       var url = new URL(window.location.href);
-      if (lang === 'ru') url.searchParams.delete('lang');
+      if (lang === PAGE_LANGUAGE) url.searchParams.delete('lang');
       else url.searchParams.set('lang', lang);
       history.replaceState(null, '', url.pathname + url.search + url.hash);
     }
@@ -106,13 +126,30 @@
     var canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) {
       canonical.setAttribute('href',
-        lang === 'ru' ? 'https://amir-web.kz/' : 'https://amir-web.kz/?lang=' + lang);
+        lang === 'ru' ? 'https://amir-web.kz/' : 'https://amir-web.kz/' + lang + '/');
     }
   }
 
   function each(sel, fn) {
     Array.prototype.forEach.call(document.querySelectorAll(sel), fn);
   }
+
+  function changeLanguage(lang) {
+    var motion = window.AmirTextMotion;
+    if (lang === root.lang) { if (motion) motion.cancel('language'); return; }
+    var update = function () { keepingPlace(function () { applyLang(lang, true); }); };
+    if (!motion) { update(); return; }
+    motion.swap('language', document.querySelectorAll('[data-i18n], [data-i18n-html], #brief-price, #brief-timeline, #prefs-code'), update);
+  }
+
+  each('a[data-language]', function (link) {
+    link.addEventListener('click', function (event) {
+      if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      settings.lang = link.dataset.language;
+      save(); syncControls(); changeLanguage(settings.lang);
+    });
+  });
 
   
   function keepingPlace(fn) {
@@ -192,7 +229,7 @@
         save();
         syncControls();
         if (name === 'theme') applyTheme(true);
-        if (name === 'lang') keepingPlace(function () { applyLang(settings.lang, true); });
+        if (name === 'lang') changeLanguage(settings.lang);
       });
 
       group.addEventListener('keydown', function (e) {
@@ -226,7 +263,7 @@
       syncControls();
       applyTheme(true);
       applyMotion();
-      applyLang(settings.lang, true);
+      changeLanguage(settings.lang);
     });
 
     prefs.addEventListener('keydown', function (e) {
@@ -425,7 +462,7 @@
   
   if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
     window.addEventListener('load', function () {
-      navigator.serviceWorker.register('./sw.js').catch(function () {  });
+      navigator.serviceWorker.register(new URL('sw.js', SITE_BASE).href).catch(function () {  });
     });
   }
 })();

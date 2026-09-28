@@ -1,5 +1,6 @@
 (function () {
   'use strict';
+  var SITE_BASE = new URL('../../', document.currentScript.src);
   var root = document.documentElement;
   var translations = window.AmirI18n;
   var motionQuery = matchMedia('(prefers-reduced-motion: reduce)');
@@ -9,7 +10,6 @@
   function $(s, scope) { return (scope || document).querySelector(s); }
   function $$(s, scope) { return Array.from((scope || document).querySelectorAll(s)); }
 
-  // Accessible tabs retain their selected panel when the language changes.
   var tabs = $$('[data-service]');
   function selectService(tab, focus) {
     tabs.forEach(function (other) {
@@ -32,7 +32,6 @@
     });
   });
 
-  // Estimates use the owner's published starting prices, with no invented fees.
   var form = $('#project-brief');
   var ready = $('#brief-ready');
   var price = $('#brief-price');
@@ -57,10 +56,20 @@
     lines.push('', t('brief.exact'));
     return lines.join('\n');
   }
+  var estimateReady = false;
   function refreshBrief() {
     var choice = selectedFormat();
-    price.textContent = formatMoney(choice.price);
-    timeline.textContent = t(choice.term);
+    var amount = formatMoney(choice.price), term = t(choice.term);
+    var motion = window.AmirTextMotion;
+    var changed = price.textContent !== amount || timeline.textContent !== term;
+    var update = function () { price.textContent = amount; timeline.textContent = term; };
+    if (changed && estimateReady && motion && !motion.active('language')) {
+      motion.swap('estimate', [price, timeline], update);
+    } else {
+      if (motion) motion.cancel('estimate');
+      update();
+    }
+    estimateReady = true;
     if (!ready.hidden) {
       var text = message();
       draft.textContent = text;
@@ -81,14 +90,12 @@
     link.addEventListener('click', function () {
       var business = link.dataset.business;
       form.elements.namedItem('business').value = business;
-      // A shop or delivery catalogue needs the large-project format.
       var suggested = business === '2' || business === '3' ? 'store' : 'business';
       $('input[value="' + suggested + '"]', form).checked = true;
       refreshBrief();
     });
   });
 
-  // Local screenshots are previews; the original sites remain separate links.
   var dialog = $('#project-dialog');
   var lastPreview = null;
   var projects = {
@@ -101,7 +108,7 @@
       var project = projects[button.dataset.project];
       lastPreview = button;
       $('#project-dialog-title').textContent = project.name;
-      $('#project-dialog-image').src = project.image;
+      $('#project-dialog-image').src = new URL(project.image, SITE_BASE).href;
       $('#project-dialog-image').alt = project.name;
       $('#project-dialog-link').href = project.url;
       dialog.showModal();
@@ -119,7 +126,6 @@
     if (lastPreview) lastPreview.focus({ preventScroll: true });
   });
 
-  // Decorative pointer motion never runs for touch devices or reduced motion.
   var tilted = $$('[data-tilt], .hero__visual');
   tilted.forEach(function (el) {
     var frame = 0;
@@ -140,7 +146,6 @@
     });
   });
 
-  // A single animation-frame update serves progress, active nav and the top link.
   var progress = $('#reading-progress');
   var toTop = $('#back-to-top');
   var scrollFrame = 0;

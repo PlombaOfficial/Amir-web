@@ -1492,7 +1492,7 @@ body.is-locked { overflow: hidden; }
   .cta, .footer, .plan--best { background: #fff !important; color: #000 !important; }
 }
 
-/* White & emerald visual system. Existing content and interaction styles above. */
+
 :root {
   --brand-ink: #0a1010; --brand-sky: #00b965; --brand-gold: #00b965;
   --brand-gold-soft: #85e4b6; --brand-paper: #f7f9f8; --brand-green: #00b965;

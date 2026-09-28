@@ -1,4 +1,4 @@
-/* Studio update: photography, meaningful interactions, dark artwork. */
+
 .reading-progress { position:fixed; inset:0 0 auto; height:3px; z-index:150; pointer-events:none; }
 .reading-progress span { display:block; height:100%; background:linear-gradient(90deg,#008e50,#52e69d); transform:scaleX(0); transform-origin:left; }
 .nav a[aria-current] { color:var(--text-accent); background:var(--green-wash); }
@@ -176,3 +176,6 @@
 @media (prefers-reduced-motion:reduce) { .hero__image-wrap,.browser-frame { transform:none!important; } .service-info,.service-photo img { animation:none!important; } }
 [data-motion="reduced"] .hero__image-wrap,[data-motion="reduced"] .browser-frame { transform:none!important; }
 @media print { .reading-progress,.back-to-top,.project-dialog,.brief-section { display:none!important; } }
+
+.footer-languages { display:flex; justify-content:center; flex-wrap:wrap; gap:22px; padding-block:0 28px; font-size:12px; color:var(--text-muted); }
+.footer-languages a:hover,.footer-languages a[aria-current] { color:var(--text-accent); }
