@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--
-  чё смотришь? :D
-  верстал сам, код чистый
--->
+<!-- Amir Web — white & emerald redesign, September 2026 -->
 <html lang="ru" data-theme="light">
 <head>
 <meta charset="UTF-8">
@@ -16,7 +13,7 @@
   var d = document.documentElement;
   try {
     var s = JSON.parse(localStorage.getItem('amirweb:settings') || '{}');
-    var t = s.theme || 'system';
+    var t = s.theme || 'light';
     var dark = t === 'dark' || (t === 'system' &&
                window.matchMedia('(prefers-color-scheme: dark)').matches);
     d.setAttribute('data-theme', dark ? 'dark' : 'light');
@@ -27,8 +24,8 @@
 })();
 </script>
 
-<meta name="theme-color" content="#FCFBF8" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0A181F" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F7F9F8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101714" media="(prefers-color-scheme: dark)">
 <meta name="color-scheme" content="light dark">
 
 <link rel="canonical" href="https://amir-web.kz/">
@@ -61,23 +58,20 @@
 
 <link rel="preload" as="font" type="font/woff2" href="./assets/fonts/manrope-cyrillic.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="./assets/fonts/manrope-latin.woff2" crossorigin>
-<link rel="stylesheet" href="./assets/css/styles.css">
+<link rel="stylesheet" href="./assets/css/styles.css?v=9">
+<link rel="preload" as="image" href="./assets/img/hero-devices.webp" fetchpriority="high">
+<link rel="stylesheet" href="./assets/css/experience.css?v=9">
 </head>
 <body>
+<div class="reading-progress" aria-hidden="true"><span id="reading-progress"></span></div>
 
 <a class="skip-link" href="#main" data-i18n="a11y.skip">Перейти к содержанию</a>
 
 <header class="header" id="header">
   <div class="header__inner container">
     <a class="logo" href="#top" data-i18n-attr="aria-label:a11y.logoHome" aria-label="Amir Web — на главную">
-      <svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
-        <g class="logo__ring">
-          <circle cx="20" cy="20" r="14.5"/>
-          <path d="M36.5 20h2.7M31.67 8.33l1.91-1.91M20 3.5V.8M8.33 8.33 6.42 6.42M3.5 20H.8M8.33 31.67l-1.91 1.91M20 36.5v2.7M31.67 31.67l1.91 1.91"/>
-        </g>
-        <path class="logo__letter" d="M13.5 26.8 20 12.6l6.5 14.2M16.4 21.9h7.2"/>
-      </svg>
-      <span class="logo__text">Amir<span>Web</span></span>
+      <img class="logo__mark" src="./assets/img/logo-mark.png" width="120" height="56" alt="">
+      <span class="logo__text">Amir Web</span>
     </a>
 
     <nav class="nav" data-i18n-attr="aria-label:a11y.mainMenu" aria-label="Основное меню">
@@ -183,29 +177,34 @@
 
   
   <section class="hero" id="top" aria-labelledby="hero-title">
-    <div class="hero__rays" data-motion-loop aria-hidden="true"></div>
     <div class="container hero__inner">
-      <p class="badge reveal"><span class="badge__dot"></span> <span data-i18n="hero.badge">Астана · свободен для новых проектов</span></p>
-
-      <h1 class="hero__title reveal" id="hero-title" data-d="1" data-i18n-html="hero.title">
-        Сайт, который приводит<br>
-        <em>клиентов</em> вашему бизнесу
-      </h1>
-
-      <p class="hero__lead reveal" data-d="2" data-i18n="hero.lead">
-        Меня зовут Амир, я веб-разработчик из Астаны. Делаю сайты для кафе, доставок,
-        магазинов и салонов красоты — быстрые, удобные с телефона и понятные вашему клиенту.
-      </p>
-
-      <div class="hero__cta reveal" data-d="3">
-        <a class="btn btn--primary btn--lg" href="https://wa.me/77085482453" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" aria-hidden="true" class="ico-wa"><path d="M17.472 14.382c-.301-.15-1.782-.879-2.057-.98-.277-.101-.478-.151-.678.15-.202.302-.78.98-.957 1.182-.176.201-.352.226-.653.075-.301-.15-1.272-.469-2.423-1.496-.895-.799-1.5-1.786-1.676-2.087-.176-.302-.019-.465.132-.615.136-.135.301-.351.452-.527.15-.176.2-.301.301-.502.101-.201.05-.377-.025-.528-.075-.15-.678-1.633-.929-2.237-.245-.588-.493-.509-.678-.518-.176-.01-.377-.01-.578-.01-.201 0-.528.076-.804.377-.276.301-1.055 1.03-1.055 2.512s1.08 2.914 1.231 3.115c.15.201 2.125 3.245 5.147 4.551.719.311 1.28.497 1.718.636.722.23 1.378.197 1.898.12.579-.087 1.782-.728 2.033-1.431.251-.703.251-1.306.176-1.432-.075-.125-.276-.201-.577-.351zM12.05 21.784h-.008a9.78 9.78 0 0 1-4.99-1.365l-.358-.213-3.71.973.99-3.617-.234-.372a9.782 9.782 0 0 1-1.5-5.187C2.24 6.61 6.64 2.21 12.056 2.21a9.785 9.785 0 0 1 6.927 2.873 9.787 9.787 0 0 1 2.871 6.927c-.002 5.4-4.406 9.774-9.804 9.774zm8.318-18.093A11.715 11.715 0 0 0 12.056.25C5.568.25.286 5.534.283 12.025a11.72 11.72 0 0 0 1.794 6.229L0 23.75l5.632-1.477a11.73 11.73 0 0 0 6.417 1.877h.005c6.486 0 11.769-5.283 11.772-11.775a11.7 11.7 0 0 0-3.458-8.384z"/></svg>
-          <span data-i18n="cta.whatsapp">Написать в WhatsApp</span>
-        </a>
-        <a class="btn btn--ghost btn--lg" href="#works" data-i18n="cta.seeWorks">Посмотреть работы</a>
+      <div class="hero__copy">
+        <p class="badge reveal"><span class="badge__dot"></span><span data-i18n="hero.badge">Астана · свободен для новых проектов</span></p>
+        <h1 class="hero__title reveal" id="hero-title" data-d="1" data-i18n-html="hero.title">Сайты<br>для бизнеса<span class="hero__period">.</span></h1>
+        <p class="hero__lead reveal" data-d="2" data-i18n="hero.lead">Визитки · лендинги · магазины</p>
+        <a class="hero__price reveal" data-d="2" href="#pricing"><span data-i18n="hero.from">от</span><strong>30 000</strong><span class="hero__currency">₸</span><svg class="" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+        <ul class="hero__benefits reveal" data-d="3">
+          <li><svg class="" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 4-6h10l4 6-9 12L3 9Z M3 9h18 M7 3l5 18 5-18"/></svg><span data-i18n="hero.modern">Современно</span></li>
+          <li><svg class="" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m13 2-9 12h7l-1 8 10-13h-8l1-7Z"/></svg><span data-i18n="hero.fast">Быстро</span></li>
+          <li><svg class="" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg><span data-i18n="hero.mobile">Удобно с телефона</span></li>
+        </ul>
+        <div class="hero__cta reveal" data-d="4">
+          <a class="btn btn--primary btn--lg hero__whatsapp" href="https://wa.me/77085482453" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" class="ico-wa"><path d="M17.472 14.382c-.301-.15-1.782-.879-2.057-.98-.277-.101-.478-.151-.678.15-.202.302-.78.98-.957 1.182-.176.201-.352.226-.653.075-.301-.15-1.272-.469-2.423-1.496-.895-.799-1.5-1.786-1.676-2.087-.176-.302-.019-.465.132-.615.136-.135.301-.351.452-.527.15-.176.2-.301.301-.502.101-.201.05-.377-.025-.528-.075-.15-.678-1.633-.929-2.237-.245-.588-.493-.509-.678-.518-.176-.01-.377-.01-.578-.01-.201 0-.528.076-.804.377-.276.301-1.055 1.03-1.055 2.512s1.08 2.914 1.231 3.115c.15.201 2.125 3.245 5.147 4.551.719.311 1.28.497 1.718.636.722.23 1.378.197 1.898.12.579-.087 1.782-.728 2.033-1.431.251-.703.251-1.306.176-1.432-.075-.125-.276-.201-.577-.351zM12.05 21.784h-.008a9.78 9.78 0 0 1-4.99-1.365l-.358-.213-3.71.973.99-3.617-.234-.372a9.782 9.782 0 0 1-1.5-5.187C2.24 6.61 6.64 2.21 12.056 2.21a9.785 9.785 0 0 1 6.927 2.873 9.787 9.787 0 0 1 2.871 6.927c-.002 5.4-4.406 9.774-9.804 9.774zm8.318-18.093A11.715 11.715 0 0 0 12.056.25C5.568.25.286 5.534.283 12.025a11.72 11.72 0 0 0 1.794 6.229L0 23.75l5.632-1.477a11.73 11.73 0 0 0 6.417 1.877h.005c6.486 0 11.769-5.283 11.772-11.775a11.7 11.7 0 0 0-3.458-8.384z"/></svg><span data-i18n="cta.whatsapp">Написать в WhatsApp</span><svg class="" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+          <a class="hero__work-link" href="#brief"><span data-i18n="brief.title">Какой сайт нужен вам?</span><svg class="" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+        </div>
       </div>
-
-      <dl class="hero__facts reveal" data-d="4">
+      <div class="hero__visual reveal" data-d="2">
+        <div class="hero__image-wrap"><img class="hero__image hero__image--light" src="./assets/img/hero-devices.webp" width="1500" height="1000" alt="Сайт Amir Web на ноутбуке и смартфоне" data-i18n-attr="alt:hero.imageAlt" fetchpriority="high" decoding="async"><img class="hero__image hero__image--dark" src="./assets/img/hero-devices-dark.webp" width="1500" height="1000" alt="Сайт Amir Web на ноутбуке и смартфоне" data-i18n-attr="alt:hero.imageAlt" loading="lazy" decoding="async"></div>
+        <div class="float-card float-card--growth" data-motion-loop>
+          <div class="float-card__icon"><svg class="" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20v-5m7 5V9m7 11V3"/></svg></div>
+          <span data-i18n="hero.clients">Больше клиентов</span>
+          <svg class="growth-line" viewBox="0 0 100 48" aria-hidden="true"><path d="M3 43C40 39 66 30 91 6m-19 3 21-6-3 21"/></svg>
+        </div>
+        <div class="float-card float-card--contact" data-motion-loop><span class="float-card__wa"><svg viewBox="0 0 24 24" aria-hidden="true" class="ico-wa"><path d="M17.472 14.382c-.301-.15-1.782-.879-2.057-.98-.277-.101-.478-.151-.678.15-.202.302-.78.98-.957 1.182-.176.201-.352.226-.653.075-.301-.15-1.272-.469-2.423-1.496-.895-.799-1.5-1.786-1.676-2.087-.176-.302-.019-.465.132-.615.136-.135.301-.351.452-.527.15-.176.2-.301.301-.502.101-.201.05-.377-.025-.528-.075-.15-.678-1.633-.929-2.237-.245-.588-.493-.509-.678-.518-.176-.01-.377-.01-.578-.01-.201 0-.528.076-.804.377-.276.301-1.055 1.03-1.055 2.512s1.08 2.914 1.231 3.115c.15.201 2.125 3.245 5.147 4.551.719.311 1.28.497 1.718.636.722.23 1.378.197 1.898.12.579-.087 1.782-.728 2.033-1.431.251-.703.251-1.306.176-1.432-.075-.125-.276-.201-.577-.351zM12.05 21.784h-.008a9.78 9.78 0 0 1-4.99-1.365l-.358-.213-3.71.973.99-3.617-.234-.372a9.782 9.782 0 0 1-1.5-5.187C2.24 6.61 6.64 2.21 12.056 2.21a9.785 9.785 0 0 1 6.927 2.873 9.787 9.787 0 0 1 2.871 6.927c-.002 5.4-4.406 9.774-9.804 9.774zm8.318-18.093A11.715 11.715 0 0 0 12.056.25C5.568.25.286 5.534.283 12.025a11.72 11.72 0 0 0 1.794 6.229L0 23.75l5.632-1.477a11.73 11.73 0 0 0 6.417 1.877h.005c6.486 0 11.769-5.283 11.772-11.775a11.7 11.7 0 0 0-3.458-8.384z"/></svg></span><span data-i18n="hero.direct">Заявки сразу в WhatsApp</span><span class="float-card__check">✓</span></div>
+        <div class="hero__caption"><svg class="" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="hero.location">Астана · Казахстан</span><span class="hero__caption-line"></span><span data-i18n="hero.online">Ваш бизнес в интернете</span></div>
+      </div>
+    </div>
+    <div class="container hero__bottom"><dl class="hero__facts reveal" data-d="4">
         <div class="fact">
           <dt data-i18n="hero.fact1.label">среднее время ответа</dt>
           <dd data-i18n="hero.fact1.value">~1 час</dd>
@@ -218,9 +217,7 @@
           <dt data-i18n="hero.fact3.label">помогаю после запуска</dt>
           <dd data-i18n="hero.fact3.value">1 месяц</dd>
         </div>
-      </dl>
-    </div>
-
+      </dl><a class="hero__scroll" href="#services"><span data-i18n="hero.explore">Ближе к вашему бизнесу</span><svg class="" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16m-6-6 6 6 6-6"/></svg></a></div>
     <div class="hero__strip" aria-hidden="true">
       <div class="strip__track" data-motion-loop>
         <span data-i18n="strip.cafe">Кафе и рестораны</span><i></i><span data-i18n="strip.delivery">Доставка еды</span><i></i><span data-i18n="strip.coffee">Кофейни</span><i></i>
@@ -238,7 +235,7 @@
     <div class="container">
       <header class="shead reveal">
         <p class="shead__kicker" data-i18n="why.kicker">Почему выбирают меня</p>
-        <h2 class="shead__title" id="why-title" data-i18n="why.title">Работаю так, как хотел бы, чтобы работали со мной</h2>
+        <h2 class="shead__title" id="why-title" data-i18n="why.title">Красиво. Удобно. По делу.</h2>
         <p class="shead__lead" data-i18n="why.lead">Без агентства, менеджеров и наценок. Вы общаетесь напрямую со мной — от первого сообщения до запуска.</p>
       </header>
 
@@ -300,87 +297,45 @@
     <div class="container">
       <header class="shead reveal">
         <p class="shead__kicker" data-i18n="svc.kicker">Какие сайты я создаю</p>
-        <h2 class="shead__title" id="services-title" data-i18n="svc.title">Для тех, к кому клиент приходит с телефона в руке</h2>
-        <p class="shead__lead" data-i18n="svc.lead">Ниже — направления, с которыми работаю чаще всего. Вашего дела нет в списке? Напишите, почти наверняка справлюсь.</p>
-      </header>
-
-      <div class="grid grid--3">
-        <article class="svc reveal" data-d="1">
-          <span class="svc__ico">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h12v5a6 6 0 0 1-6 6h0a6 6 0 0 1-6-6V8Z"/><path d="M16 9h2a3 3 0 0 1 0 6h-2"/><path d="M7.5 2v3M11.5 2v3"/></svg>
-          </span>
-          <h3 data-i18n="svc.s1.title">Кафе, рестораны и кофейни</h3>
-          <p data-i18n="svc.s1.text">Меню с фотографиями блюд, адрес на карте, бронь столика и ссылки на соцсети. Гость видит атмосферу заведения ещё до визита.</p>
-        </article>
-
-        <article class="svc reveal" data-d="2">
-          <span class="svc__ico">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="7" width="12" height="10" rx="2"/><path d="M14.5 10.5H18l3 3.5V17h-6.5"/><circle cx="7" cy="19" r="1.7"/><circle cx="17.5" cy="19" r="1.7"/></svg>
-          </span>
-          <h3 data-i18n="svc.s2.title">Доставка еды</h3>
-          <p data-i18n="svc.s2.text">Каталог блюд с ценами, корзина и оформление заказа. Готовый заказ вместе с адресом сразу приходит вам — без звонков и путаницы.</p>
-        </article>
-
-        <article class="svc reveal" data-d="3">
-          <span class="svc__ico">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l1.6-5h14.8L21 9"/><path d="M4.5 9v10a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V9"/><path d="M3 9h18"/><path d="M9.5 20v-5.5h5V20"/></svg>
-          </span>
-          <h3 data-i18n="svc.s3.title">Магазины</h3>
-          <p data-i18n="svc.s3.text">Витрина товаров с ценами и фотографиями, удобные категории и поиск. Клиент находит нужное за пару касаний и пишет вам.</p>
-        </article>
-
-        <article class="svc reveal" data-d="4">
-          <span class="svc__ico">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="6.5" r="2.6"/><circle cx="6" cy="17.5" r="2.6"/><path d="M8.2 7.9 20 18M8.2 16.1 20 6"/></svg>
-          </span>
-          <h3 data-i18n="svc.s4.title">Салоны красоты</h3>
-          <p data-i18n="svc.s4.text">Услуги и цены, работы мастеров, отзывы и запись онлайн. Клиентка выбирает мастера и записывается, пока вы заняты.</p>
-        </article>
-
-        <article class="svc reveal" data-d="5">
-          <span class="svc__ico">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20.2a7.5 7.5 0 0 1 15 0"/></svg>
-          </span>
-          <h3 data-i18n="svc.s5.title">Мастера и специалисты</h3>
-          <p data-i18n="svc.s5.text">Личный сайт: кто вы, чем помогаете, примеры работ, отзывы и кнопка связи. Выглядит солиднее, чем страница в соцсети.</p>
-        </article>
-
-        <article class="svc reveal" data-d="6">
-          <span class="svc__ico">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 7.5h2M13 7.5h2M9 11.5h2M13 11.5h2"/><path d="M10 21v-4h4v4"/></svg>
-          </span>
-          <h3 data-i18n="svc.s6.title">Небольшие компании</h3>
-          <p data-i18n="svc.s6.text">Понятный сайт об услугах, ценах и команде. Тот самый, который партнёр или заказчик открывает перед тем, как вам позвонить.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+        <h2 class="shead__title" id="services-title" data-i18n="svc.title">Сайт под ваше дело</h2>
+        <p class="shead__lead" data-i18n="svc.lead">Выберите своё направление — покажу, что можно сделать для вашего бизнеса.</p>
+      </header><div class="service-explorer reveal"><div class="service-tabs" role="tablist" aria-label="Выберите направление" data-i18n-attr="aria-label:svc.selection"><button id="service-tab-1" role="tab" aria-selected="true" aria-controls="service-panel-1" tabindex="0" type="button" data-service="1"><span class="service-tab-dot"></span><span data-i18n="svc.tab1">Кафе</span></button><button id="service-tab-2" role="tab" aria-selected="false" aria-controls="service-panel-2" tabindex="-1" type="button" data-service="2"><span class="service-tab-dot"></span><span data-i18n="svc.tab2">Доставка</span></button><button id="service-tab-3" role="tab" aria-selected="false" aria-controls="service-panel-3" tabindex="-1" type="button" data-service="3"><span class="service-tab-dot"></span><span data-i18n="svc.tab3">Магазины</span></button><button id="service-tab-4" role="tab" aria-selected="false" aria-controls="service-panel-4" tabindex="-1" type="button" data-service="4"><span class="service-tab-dot"></span><span data-i18n="svc.tab4">Красота</span></button><button id="service-tab-5" role="tab" aria-selected="false" aria-controls="service-panel-5" tabindex="-1" type="button" data-service="5"><span class="service-tab-dot"></span><span data-i18n="svc.tab5">Специалисты</span></button><button id="service-tab-6" role="tab" aria-selected="false" aria-controls="service-panel-6" tabindex="-1" type="button" data-service="6"><span class="service-tab-dot"></span><span data-i18n="svc.tab6">Компании</span></button></div><article class="service-panel" id="service-panel-1" role="tabpanel" aria-labelledby="service-tab-1" tabindex="0" >
+  <div class="service-photo"><img src="./assets/img/cafe.webp" width="1000" height="1200" loading="lazy" decoding="async" alt="Светлый интерьер кафе" data-i18n-attr="alt:svc.photo1"><span class="service-photo__label"><span data-i18n="svc.caption">Дизайн начинается с вашего дела</span></span></div>
+  <div class="service-info"><span class="service-number">01<span>/ 06</span></span><p class="service-chip" data-i18n="svc.feature1">Меню и бронь</p><h3 data-i18n="svc.s1.title">Кафе, рестораны и кофейни</h3><p data-i18n="svc.s1.text">Меню с фотографиями блюд, адрес на карте, бронь столика и ссылки на соцсети. Гость видит атмосферу заведения ещё до визита.</p><div class="service-includes"><span>✓ <span data-i18n="hero.mobile">Удобно с телефона</span></span><span>✓ WhatsApp</span></div><a class="btn btn--primary" href="#brief" data-business="1"><span data-i18n="svc.choose">Хочу такой сайт</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+</article>
+<article class="service-panel" id="service-panel-2" role="tabpanel" aria-labelledby="service-tab-2" tabindex="0" hidden>
+  <div class="service-photo"><img src="./assets/img/cafe.webp" width="1000" height="1200" loading="lazy" decoding="async" alt="Светлый интерьер кафе" data-i18n-attr="alt:svc.photo1"><span class="service-photo__label"><span data-i18n="svc.caption">Дизайн начинается с вашего дела</span></span></div>
+  <div class="service-info"><span class="service-number">02<span>/ 06</span></span><p class="service-chip" data-i18n="svc.feature2">Каталог и заказ</p><h3 data-i18n="svc.s2.title">Доставка еды</h3><p data-i18n="svc.s2.text">Каталог блюд с ценами, корзина и оформление заказа. Готовый заказ вместе с адресом сразу приходит вам — без звонков и путаницы.</p><div class="service-includes"><span>✓ <span data-i18n="hero.mobile">Удобно с телефона</span></span><span>✓ WhatsApp</span></div><a class="btn btn--primary" href="#brief" data-business="2"><span data-i18n="svc.choose">Хочу такой сайт</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+</article>
+<article class="service-panel" id="service-panel-3" role="tabpanel" aria-labelledby="service-tab-3" tabindex="0" hidden>
+  <div class="service-photo"><img src="./assets/img/shop.webp" width="1000" height="1200" loading="lazy" decoding="async" alt="Лаконичная вешалка в магазине" data-i18n-attr="alt:svc.photo2"><span class="service-photo__label"><span data-i18n="svc.caption">Дизайн начинается с вашего дела</span></span></div>
+  <div class="service-info"><span class="service-number">03<span>/ 06</span></span><p class="service-chip" data-i18n="svc.feature3">Товары и категории</p><h3 data-i18n="svc.s3.title">Магазины</h3><p data-i18n="svc.s3.text">Витрина товаров с ценами и фотографиями, удобные категории и поиск. Клиент находит нужное за пару касаний и пишет вам.</p><div class="service-includes"><span>✓ <span data-i18n="hero.mobile">Удобно с телефона</span></span><span>✓ WhatsApp</span></div><a class="btn btn--primary" href="#brief" data-business="3"><span data-i18n="svc.choose">Хочу такой сайт</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+</article>
+<article class="service-panel" id="service-panel-4" role="tabpanel" aria-labelledby="service-tab-4" tabindex="0" hidden>
+  <div class="service-photo"><img src="./assets/img/shop.webp" width="1000" height="1200" loading="lazy" decoding="async" alt="Лаконичная вешалка в магазине" data-i18n-attr="alt:svc.photo2"><span class="service-photo__label"><span data-i18n="svc.caption">Дизайн начинается с вашего дела</span></span></div>
+  <div class="service-info"><span class="service-number">04<span>/ 06</span></span><p class="service-chip" data-i18n="svc.feature4">Услуги и запись</p><h3 data-i18n="svc.s4.title">Салоны красоты</h3><p data-i18n="svc.s4.text">Услуги и цены, работы мастеров, отзывы и запись онлайн. Клиентка выбирает мастера и записывается, пока вы заняты.</p><div class="service-includes"><span>✓ <span data-i18n="hero.mobile">Удобно с телефона</span></span><span>✓ WhatsApp</span></div><a class="btn btn--primary" href="#brief" data-business="4"><span data-i18n="svc.choose">Хочу такой сайт</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+</article>
+<article class="service-panel" id="service-panel-5" role="tabpanel" aria-labelledby="service-tab-5" tabindex="0" hidden>
+  <div class="service-photo"><img src="./assets/img/workspace.webp" width="1000" height="1200" loading="lazy" decoding="async" alt="Рабочее пространство с ноутбуком и растениями" data-i18n-attr="alt:svc.photo3"><span class="service-photo__label"><span data-i18n="svc.caption">Дизайн начинается с вашего дела</span></span></div>
+  <div class="service-info"><span class="service-number">05<span>/ 06</span></span><p class="service-chip" data-i18n="svc.feature5">Портфолио и связь</p><h3 data-i18n="svc.s5.title">Мастера и специалисты</h3><p data-i18n="svc.s5.text">Личный сайт: кто вы, чем помогаете, примеры работ, отзывы и кнопка связи. Выглядит солиднее, чем страница в соцсети.</p><div class="service-includes"><span>✓ <span data-i18n="hero.mobile">Удобно с телефона</span></span><span>✓ WhatsApp</span></div><a class="btn btn--primary" href="#brief" data-business="5"><span data-i18n="svc.choose">Хочу такой сайт</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+</article>
+<article class="service-panel" id="service-panel-6" role="tabpanel" aria-labelledby="service-tab-6" tabindex="0" hidden>
+  <div class="service-photo"><img src="./assets/img/workspace.webp" width="1000" height="1200" loading="lazy" decoding="async" alt="Рабочее пространство с ноутбуком и растениями" data-i18n-attr="alt:svc.photo3"><span class="service-photo__label"><span data-i18n="svc.caption">Дизайн начинается с вашего дела</span></span></div>
+  <div class="service-info"><span class="service-number">06<span>/ 06</span></span><p class="service-chip" data-i18n="svc.feature6">Компания и услуги</p><h3 data-i18n="svc.s6.title">Небольшие компании</h3><p data-i18n="svc.s6.text">Понятный сайт об услугах, ценах и команде. Тот самый, который партнёр или заказчик открывает перед тем, как вам позвонить.</p><div class="service-includes"><span>✓ <span data-i18n="hero.mobile">Удобно с телефона</span></span><span>✓ WhatsApp</span></div><a class="btn btn--primary" href="#brief" data-business="6"><span data-i18n="svc.choose">Хочу такой сайт</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+</article></div></div></section>
 
   
   <section class="section" id="works" aria-labelledby="works-title">
     <div class="container">
       <header class="shead reveal">
         <p class="shead__kicker" data-i18n="works.kicker">Мои работы</p>
-        <h2 class="shead__title" id="works-title" data-i18n="works.title">Живые сайты, которые можно открыть прямо сейчас</h2>
-        <p class="shead__lead" data-i18n="works.lead">Не картинки в портфолио — работающие проекты. Нажмите и посмотрите, как они ведут себя на вашем телефоне.</p>
+        <h2 class="shead__title" id="works-title" data-i18n="works.title">Работы, которые можно открыть</h2>
+        <p class="shead__lead" data-i18n="works.lead">Посмотрите реальные экраны проектов и откройте сайты, чтобы попробовать их в работе.</p>
       </header>
 
       <article class="work reveal">
-        <div class="work__visual">
-          <div class="phone" aria-hidden="true">
-            <div class="phone__screen">
-              <div class="mk mk--menu">
-                <div class="mk__bar"><span class="mk__logo">Sharyn</span><span class="mk__dots"></span></div>
-                <div class="mk__hero"></div>
-                <div class="mk__chips"><i class="on"></i><i></i><i></i><i></i></div>
-                <div class="mk__row"><span class="mk__thumb"></span><span class="mk__lines"><b></b><s></s></span><span class="mk__price"></span></div>
-                <div class="mk__row"><span class="mk__thumb"></span><span class="mk__lines"><b></b><s></s></span><span class="mk__price"></span></div>
-                <div class="mk__row"><span class="mk__thumb"></span><span class="mk__lines"><b></b><s></s></span><span class="mk__price"></span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="work__body">
+        <div class="work__visual work__visual--real" data-tilt><button class="project-preview" type="button" data-project="sharyn" aria-label="Sharyn — Посмотреть подробнее"><span class="browser-frame"><span class="browser-frame__bar"><i></i><i></i><i></i><span>sharynmenu.onrender.com</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5H5v3m11-3h3v3M5 16v3h3m11-3v3h-3"/></svg></span><img src="./assets/img/sharyn-screen.webp" width="1280" height="820" alt="Sharyn" loading="lazy" decoding="async"></span><span class="project-preview__hint"><span data-i18n="works.preview">Посмотреть подробнее</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 17 10-10M7 7h10v10"/></svg></span></button></div>
+<div class="work__body">
           <p class="work__tag" data-i18n="works.w1.tag">Ресторан</p>
           <h3 class="work__name">Sharyn</h3>
           <dl class="work__list">
@@ -399,32 +354,17 @@
       </article>
 
       <article class="work work--rev reveal">
-        <div class="work__visual">
-          <div class="phone" aria-hidden="true">
-            <div class="phone__screen">
-              <div class="mk mk--profile">
-                <div class="mk__bar"><span class="mk__logo">Teacher</span><span class="mk__dots"></span></div>
-                <div class="mk__ava"></div>
-                <div class="mk__title"></div>
-                <div class="mk__sub"></div>
-                <div class="mk__pills"><i></i><i></i></div>
-                <div class="mk__cta"></div>
-                <div class="mk__row mk__row--flat"><span class="mk__lines"><b></b><s></s></span></div>
-                <div class="mk__row mk__row--flat"><span class="mk__lines"><b></b><s></s></span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="work__body">
-          <p class="work__tag" data-i18n="works.w2.tag">Преподаватель</p>
+        <div class="work__visual work__visual--real" data-tilt><button class="project-preview" type="button" data-project="teacher" aria-label="Teacher Temp — Посмотреть подробнее"><span class="browser-frame"><span class="browser-frame__bar"><i></i><i></i><i></i><span>teachertemp.onrender.com</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5H5v3m11-3h3v3M5 16v3h3m11-3v3h-3"/></svg></span><img src="./assets/img/teacher-screen.webp" width="1280" height="820" alt="Teacher Temp" loading="lazy" decoding="async"></span><span class="project-preview__hint"><span data-i18n="works.preview">Посмотреть подробнее</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 17 10-10M7 7h10v10"/></svg></span></button></div>
+<div class="work__body">
+          <p class="work__tag" data-i18n="works.w2.tag">Демо · преподаватель</p>
           <h3 class="work__name">Teacher Temp</h3>
           <dl class="work__list">
             <dt data-i18n="works.task">Задача</dt>
-            <dd data-i18n="works.w2.task">Учеников находили в соцсетях, но они не понимали, сколько стоит занятие и как записаться.</dd>
+            <dd data-i18n="works.w2.task">Показать услуги, форматы занятий и стоимость на одном личном сайте.</dd>
             <dt data-i18n="works.did">Что сделал</dt>
-            <dd data-i18n="works.w2.did">Понятный личный сайт: о преподавателе, форматы занятий, цены и кнопка записи на каждом экране.</dd>
+            <dd data-i18n="works.w2.did">Демонстрационный сайт преподавателя: программы, цены, кейсы и интерфейс записи.</dd>
             <dt data-i18n="works.result">Результат</dt>
-            <dd data-i18n="works.w2.result">Человек за минуту понимает, чем ему помогут, и пишет сам — без десяти уточняющих вопросов в директ.</dd>
+            <dd data-i18n="works.w2.result">Посетитель может изучить предложение и формат заявки. Форма на демо-сайте не отправляет сообщения.</dd>
           </dl>
           <a class="link" href="https://teachertemp.onrender.com" target="_blank" rel="noopener">
             <span data-i18n="works.open">Открыть сайт</span>
@@ -443,7 +383,7 @@
     <div class="container">
       <header class="shead reveal">
         <p class="shead__kicker" data-i18n="process.kicker">Как проходит работа</p>
-        <h2 class="shead__title" id="process-title" data-i18n="process.title">Пять простых шагов — от сообщения до готового сайта</h2>
+        <h2 class="shead__title" id="process-title" data-i18n="process.title">От идеи до запуска</h2>
         <p class="shead__lead" data-i18n="process.lead">Вам не нужно ничего знать про сайты. Достаточно рассказать о своём деле — остальное беру на себя.</p>
       </header>
 
@@ -576,16 +516,17 @@
   </section>
 
   
-  <section class="section section--sand" id="about" aria-labelledby="about-title">
+  <section class="section brief-section" id="brief" aria-labelledby="brief-title"><div class="container"><header class="shead reveal"><p class="shead__kicker" data-i18n="brief.kicker">Давайте начнём</p><h2 class="shead__title" id="brief-title" data-i18n="brief.title">Какой сайт нужен вам?</h2><p class="shead__lead" data-i18n="brief.lead">Выберите формат и расскажите пару слов о задаче. Подготовим сообщение — останется обсудить детали.</p></header>
+<div class="brief-grid reveal"><form id="project-brief" class="brief-form"><fieldset><legend data-i18n="brief.format">Формат сайта</legend><div class="format-options"><label class="format-option"><input type="radio" name="format" value="basic" checked><span><strong data-i18n="brief.basic">Визитка</strong><small><span data-i18n="brief.from">от</span> <span>30 000 ₸</span></small></span><i aria-hidden="true"></i></label><label class="format-option"><input type="radio" name="format" value="business" ><span><strong data-i18n="brief.business">Для бизнеса</strong><small><span data-i18n="brief.from">от</span> <span>60 000 ₸</span></small></span><i aria-hidden="true"></i></label><label class="format-option"><input type="radio" name="format" value="store" ><span><strong data-i18n="brief.store">Магазин / большой проект</strong><small><span data-i18n="brief.from">от</span> <span>100 000 ₸</span></small></span><i aria-hidden="true"></i></label></div></fieldset>
+<div class="brief-fields"><label><span data-i18n="brief.field">Ваше направление</span><select name="business" id="brief-business"><option value="1" data-i18n="svc.s1.title">Кафе, рестораны и кофейни</option><option value="2" data-i18n="svc.s2.title">Доставка еды</option><option value="3" data-i18n="svc.s3.title">Магазины</option><option value="4" data-i18n="svc.s4.title">Салоны красоты</option><option value="5" data-i18n="svc.s5.title">Мастера и специалисты</option><option value="6" data-i18n="svc.s6.title">Небольшие компании</option><option value="other" data-i18n="brief.other">Другое направление</option></select></label><label><span data-i18n="brief.name">Как к вам обращаться</span><input name="name" maxlength="80" autocomplete="given-name" placeholder="Имя — по желанию" data-i18n-attr="placeholder:brief.namePlaceholder"></label></div>
+<label class="brief-details"><span data-i18n="brief.details">Что хотите сделать?</span><textarea name="details" maxlength="1000" rows="3" placeholder="Например: сайт кофейни с меню и бронью столиков" data-i18n-attr="placeholder:brief.placeholder"></textarea></label><button type="submit" class="btn btn--primary brief-submit"><span data-i18n="brief.submit">Подготовить заявку</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button><noscript><p data-i18n="brief.withJs">Для подготовки сообщения включите JavaScript или напишите мне напрямую.</p><a href="https://wa.me/77085482453">WhatsApp</a></noscript></form>
+<aside class="brief-summary"><span class="brief-summary__mark" aria-hidden="true">↗</span><p data-i18n="brief.resultTitle">Стартовая стоимость</p><div class="brief-price" aria-live="polite"><span data-i18n="brief.from">от</span><strong id="brief-price">30 000</strong><span>₸</span></div><p id="brief-timeline" class="brief-timeline">Обычно 3–5 дней</p><p class="brief-summary__support" data-i18n="brief.support">Дизайн, мобильная версия и месяц поддержки</p><p class="brief-summary__note" data-i18n="brief.exact">Точная цена — после обсуждения задачи. Без скрытых доплат.</p><div id="brief-ready" class="brief-ready" hidden><h3 tabindex="-1" id="brief-ready-title" data-i18n="brief.ready">Ваше сообщение готово</h3><p id="brief-message"></p><a class="btn btn--primary" id="brief-whatsapp" href="https://wa.me/77085482453" target="_blank" rel="noopener noreferrer"><span data-i18n="brief.send">Открыть WhatsApp</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><p class="brief-notice" data-i18n="brief.notice">Откроется WhatsApp с готовым текстом. Отправку сообщения подтверждаете вы.</p></div></aside></div></div></section>
+<section class="section section--sand" id="about" aria-labelledby="about-title">
     <div class="ornament" aria-hidden="true"></div>
     <div class="container about">
       <div class="about__media reveal">
-        <div class="about__photo">
-          <span class="about__initial" aria-hidden="true">А</span>
-        </div>
-        <span class="about__stamp" aria-hidden="true">
-          <svg viewBox="0 0 40 40"><g class="logo__ring"><circle cx="20" cy="20" r="14.5"/><path d="M36.5 20h2.7M31.67 8.33l1.91-1.91M20 3.5V.8M8.33 8.33 6.42 6.42M3.5 20H.8M8.33 31.67l-1.91 1.91M20 36.5v2.7M31.67 31.67l1.91 1.91"/></g></svg>
-        </span>
+        <div class="about__photo about__photo--editorial"><img src="./assets/img/workspace.webp" width="1000" height="1200" loading="lazy" alt="Рабочее пространство с ноутбуком и растениями" data-i18n-attr="alt:svc.photo3"><div class="about__photo-caption"><strong data-i18n="about.photo">Идея. Дизайн. Ваш сайт.</strong><span data-i18n="about.photoSub">Внимание к каждой детали</span></div></div>
+        <span class="about__stamp" aria-hidden="true"><svg class="" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m6 12 4 4 8-8"/></svg></span>
       </div>
       <div class="about__body reveal" data-d="1">
         <p class="shead__kicker" data-i18n="about.kicker">Обо мне</p>
@@ -607,7 +548,7 @@
     <div class="container container--narrow">
       <header class="shead reveal">
         <p class="shead__kicker" data-i18n="faq.kicker">Ответы на популярные вопросы</p>
-        <h2 class="shead__title" id="faq-title" data-i18n="faq.title">То, что обычно спрашивают первым</h2>
+        <h2 class="shead__title" id="faq-title" data-i18n="faq.title">Остались вопросы?</h2>
       </header>
 
       <div class="faq reveal">
@@ -688,18 +629,13 @@
 
   
   <section class="cta" id="contacts" aria-labelledby="cta-title">
-    <div class="cta__rays" data-motion-loop aria-hidden="true"></div>
+    <div class="cta__glow" aria-hidden="true"></div>
     <div class="container cta__inner">
       <p class="badge badge--light reveal"><span class="badge__dot"></span> <span data-i18n="cta.badge">Свободен для новых проектов</span></p>
 
-      <h2 class="cta__title reveal" data-d="1" id="cta-title" data-i18n-html="cta.title">
-        Расскажите о своём деле —<br>предложу, каким должен быть ваш сайт
-      </h2>
+      <h2 class="cta__title reveal" data-d="1" id="cta-title" data-i18n-html="cta.title">Ваш бизнес.<br>Следующий уровень.</h2>
 
-      <p class="cta__text reveal" data-d="2" data-i18n="cta.text">
-        Напишите пару слов о бизнесе. Отвечу в течение часа, задам несколько вопросов
-        и назову точную цену и сроки. Разговор бесплатный и ни к чему не обязывает.
-      </p>
+      <p class="cta__text reveal" data-d="2" data-i18n="cta.text">Расскажите о своём деле. Предложу решение, назову цену и сроки. Первая консультация — бесплатно.</p>
 
       <div class="cta__btns reveal" data-d="3">
         <a class="btn btn--primary btn--lg" href="https://wa.me/77085482453" target="_blank" rel="noopener">
@@ -721,14 +657,8 @@
 <footer class="footer">
   <div class="container footer__inner">
     <a class="logo logo--sm" href="#top" data-i18n-attr="aria-label:a11y.logoTop" aria-label="Amir Web — наверх">
-      <svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
-        <g class="logo__ring">
-          <circle cx="20" cy="20" r="14.5"/>
-          <path d="M36.5 20h2.7M31.67 8.33l1.91-1.91M20 3.5V.8M8.33 8.33 6.42 6.42M3.5 20H.8M8.33 31.67l-1.91 1.91M20 36.5v2.7M31.67 31.67l1.91 1.91"/>
-        </g>
-        <path class="logo__letter" d="M13.5 26.8 20 12.6l6.5 14.2M16.4 21.9h7.2"/>
-      </svg>
-      <span class="logo__text">Amir<span>Web</span></span>
+      <img class="logo__mark" src="./assets/img/logo-mark.png" width="120" height="56" alt="">
+      <span class="logo__text">Amir Web</span>
     </a>
 
     <p class="footer__copy">© <span id="year">2026</span> <span data-i18n="footer.copy">Amir Web — сайты для бизнеса в Казахстане</span></p>
@@ -751,8 +681,10 @@
   </a>
 </div>
 
-<script src="./assets/js/i18n.js" defer></script>
-<script src="./assets/js/main.js" defer></script>
+<dialog class="project-dialog" id="project-dialog" aria-labelledby="project-dialog-title"><div class="project-dialog__head"><div><span data-i18n="preview.title">Превью проекта</span><h2 id="project-dialog-title"></h2></div><button type="button" id="project-dialog-close" class="dialog-close" aria-label="Закрыть превью" data-i18n-attr="aria-label:a11y.closePreview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><img id="project-dialog-image" width="1280" height="820" alt=""><div class="project-dialog__foot"><p data-i18n="preview.hint">Снимок сайта. Интерактивная версия — по кнопке ниже.</p><a class="btn btn--primary" id="project-dialog-link" href="https://sharynmenu.onrender.com" target="_blank" rel="noopener"><span data-i18n="works.open">Открыть сайт</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div></dialog><a class="back-to-top" id="back-to-top" href="#top" aria-label="Вернуться наверх" data-i18n-attr="aria-label:a11y.toTop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6"/></svg></a>
+<script src="./assets/js/i18n.js?v=9" defer></script>
+<script src="./assets/js/main.js?v=9" defer></script>
+<script src="./assets/js/experience.js?v=9" defer></script>
 
 <script type="application/ld+json">
 {
@@ -810,6 +742,7 @@
 
 <script>
 window.addEventListener('load', function () {
+  if (!['amir-web.kz', 'www.amir-web.kz'].includes(location.hostname)) return;
   var start = function () {
     var s = document.createElement('script');
     s.async = true;

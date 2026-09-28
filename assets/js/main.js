@@ -1,10 +1,9 @@
-console.log("%cчё смотришь? :D", "color: #ff5722; font-size: 16px; font-weight: bold;");
 
 (function () {
   'use strict';
 
   var STORE_KEY = 'amirweb:settings';
-  var DEFAULTS = { theme: 'system', lang: 'ru', motion: 'auto' };
+  var DEFAULTS = { theme: 'light', lang: 'ru', motion: 'auto' };
   var root = document.documentElement;
   var i18n = window.AmirI18n;
 
@@ -43,7 +42,7 @@ console.log("%cчё смотришь? :D", "color: #ff5722; font-size: 16px; fon
     Array.prototype.forEach.call(metas, function (m) { m.remove(); });
     var meta = document.createElement('meta');
     meta.name = 'theme-color';
-    meta.content = dark ? '#0A181F' : '#FCFBF8';
+    meta.content = dark ? '#101714' : '#F7F9F8';
     document.head.appendChild(meta);
   }
 
@@ -103,6 +102,7 @@ console.log("%cчё смотришь? :D", "color: #ff5722; font-size: 16px; fon
       history.replaceState(null, '', url.pathname + url.search + url.hash);
     }
 
+    document.dispatchEvent(new CustomEvent('amir:language', {detail:{lang:lang}}));
     var canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) {
       canonical.setAttribute('href',
@@ -265,10 +265,17 @@ console.log("%cчё смотришь? :D", "color: #ff5722; font-size: 16px; fon
     burger.setAttribute('aria-expanded', 'true');
     burger.setAttribute('aria-label', i18n ? i18n.t(settings.lang, 'a11y.closeMenu') : 'Закрыть меню');
     requestAnimationFrame(function () { menu.classList.add('is-open'); });
+    document.getElementById('main').inert = true;
+    document.querySelector('.footer').inert = true;
+    var firstLink = menu.querySelector('a');
+    if (firstLink) firstLink.focus();
   }
 
   function closeMenu() {
     menu.classList.remove('is-open');
+    document.getElementById('main').inert = false;
+    document.querySelector('.footer').inert = false;
+    if (menu.contains(document.activeElement)) burger.focus();
     document.body.classList.remove('is-locked');
     burger.setAttribute('aria-expanded', 'false');
     burger.setAttribute('aria-label', i18n ? i18n.t(settings.lang, 'a11y.openMenu') : 'Открыть меню');
@@ -280,6 +287,13 @@ console.log("%cчё смотришь? :D", "color: #ff5722; font-size: 16px; fon
   if (burger && menu) {
     burger.addEventListener('click', function () {
       burger.getAttribute('aria-expanded') === 'true' ? closeMenu() : openMenu();
+    });
+
+    menu.addEventListener('keydown', function (e) {
+      if (e.key !== 'Tab') return;
+      var links = menu.querySelectorAll('a');
+      if (e.shiftKey && document.activeElement === links[0]) { e.preventDefault(); links[links.length - 1].focus(); }
+      else if (!e.shiftKey && document.activeElement === links[links.length - 1]) { e.preventDefault(); links[0].focus(); }
     });
 
     menu.addEventListener('click', function (e) {
@@ -409,9 +423,9 @@ console.log("%cчё смотришь? :D", "color: #ff5722; font-size: 16px; fon
   syncControls();
 
   
-  if ('serviceWorker' in navigator) {
+  if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
     window.addEventListener('load', function () {
-      navigator.serviceWorker.register('/sw.js').catch(function () {  });
+      navigator.serviceWorker.register('./sw.js').catch(function () {  });
     });
   }
 })();
